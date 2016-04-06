@@ -9,7 +9,7 @@ This sample app is a .net/winform tool to test making REST calls for Outlook/Exc
 This sample requires the following:  
 
   * [Visual Studio 2015](https://www.visualstudio.com/en-us/downloads) 
-  * Either a [Microsoft](www.outlook.com) or [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account).
+  * Either a [Microsoft](http://www.outlook.com) or [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account).
  
 ##Register and configure the app
 1. Sign into the [App Registration Portal](https://apps.dev.microsoft.com/) using either your personal or work or school account.
