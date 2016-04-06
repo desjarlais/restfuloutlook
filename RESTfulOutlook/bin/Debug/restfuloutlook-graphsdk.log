@@ -1,0 +1,10 @@
+04/06/16 2:54:25 PM ==> REQUEST
+04/06/16 2:54:25 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/06/16 2:54:27 PM ==> REQUEST
+04/06/16 2:54:27 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAACSbek7AAA=/messages', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}

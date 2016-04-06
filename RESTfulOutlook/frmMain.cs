@@ -164,8 +164,18 @@ namespace RESTfulOutlook
                     // clear the token cache and cookies from browser control
                     // TODO: implement way to check the token cache type or just leave clearing both
                     authContext.TokenCache.Clear();
-                    fc.Clear();
-                    ClearCookies();
+
+                    // check for cache type
+                    if (Properties.Settings.Default.TokenCache == "File")
+                    {
+                        fc.Clear();
+                    }
+                    else
+                    {
+                        ClearCookies();
+                    }
+
+                    // clear the user info
                     user.Clear();
                 }
                 else
@@ -175,14 +185,16 @@ namespace RESTfulOutlook
                     tbUsername.Enabled = true;
                     mskPassword.Enabled = true;
                 }
-
-                // reset UI text
-                lblUsername.Text = "No User Logged In";
-                btnLoginLogout.Text = "Login";
             }
             catch (Exception ex)
             {
                 applogger.Log(ex.Message);
+            }
+            finally
+            {
+                // reset UI text
+                lblUsername.Text = "No User Logged In";
+                btnLoginLogout.Text = "Login";
             }
         }
 
