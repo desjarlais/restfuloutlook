@@ -27,9 +27,22 @@ This sample requires the following:
 
 7. Select **Save**.
 
-
 **Note**: I did include my registration details in the settings, so it might be possible to just use the tool without registering.  I would recommend going through the registration process however.
 
-## Questions and comments
+##Questions and comments
 
 If you have any feedback about this project, use the issues section for any questions or suggestions located here: [Issues](https://github.com/desjarlais/restfuloutlook/issues)
+
+##How to use the tool
+When you launch the application, you can click on the Settings button and edit the app registration detail if you went through the steps above to get your client id and redirect values.
+
+With those values set, you can proceed to login.  Once you have successfully authenticated, the buttons in the app will light up and you can start looking at the different API's and the data they return.  The SDK buttons use the Microsoft Graph SDK to return information from Exchange and the Graph API Explorer button is somewhat a clone of [MS Graph Explorer](https://graph.microsoft.io/en-us/graph-explorer#/) 
+
+##Additional Links and Resources
+Here are some additional helpful links if you are working with, or looking to work with the Microsoft Graph API and SDK's
+
+- [Microsoft Graph overview](http://graph.microsoft.io)
+- [Office 365 APIs platform overview](https://msdn.microsoft.com/office/office365/howto/platform-development-overview)
+- [Office 365 API code samples and videos](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
+- [Office developer code samples](http://dev.office.com/code-samples)
+- [Office dev center](http://dev.office.com/)
