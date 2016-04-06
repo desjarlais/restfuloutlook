@@ -26,7 +26,7 @@ This sample requires the following:
 
 7. Select **Save**.
 
-**Note**: I did include my registration details in the settings, so it might be possible to just use the tool without registering.  I would recommend going through the registration process however.
+**Note**: I did include my registration details in the settings, so you can just use the tool as-is without registering.
 
 ##Questions and comments
 
