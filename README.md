@@ -30,3 +30,6 @@ This sample requires the following:
 
 **Note**: I did include my registration details in the settings, so it might be possible to just use the tool without registering.  I would recommend going through the registration process however.
 
+## Questions and comments
+
+If you have any feedback about this project, use the issues section for any questions or suggestions located here: [Issues](https://github.com/desjarlais/restfuloutlook/issues)
