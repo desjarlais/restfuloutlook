@@ -12,6 +12,9 @@ This sample requires the following:
   * Either a [Microsoft](http://www.outlook.com) or [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account).
  
 ##Register and configure the app
+
+**Note**: I did include my registration details in the settings, so you can just use the tool as-is without registering and login without going through the following steps.  If you want to actually register the app against your tenant, then continue with the following steps.
+
 1. Sign into the [App Registration Portal](https://apps.dev.microsoft.com/) using either your personal or work or school account.
 2. Select **Add an app**.
 3. Enter a name for the app, and select **Create application**.
@@ -28,8 +31,6 @@ This sample requires the following:
 8. Open the restfuloutlook app and click on Settings
 9. Check the box for Edit Registration and populate the clientid and uri
 10. Click on **Save**.
-
-**Note**: I did include my registration details in the settings, so you can just use the tool as-is without registering.
 
 ##Questions and comments
 
