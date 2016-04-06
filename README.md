@@ -25,6 +25,9 @@ This sample requires the following:
 	The app id is a unique identifier for your app. The redirect URI is a unique URI provided by Windows 10 for each application to ensure that messages sent to that URI are only sent to that application. 
 
 7. Select **Save**.
+8. Open the restfuloutlook app and click on Settings
+9. Check the box for Edit Registration and populate the clientid and uri
+10. Click on **Save**.
 
 **Note**: I did include my registration details in the settings, so you can just use the tool as-is without registering.
 
