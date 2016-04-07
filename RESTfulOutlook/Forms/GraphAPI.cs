@@ -120,7 +120,7 @@ namespace RESTfulOutlook.Forms
 
                 if (!response.IsSuccessStatusCode)
                     throw new WebException(response.StatusCode.ToString() + ": " + response.ReasonPhrase);
-
+                    
                 string content = response.Content.ReadAsStringAsync().Result;
 
                 logger.Log("RESPONSE HEADER");
@@ -128,40 +128,52 @@ namespace RESTfulOutlook.Forms
                 logger.Log("RESPONSE");
                 logger.Log(content);
 
-                if (content[0] == '<')
+                if (response.StatusCode == HttpStatusCode.Accepted)
                 {
-                    // check for an xml response and populate the tree
-                    // this is mainly for the metadata query
-                    XmlDocument dom = new XmlDocument();
-                    dom.LoadXml(content);
+                    tvw.Nodes.Add(new TreeNode("Message sent succesfully."));
+                }
+                else if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    if (content[0] == '<')
+                    {
+                        // check for an xml response and populate the tree
+                        // this is mainly for the metadata query
+                        XmlDocument dom = new XmlDocument();
+                        dom.LoadXml(content);
 
-                    tvw.Nodes.Clear();
-                    tvw.Nodes.Add(new TreeNode(dom.DocumentElement.Name));
-                    TreeNode tNode = new TreeNode();
-                    tNode = tvw.Nodes[0];
+                        tvw.Nodes.Clear();
+                        tvw.Nodes.Add(new TreeNode(dom.DocumentElement.Name));
+                        TreeNode tNode = new TreeNode();
+                        tNode = tvw.Nodes[0];
 
-                    AddNode(dom.DocumentElement, tNode);
+                        AddNode(dom.DocumentElement, tNode);
+                    }
+                    else
+                    {
+                        // if it isn't xml it should be json, populate the tree
+                        JObject jResult = JObject.Parse(content);
+
+                        if (jResult["odata.error"] != null)
+                        {
+                            throw new Exception((string)jResult["odata.error"]["message"]["value"]);
+                        }
+
+                        if (jResult[""] != null)
+                        {
+
+                            logger.Log("");
+                        }
+
+                        tvw.Nodes.Clear();
+                        TreeNode parent = Json2Tree(jResult);
+                        parent.Text = "Root Object";
+                        tvw.Nodes.Add(parent);
+                    }
                 }
                 else
                 {
-                    // if it isn't xml it should be json, populate the tree
-                    JObject jResult = JObject.Parse(content);
-
-                    if (jResult["odata.error"] != null)
-                    {
-                        throw new Exception((string)jResult["odata.error"]["message"]["value"]);
-                    }
-                        
-                    if (jResult[""] != null)
-                    {
-
-                        logger.Log("");
-                    }
-
-                    tvw.Nodes.Clear();
-                    TreeNode parent = Json2Tree(jResult);
-                    parent.Text = "Root Object";
-                    tvw.Nodes.Add(parent);
+                    // log anything that is not an OK or Accepted response, but also not an error
+                    logger.Log(response.StatusCode.ToString());
                 }
             }
             catch (Exception ex)
@@ -180,6 +192,7 @@ namespace RESTfulOutlook.Forms
         private void cbRESTQuery_SelectedValueChanged(object sender, EventArgs e)
         {
             string apiVersion = null;
+            dgRequestHeaders.Rows.Clear();
 
             if (rdoV1.Checked)
             {
@@ -202,12 +215,16 @@ namespace RESTfulOutlook.Forms
                     
                     if (pair.Key == "OutlookMail-SendTestMessage")
                     {
+                        // create the root object
+                        JsonHelpers.RootObject ro = new JsonHelpers.RootObject();
+                        ro.SaveToSentItems = "True";
+                        
                         // create new message helper
                         JsonHelpers.Message msg = new JsonHelpers.Message();
-
+                                                
                         // add the subject
                         msg.Subject = "my test subject from json";
-
+                        
                         // create and populate the body object
                         JsonHelpers.Body body = new JsonHelpers.Body();
                         body.ContentType = "Text";
@@ -231,7 +248,9 @@ namespace RESTfulOutlook.Forms
                         // finally set the message recipients to the list
                         msg.ToRecipients = recipList;
 
-                        string json = JsonConvert.SerializeObject(msg);
+                        ro.Message = msg;
+
+                        string json = JsonConvert.SerializeObject(ro);
                         tbRequestBody.Text = json;
 
                         // setup headers and POST info
@@ -241,6 +260,8 @@ namespace RESTfulOutlook.Forms
                     else
                     {
                         AddRequestHeader("Accept", "application/json");
+                        cmbHttpMethod.Text = "GET";
+                        tbRequestBody.Text = "";
                     }
                 }
             }

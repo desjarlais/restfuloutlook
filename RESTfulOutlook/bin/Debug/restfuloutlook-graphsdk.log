@@ -8,3 +8,8 @@
 {
   SdkVersion: graph-dotnet-1.0.0
 }
+04/06/16 3:27:45 PM ==> REQUEST
+04/06/16 3:27:45 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
