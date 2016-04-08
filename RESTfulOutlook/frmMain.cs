@@ -161,8 +161,7 @@ namespace RESTfulOutlook
             {
                 if (rdoGraphAPI.Checked)
                 {
-                    // clear the token cache and cookies from browser control
-                    // TODO: implement way to check the token cache type or just leave clearing both
+                    // clear the token cache
                     authContext.TokenCache.Clear();
 
                     // check for cache type
@@ -172,6 +171,7 @@ namespace RESTfulOutlook
                     }
                     else
                     {
+                        // clear cookies from browser control
                         ClearCookies();
                     }
 
@@ -180,6 +180,7 @@ namespace RESTfulOutlook
                 }
                 else
                 {
+                    // reset basic auth controls
                     passwordEntered = null;
                     userNameEntered = null;
                     tbUsername.Enabled = true;

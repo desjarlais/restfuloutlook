@@ -126,11 +126,11 @@ namespace RESTfulOutlook.Forms
                 logger.Log("RESPONSE HEADER");
                 logger.Log(response.Headers.ToString());
                 logger.Log("RESPONSE");
-                logger.Log(content);
 
                 if (response.StatusCode == HttpStatusCode.Accepted)
                 {
                     tvw.Nodes.Add(new TreeNode("Message sent succesfully."));
+                    logger.Log("StatusCode = " + response.StatusCode.ToString());
                 }
                 else if (response.StatusCode == HttpStatusCode.OK)
                 {
@@ -147,6 +147,7 @@ namespace RESTfulOutlook.Forms
                         tNode = tvw.Nodes[0];
 
                         AddNode(dom.DocumentElement, tNode);
+                        logger.Log(dom.ToString());
                     }
                     else
                     {
@@ -168,6 +169,7 @@ namespace RESTfulOutlook.Forms
                         TreeNode parent = Json2Tree(jResult);
                         parent.Text = "Root Object";
                         tvw.Nodes.Add(parent);
+                        logger.Log(jResult.ToString());
                     }
                 }
                 else
@@ -219,41 +221,44 @@ namespace RESTfulOutlook.Forms
                         JsonHelpers.RootObject ro = new JsonHelpers.RootObject();
                         ro.SaveToSentItems = "True";
                         
-                        // create new message helper
+                        // create message
                         JsonHelpers.Message msg = new JsonHelpers.Message();
                                                 
-                        // add the subject
-                        msg.Subject = "my test subject from json";
+                        // set the subject and importance
+                        msg.Subject = "json test message";
+                        msg.Importance = "Normal";
                         
                         // create and populate the body object
                         JsonHelpers.Body body = new JsonHelpers.Body();
-                        body.ContentType = "Text";
-                        body.Content = "The new cafeteria is open.";
+                        body.ContentType = "HTML";
+                        body.Content = "The <b>new</b> cafeteria is open!";
                         msg.Body = body;
 
                         // create and populate the recips object
-                        // first create a list of recipients object
+                        // first create a List of ToRecipient objects
                         List<JsonHelpers.ToRecipient> recipList = new List<JsonHelpers.ToRecipient>();
 
-                        // now create a recip (ToRecipient) object and set the emailaddress info
+                        // now create an individual recip (ToRecipient) object
+                        // set the emailaddress info for the recip
                         JsonHelpers.ToRecipient recip = new JsonHelpers.ToRecipient();
                         JsonHelpers.EmailAddress email = new JsonHelpers.EmailAddress();
-                        email.Address = "brandes@desjarlaisdev.onmicrosoft.com";
+                        email.Address = "email@domain.com";
 
                         // add the email address object to the recipient
                         // then add the recip to the list
                         recip.EmailAddress = email;
                         recipList.Add(recip);
 
-                        // finally set the message recipients to the list
+                        // finally set the message recipients to the List of recips
+                        // then set the root object Message
                         msg.ToRecipients = recipList;
-
                         ro.Message = msg;
 
+                        // serialize the .net object -> json and display in the textbox
                         string json = JsonConvert.SerializeObject(ro);
                         tbRequestBody.Text = json;
 
-                        // setup headers and POST info
+                        // set headers and POST
                         cmbHttpMethod.Text = "POST";
                         AddRequestHeader("Accept", "text/*, application/xml, application/json; odata.metadata=none");
                     }

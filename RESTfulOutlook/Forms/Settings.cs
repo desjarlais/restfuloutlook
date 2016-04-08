@@ -15,6 +15,7 @@ namespace RESTfulOutlook.Forms
             Version version = Assembly.GetEntryAssembly().GetName().Version;
             lblVersion.Text = version.ToString();
 
+            // populate hyperlinks
             linkFeedback.Text = "RESTfulOutlook Website";
             linkFeedback.Links.Add(0, 22, "http://github.com/desjarlais/restfuloutlook/issues");
 

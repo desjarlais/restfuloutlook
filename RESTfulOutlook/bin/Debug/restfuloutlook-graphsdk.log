@@ -13,3 +13,13 @@
 {
   SdkVersion: graph-dotnet-1.0.0
 }
+04/07/16 4:53:15 PM ==> REQUEST
+04/07/16 4:53:15 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/07/16 4:53:19 PM ==> REQUEST
+04/07/16 4:53:19 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAAAAAAEMAAA=/messages', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}

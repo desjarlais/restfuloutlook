@@ -87,11 +87,9 @@
             this.groupBox1.Controls.Add(this.rdoWarning);
             this.groupBox1.Controls.Add(this.rdoInfo);
             this.groupBox1.Controls.Add(this.rdoOff);
-            this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(149, 265);
+            this.groupBox1.Size = new System.Drawing.Size(112, 215);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Adal Trace Level";
@@ -99,10 +97,9 @@
             // rdoAll
             // 
             this.rdoAll.AutoSize = true;
-            this.rdoAll.Location = new System.Drawing.Point(16, 222);
-            this.rdoAll.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoAll.Location = new System.Drawing.Point(12, 180);
             this.rdoAll.Name = "rdoAll";
-            this.rdoAll.Size = new System.Drawing.Size(41, 20);
+            this.rdoAll.Size = new System.Drawing.Size(36, 17);
             this.rdoAll.TabIndex = 7;
             this.rdoAll.Text = "All";
             this.rdoAll.UseVisualStyleBackColor = true;
@@ -110,10 +107,9 @@
             // rdoActivity
             // 
             this.rdoActivity.AutoSize = true;
-            this.rdoActivity.Location = new System.Drawing.Point(16, 193);
-            this.rdoActivity.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoActivity.Location = new System.Drawing.Point(12, 157);
             this.rdoActivity.Name = "rdoActivity";
-            this.rdoActivity.Size = new System.Drawing.Size(114, 20);
+            this.rdoActivity.Size = new System.Drawing.Size(95, 17);
             this.rdoActivity.TabIndex = 8;
             this.rdoActivity.Text = "ActivityTracing";
             this.rdoActivity.UseVisualStyleBackColor = true;
@@ -121,10 +117,9 @@
             // rdoCritical
             // 
             this.rdoCritical.AutoSize = true;
-            this.rdoCritical.Location = new System.Drawing.Point(16, 165);
-            this.rdoCritical.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoCritical.Location = new System.Drawing.Point(12, 134);
             this.rdoCritical.Name = "rdoCritical";
-            this.rdoCritical.Size = new System.Drawing.Size(66, 20);
+            this.rdoCritical.Size = new System.Drawing.Size(56, 17);
             this.rdoCritical.TabIndex = 7;
             this.rdoCritical.Text = "Critical";
             this.rdoCritical.UseVisualStyleBackColor = true;
@@ -132,10 +127,9 @@
             // rdoVerbose
             // 
             this.rdoVerbose.AutoSize = true;
-            this.rdoVerbose.Location = new System.Drawing.Point(16, 137);
-            this.rdoVerbose.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoVerbose.Location = new System.Drawing.Point(12, 111);
             this.rdoVerbose.Name = "rdoVerbose";
-            this.rdoVerbose.Size = new System.Drawing.Size(78, 20);
+            this.rdoVerbose.Size = new System.Drawing.Size(64, 17);
             this.rdoVerbose.TabIndex = 4;
             this.rdoVerbose.Text = "Verbose";
             this.rdoVerbose.UseVisualStyleBackColor = true;
@@ -143,10 +137,9 @@
             // rdoError
             // 
             this.rdoError.AutoSize = true;
-            this.rdoError.Location = new System.Drawing.Point(16, 108);
-            this.rdoError.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoError.Location = new System.Drawing.Point(12, 88);
             this.rdoError.Name = "rdoError";
-            this.rdoError.Size = new System.Drawing.Size(55, 20);
+            this.rdoError.Size = new System.Drawing.Size(47, 17);
             this.rdoError.TabIndex = 3;
             this.rdoError.Text = "Error";
             this.rdoError.UseVisualStyleBackColor = true;
@@ -154,10 +147,9 @@
             // rdoWarning
             // 
             this.rdoWarning.AutoSize = true;
-            this.rdoWarning.Location = new System.Drawing.Point(16, 80);
-            this.rdoWarning.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoWarning.Location = new System.Drawing.Point(12, 65);
             this.rdoWarning.Name = "rdoWarning";
-            this.rdoWarning.Size = new System.Drawing.Size(76, 20);
+            this.rdoWarning.Size = new System.Drawing.Size(65, 17);
             this.rdoWarning.TabIndex = 2;
             this.rdoWarning.Text = "Warning";
             this.rdoWarning.UseVisualStyleBackColor = true;
@@ -165,10 +157,9 @@
             // rdoInfo
             // 
             this.rdoInfo.AutoSize = true;
-            this.rdoInfo.Location = new System.Drawing.Point(16, 52);
-            this.rdoInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoInfo.Location = new System.Drawing.Point(12, 42);
             this.rdoInfo.Name = "rdoInfo";
-            this.rdoInfo.Size = new System.Drawing.Size(91, 20);
+            this.rdoInfo.Size = new System.Drawing.Size(77, 17);
             this.rdoInfo.TabIndex = 1;
             this.rdoInfo.Text = "Information";
             this.rdoInfo.UseVisualStyleBackColor = true;
@@ -177,10 +168,9 @@
             // 
             this.rdoOff.AutoSize = true;
             this.rdoOff.Checked = true;
-            this.rdoOff.Location = new System.Drawing.Point(16, 23);
-            this.rdoOff.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoOff.Location = new System.Drawing.Point(12, 19);
             this.rdoOff.Name = "rdoOff";
-            this.rdoOff.Size = new System.Drawing.Size(42, 20);
+            this.rdoOff.Size = new System.Drawing.Size(39, 17);
             this.rdoOff.TabIndex = 0;
             this.rdoOff.TabStop = true;
             this.rdoOff.Text = "Off";
@@ -188,10 +178,9 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(624, 510);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOk.Location = new System.Drawing.Point(468, 414);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(100, 28);
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 5;
             this.btnOk.Text = "Save";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -199,10 +188,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(516, 510);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(387, 414);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -214,11 +202,9 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.lblVersion);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(385, 15);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(289, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(331, 119);
+            this.groupBox2.Size = new System.Drawing.Size(248, 97);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "App Info";
@@ -226,49 +212,44 @@
             // linkFeedback
             // 
             this.linkFeedback.AutoSize = true;
-            this.linkFeedback.Location = new System.Drawing.Point(8, 85);
-            this.linkFeedback.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkFeedback.Location = new System.Drawing.Point(6, 69);
             this.linkFeedback.Name = "linkFeedback";
-            this.linkFeedback.Size = new System.Drawing.Size(0, 16);
+            this.linkFeedback.Size = new System.Drawing.Size(0, 13);
             this.linkFeedback.TabIndex = 3;
             this.linkFeedback.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkFeedback_LinkClicked);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 59);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(6, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 16);
+            this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 2;
             this.label6.Text = "Submit Feedback :";
             // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.lblVersion.Location = new System.Drawing.Point(72, 22);
-            this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVersion.Location = new System.Drawing.Point(54, 18);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(45, 16);
+            this.lblVersion.Size = new System.Drawing.Size(40, 13);
             this.lblVersion.TabIndex = 1;
             this.lblVersion.Text = "1.0.0.0";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Version : ";
             // 
             // btnGraphLog
             // 
-            this.btnGraphLog.Location = new System.Drawing.Point(178, 510);
-            this.btnGraphLog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGraphLog.Location = new System.Drawing.Point(134, 414);
             this.btnGraphLog.Name = "btnGraphLog";
-            this.btnGraphLog.Size = new System.Drawing.Size(154, 28);
+            this.btnGraphLog.Size = new System.Drawing.Size(116, 23);
             this.btnGraphLog.TabIndex = 10;
             this.btnGraphLog.Text = "Graph SDK Log";
             this.btnGraphLog.UseVisualStyleBackColor = true;
@@ -276,10 +257,9 @@
             // 
             // btnAppLog
             // 
-            this.btnAppLog.Location = new System.Drawing.Point(16, 510);
-            this.btnAppLog.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAppLog.Location = new System.Drawing.Point(12, 414);
             this.btnAppLog.Name = "btnAppLog";
-            this.btnAppLog.Size = new System.Drawing.Size(154, 28);
+            this.btnAppLog.Size = new System.Drawing.Size(116, 23);
             this.btnAppLog.TabIndex = 8;
             this.btnAppLog.Text = "Application Log";
             this.btnAppLog.UseVisualStyleBackColor = true;
@@ -291,11 +271,9 @@
             this.groupBox3.Controls.Add(this.rdoNever);
             this.groupBox3.Controls.Add(this.rdoAuto);
             this.groupBox3.Controls.Add(this.rdoAlways);
-            this.groupBox3.Location = new System.Drawing.Point(173, 15);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Location = new System.Drawing.Point(130, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(204, 158);
+            this.groupBox3.Size = new System.Drawing.Size(153, 128);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Auth Prompt Behavior";
@@ -303,10 +281,9 @@
             // rdoRefresh
             // 
             this.rdoRefresh.AutoSize = true;
-            this.rdoRefresh.Location = new System.Drawing.Point(12, 113);
-            this.rdoRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoRefresh.Location = new System.Drawing.Point(9, 92);
             this.rdoRefresh.Name = "rdoRefresh";
-            this.rdoRefresh.Size = new System.Drawing.Size(122, 20);
+            this.rdoRefresh.Size = new System.Drawing.Size(99, 17);
             this.rdoRefresh.TabIndex = 3;
             this.rdoRefresh.Text = "RefreshSession";
             this.rdoRefresh.UseVisualStyleBackColor = true;
@@ -314,10 +291,9 @@
             // rdoNever
             // 
             this.rdoNever.AutoSize = true;
-            this.rdoNever.Location = new System.Drawing.Point(12, 85);
-            this.rdoNever.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoNever.Location = new System.Drawing.Point(9, 69);
             this.rdoNever.Name = "rdoNever";
-            this.rdoNever.Size = new System.Drawing.Size(63, 20);
+            this.rdoNever.Size = new System.Drawing.Size(54, 17);
             this.rdoNever.TabIndex = 2;
             this.rdoNever.Text = "Never";
             this.rdoNever.UseVisualStyleBackColor = true;
@@ -325,10 +301,9 @@
             // rdoAuto
             // 
             this.rdoAuto.AutoSize = true;
-            this.rdoAuto.Location = new System.Drawing.Point(12, 57);
-            this.rdoAuto.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoAuto.Location = new System.Drawing.Point(9, 46);
             this.rdoAuto.Name = "rdoAuto";
-            this.rdoAuto.Size = new System.Drawing.Size(53, 20);
+            this.rdoAuto.Size = new System.Drawing.Size(47, 17);
             this.rdoAuto.TabIndex = 1;
             this.rdoAuto.Text = "Auto";
             this.rdoAuto.UseVisualStyleBackColor = true;
@@ -337,10 +312,9 @@
             // 
             this.rdoAlways.AutoSize = true;
             this.rdoAlways.Checked = true;
-            this.rdoAlways.Location = new System.Drawing.Point(12, 28);
-            this.rdoAlways.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoAlways.Location = new System.Drawing.Point(9, 23);
             this.rdoAlways.Name = "rdoAlways";
-            this.rdoAlways.Size = new System.Drawing.Size(69, 20);
+            this.rdoAlways.Size = new System.Drawing.Size(58, 17);
             this.rdoAlways.TabIndex = 0;
             this.rdoAlways.TabStop = true;
             this.rdoAlways.Text = "Always";
@@ -350,11 +324,9 @@
             // 
             this.groupBox4.Controls.Add(this.rdoFileCache);
             this.groupBox4.Controls.Add(this.rdoAdalCache);
-            this.groupBox4.Location = new System.Drawing.Point(173, 180);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Location = new System.Drawing.Point(130, 146);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(204, 100);
+            this.groupBox4.Size = new System.Drawing.Size(153, 81);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Token Cache";
@@ -362,10 +334,9 @@
             // rdoFileCache
             // 
             this.rdoFileCache.AutoSize = true;
-            this.rdoFileCache.Location = new System.Drawing.Point(12, 52);
-            this.rdoFileCache.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoFileCache.Location = new System.Drawing.Point(9, 42);
             this.rdoFileCache.Name = "rdoFileCache";
-            this.rdoFileCache.Size = new System.Drawing.Size(90, 20);
+            this.rdoFileCache.Size = new System.Drawing.Size(75, 17);
             this.rdoFileCache.TabIndex = 1;
             this.rdoFileCache.Text = "File Cache";
             this.rdoFileCache.UseVisualStyleBackColor = true;
@@ -374,10 +345,9 @@
             // 
             this.rdoAdalCache.AutoSize = true;
             this.rdoAdalCache.Checked = true;
-            this.rdoAdalCache.Location = new System.Drawing.Point(12, 23);
-            this.rdoAdalCache.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoAdalCache.Location = new System.Drawing.Point(9, 19);
             this.rdoAdalCache.Name = "rdoAdalCache";
-            this.rdoAdalCache.Size = new System.Drawing.Size(103, 20);
+            this.rdoAdalCache.Size = new System.Drawing.Size(87, 17);
             this.rdoAdalCache.TabIndex = 0;
             this.rdoAdalCache.TabStop = true;
             this.rdoAdalCache.Text = "ADAL Cache";
@@ -396,11 +366,9 @@
             this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.label3);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Location = new System.Drawing.Point(16, 287);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Location = new System.Drawing.Point(12, 233);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(708, 215);
+            this.groupBox5.Size = new System.Drawing.Size(531, 175);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "App Registration (must be completed first)";
@@ -408,10 +376,9 @@
             // btnResetRegistration
             // 
             this.btnResetRegistration.Enabled = false;
-            this.btnResetRegistration.Location = new System.Drawing.Point(16, 180);
-            this.btnResetRegistration.Margin = new System.Windows.Forms.Padding(4);
+            this.btnResetRegistration.Location = new System.Drawing.Point(12, 146);
             this.btnResetRegistration.Name = "btnResetRegistration";
-            this.btnResetRegistration.Size = new System.Drawing.Size(181, 28);
+            this.btnResetRegistration.Size = new System.Drawing.Size(136, 23);
             this.btnResetRegistration.TabIndex = 15;
             this.btnResetRegistration.Text = "Reset App Registration";
             this.btnResetRegistration.UseVisualStyleBackColor = true;
@@ -420,10 +387,9 @@
             // linkRegistration
             // 
             this.linkRegistration.AutoSize = true;
-            this.linkRegistration.Location = new System.Drawing.Point(495, 186);
-            this.linkRegistration.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkRegistration.Location = new System.Drawing.Point(371, 151);
             this.linkRegistration.Name = "linkRegistration";
-            this.linkRegistration.Size = new System.Drawing.Size(205, 16);
+            this.linkRegistration.Size = new System.Drawing.Size(163, 13);
             this.linkRegistration.TabIndex = 15;
             this.linkRegistration.TabStop = true;
             this.linkRegistration.Text = "Microsoft Graph App Registration";
@@ -432,46 +398,41 @@
             // txtTenantId
             // 
             this.txtTenantId.Enabled = false;
-            this.txtTenantId.Location = new System.Drawing.Point(113, 143);
-            this.txtTenantId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenantId.Location = new System.Drawing.Point(85, 116);
             this.txtTenantId.Name = "txtTenantId";
-            this.txtTenantId.Size = new System.Drawing.Size(585, 22);
+            this.txtTenantId.Size = new System.Drawing.Size(440, 20);
             this.txtTenantId.TabIndex = 22;
             // 
             // txtAuthority
             // 
             this.txtAuthority.Enabled = false;
-            this.txtAuthority.Location = new System.Drawing.Point(113, 111);
-            this.txtAuthority.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAuthority.Location = new System.Drawing.Point(85, 90);
             this.txtAuthority.Name = "txtAuthority";
-            this.txtAuthority.Size = new System.Drawing.Size(585, 22);
+            this.txtAuthority.Size = new System.Drawing.Size(440, 20);
             this.txtAuthority.TabIndex = 21;
             // 
             // txtClientId
             // 
             this.txtClientId.Enabled = false;
-            this.txtClientId.Location = new System.Drawing.Point(113, 78);
-            this.txtClientId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientId.Location = new System.Drawing.Point(85, 63);
             this.txtClientId.Name = "txtClientId";
-            this.txtClientId.Size = new System.Drawing.Size(585, 22);
+            this.txtClientId.Size = new System.Drawing.Size(440, 20);
             this.txtClientId.TabIndex = 20;
             // 
             // txtRedirectUri
             // 
             this.txtRedirectUri.Enabled = false;
-            this.txtRedirectUri.Location = new System.Drawing.Point(113, 44);
-            this.txtRedirectUri.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRedirectUri.Location = new System.Drawing.Point(85, 36);
             this.txtRedirectUri.Name = "txtRedirectUri";
-            this.txtRedirectUri.Size = new System.Drawing.Size(585, 22);
+            this.txtRedirectUri.Size = new System.Drawing.Size(440, 20);
             this.txtRedirectUri.TabIndex = 19;
             // 
             // chkEditAppRegistration
             // 
             this.chkEditAppRegistration.AutoSize = true;
-            this.chkEditAppRegistration.Location = new System.Drawing.Point(16, 23);
-            this.chkEditAppRegistration.Margin = new System.Windows.Forms.Padding(4);
+            this.chkEditAppRegistration.Location = new System.Drawing.Point(12, 19);
             this.chkEditAppRegistration.Name = "chkEditAppRegistration";
-            this.chkEditAppRegistration.Size = new System.Drawing.Size(125, 20);
+            this.chkEditAppRegistration.Size = new System.Drawing.Size(103, 17);
             this.chkEditAppRegistration.TabIndex = 18;
             this.chkEditAppRegistration.Text = "Edit Registration";
             this.chkEditAppRegistration.UseVisualStyleBackColor = true;
@@ -480,51 +441,45 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 146);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(16, 119);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 17;
             this.label5.Text = "Tenant Id :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 113);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(16, 92);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 16);
+            this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "Authority :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 81);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(16, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
+            this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 15;
             this.label3.Text = "Client Id :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 48);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(16, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 16);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "RedirectUri :";
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.ckOutlookDiag);
-            this.groupBox6.Location = new System.Drawing.Point(385, 142);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox6.Location = new System.Drawing.Point(289, 115);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Size = new System.Drawing.Size(331, 138);
+            this.groupBox6.Size = new System.Drawing.Size(248, 112);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Diagnostics";
@@ -532,18 +487,19 @@
             // ckOutlookDiag
             // 
             this.ckOutlookDiag.AutoSize = true;
-            this.ckOutlookDiag.Location = new System.Drawing.Point(11, 22);
+            this.ckOutlookDiag.Location = new System.Drawing.Point(8, 18);
+            this.ckOutlookDiag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ckOutlookDiag.Name = "ckOutlookDiag";
-            this.ckOutlookDiag.Size = new System.Drawing.Size(184, 20);
+            this.ckOutlookDiag.Size = new System.Drawing.Size(190, 17);
             this.ckOutlookDiag.TabIndex = 0;
-            this.ckOutlookDiag.Text = "Enable Graph Diagnostics";
+            this.ckOutlookDiag.Text = "Enable Graph Explorer Diagnostics";
             this.ckOutlookDiag.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 553);
+            this.ClientSize = new System.Drawing.Size(553, 449);
             this.Controls.Add(this.btnGraphLog);
             this.Controls.Add(this.btnAppLog);
             this.Controls.Add(this.groupBox6);
@@ -556,7 +512,6 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

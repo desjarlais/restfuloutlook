@@ -2,9 +2,10 @@
 
 namespace RESTfulOutlook.JsonHelpers
 {
-    public class Message 
+    public class Message
     {
         public string Subject { get; set; }
+        public string Importance { get; set; }
         public Body Body { get; set; }
         public List<ToRecipient> ToRecipients { get; set; }
     }
