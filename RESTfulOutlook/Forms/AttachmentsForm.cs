@@ -29,7 +29,7 @@ namespace RESTfulOutlook.Forms
                     {
                         // populate the grid view for file attachments
                         int n = dgFileAttachments.Rows.Add();
-                        dgFileAttachments.Rows[n].Cells[0].Value = fItem.ContentBytes;
+                        dgFileAttachments.Rows[n].Cells[0].Value = AttachmentHelper.GetHexStringFromByteArray(fItem.ContentBytes);
                         dgFileAttachments.Rows[n].Cells[1].Value = fItem.ContentId;
                         dgFileAttachments.Rows[n].Cells[2].Value = fItem.ContentLocation;
                         dgFileAttachments.Rows[n].Cells[3].Value = fItem.ContentType;
@@ -37,9 +37,9 @@ namespace RESTfulOutlook.Forms
                         dgFileAttachments.Rows[n].Cells[5].Value = fItem.Id;
                         dgFileAttachments.Rows[n].Cells[6].Value = fItem.IsInline.ToString();
                         dgFileAttachments.Rows[n].Cells[7].Value = fItem.Name;
-                        dgFileAttachments.Rows[n].Cells[8].Value = (string)AttachmentHelper.SizeSuffix(fItem.Size.Value);
+                        dgFileAttachments.Rows[n].Cells[8].Value = AttachmentHelper.SizeSuffix(fItem.Size.Value);
 
-                        if (fItem.AdditionalData.Count > 0)
+                        if (fItem.AdditionalData != null)
                         {
                             dgFileAttachments.Rows[n].Cells[9].Value = "View Data";
                             foreach (var data in fItem.AdditionalData)
@@ -52,6 +52,7 @@ namespace RESTfulOutlook.Forms
                 
                 if (iAttachments != null)
                 {
+                    // populate the grid for item attachments
                     foreach (var iItem in iAttachments)
                     {
                         int m = dgItemAttachments.Rows.Add();
@@ -61,9 +62,9 @@ namespace RESTfulOutlook.Forms
                         dgItemAttachments.Rows[m].Cells[3].Value = iItem.Item;
                         dgItemAttachments.Rows[m].Cells[4].Value = iItem.IsInline.ToString();
                         dgItemAttachments.Rows[m].Cells[5].Value = iItem.Name;
-                        dgItemAttachments.Rows[m].Cells[6].Value = (string)AttachmentHelper.SizeSuffix(iItem.Size.Value);
+                        dgItemAttachments.Rows[m].Cells[6].Value = AttachmentHelper.SizeSuffix(iItem.Size.Value);
 
-                        if (iItem.AdditionalData.Count > 0)
+                        if (iItem.AdditionalData != null)
                         {
                             dgItemAttachments.Rows[m].Cells[7].Value = "View Data";
                             foreach (var data in iItem.AdditionalData)
@@ -76,6 +77,7 @@ namespace RESTfulOutlook.Forms
 
                 if (rAttachments != null)
                 {
+                    // populate the grid for reference attachments
                     foreach (var iItem in rAttachments)
                     {
                         int m = dgRefAttachments.Rows.Add();
@@ -84,9 +86,9 @@ namespace RESTfulOutlook.Forms
                         dgRefAttachments.Rows[m].Cells[2].Value = iItem.Id;
                         dgRefAttachments.Rows[m].Cells[3].Value = iItem.IsInline.ToString();
                         dgRefAttachments.Rows[m].Cells[4].Value = iItem.Name;
-                        dgRefAttachments.Rows[m].Cells[5].Value = (string)AttachmentHelper.SizeSuffix(iItem.Size.Value);
+                        dgRefAttachments.Rows[m].Cells[5].Value = AttachmentHelper.SizeSuffix(iItem.Size.Value);
 
-                        if (iItem.AdditionalData.Count > 0)
+                        if (iItem.AdditionalData != null)
                         {
                             dgRefAttachments.Rows[m].Cells[6].Value = "View Data";
                             foreach (var data in iItem.AdditionalData)
@@ -102,7 +104,7 @@ namespace RESTfulOutlook.Forms
 
             }
         }
-
+        
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -181,7 +183,7 @@ namespace RESTfulOutlook.Forms
                     }
                 }
 
-                Forms.CategoriesForm mCategories = new Forms.CategoriesForm(tempAdditionalData);
+                CategoriesForm mCategories = new CategoriesForm(tempAdditionalData);
                 mCategories.Owner = this;
                 mCategories.ShowDialog(this);
             }
@@ -204,7 +206,7 @@ namespace RESTfulOutlook.Forms
                     }
                 }
 
-                Forms.CategoriesForm mCategories = new Forms.CategoriesForm(tempAdditionalData);
+                CategoriesForm mCategories = new CategoriesForm(tempAdditionalData);
                 mCategories.Owner = this;
                 mCategories.ShowDialog(this);
             }
@@ -227,7 +229,7 @@ namespace RESTfulOutlook.Forms
                     }
                 }
 
-                Forms.CategoriesForm mCategories = new Forms.CategoriesForm(tempAdditionalData);
+                CategoriesForm mCategories = new CategoriesForm(tempAdditionalData);
                 mCategories.Owner = this;
                 mCategories.ShowDialog(this);
             }

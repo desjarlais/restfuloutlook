@@ -244,7 +244,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.ItemBodyForm mItemBody = new Forms.ItemBodyForm(mId, tItemBody);
+                    ItemBodyForm mItemBody = new ItemBodyForm(mId, tItemBody);
                     mItemBody.Owner = this;
                     mItemBody.ShowDialog(this);
                 }
@@ -261,7 +261,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.AttendeeForm mAttendees = new Forms.AttendeeForm(mId, tAttendees);
+                    AttendeeForm mAttendees = new AttendeeForm(mId, tAttendees);
                     mAttendees.Owner = this;
                     mAttendees.ShowDialog(this);
                 }
@@ -276,7 +276,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.CategoriesForm mCategories = new Forms.CategoriesForm(lCategories);
+                    CategoriesForm mCategories = new CategoriesForm(lCategories);
                     mCategories.Owner = this;
                     mCategories.ShowDialog(this);
                 }
@@ -337,7 +337,7 @@ namespace RESTfulOutlook.Forms
                             }
                         }
 
-                        Forms.AttachmentsForm mAttachment = new Forms.AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments);
+                        AttachmentsForm mAttachment = new AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments);
                         mAttachment.Owner = this;
                         mAttachment.ShowDialog(this);
                     }

@@ -27,5 +27,15 @@ namespace RESTfulOutlook.Utils
 
             return string.Format("{0:n1} {1}", adjustedSize, sizeSuffixes[mag]);
         }
+
+        /// <summary>
+        /// this function takes in a byte array and returns the hex string
+        /// </summary>
+        /// <param name="byteArray">byte array to be converted</param>
+        /// <returns></returns>
+        public static string GetHexStringFromByteArray(byte[] byteArray)
+        {
+            return BitConverter.ToString(byteArray); 
+        }
     }
 }
