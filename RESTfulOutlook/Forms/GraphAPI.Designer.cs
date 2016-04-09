@@ -102,9 +102,11 @@
             "OutlookMail-GetImportanUnreadMessages",
             "OutlookMail-SendTestMessage",
             "OutlookCalendar-ListCalendars",
+            "OutlookCalendar-CreateTestEvent",
             "OutlookCalendar-ListCalendarGroups",
             "OutlookCalendar-ListCalendarView",
             "OutlookContacts-ListContacts",
+            "OutlookContacts-CreateTestContact",
             "OutlookContacts-ListContactFolders",
             "OutlookGroups-ListGroups",
             "OutlookGroups-ListMemberOf",
@@ -363,7 +365,7 @@
             // btnClearResponse
             // 
             this.btnClearResponse.Location = new System.Drawing.Point(260, 507);
-            this.btnClearResponse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClearResponse.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearResponse.Name = "btnClearResponse";
             this.btnClearResponse.Size = new System.Drawing.Size(118, 31);
             this.btnClearResponse.TabIndex = 13;
@@ -374,7 +376,7 @@
             // btnGraphLog
             // 
             this.btnGraphLog.Location = new System.Drawing.Point(382, 507);
-            this.btnGraphLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGraphLog.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraphLog.Name = "btnGraphLog";
             this.btnGraphLog.Size = new System.Drawing.Size(114, 31);
             this.btnGraphLog.TabIndex = 12;

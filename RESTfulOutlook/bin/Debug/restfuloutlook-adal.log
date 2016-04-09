@@ -643,4 +643,147 @@ RESTfulOutlook.vshost.exe Information: 0 : 4/8/2016 10:38:15 PM: 1f086a5a-5728-4
 RESTfulOutlook.vshost.exe Information: 0 : 4/8/2016 10:38:15 PM: 1f086a5a-5728-4d93-9ae2-ff552d57acb5 - TokenCache: An item was stored in the cache
 RESTfulOutlook.vshost.exe Information: 0 : 4/8/2016 10:38:15 PM: 1f086a5a-5728-4d93-9ae2-ff552d57acb5 - AcquireTokenHandlerBase: === Token Acquisition finished successfully. An access token was retuned:
 	Access Token Hash: UocE7K2sCKMLO2/gbVvTUEjy+V22QuDToyHrhdfnn2k=
-	Refresh Token Hash: b7m8enHeqJYiySCU7rjXMs7bIRcQnIy/yCS
+	Refresh Token Hash: b7m8enHeqJYiySCU7rjXMs7bIRcQnIy/yCSRESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:45:58 AM:  - AuthenticationContext: ADAL .NET with assembly version '2.23.0.0', file version '2.23.30226.1847' and informational version '0b5f258db72d0632d3693d262acbf77b634e9136' is running...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:46:00 AM: 80975ba7-f0a6-4abf-9201-63d0bd1a90b5 - AcquireTokenHandlerBase: === Token Acquisition started:
+	Authority: https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/
+	Resource: https://graph.microsoft.com/
+	ClientId: 9e827b51-5206-432c-9d4d-6be8cd20407e
+	CacheType: Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache (0 items)
+	Authentication Target: User
+	
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:46:00 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=80975ba7-f0a6-4abf-9201-63d0bd1a90b5&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:46:01 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigated to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=80975ba7-f0a6-4abf-9201-63d0bd1a90b5&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:46:07 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/login'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:46:08 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state: IsBusy: True, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:46:08 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state (after Stop): IsBusy: False, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:46:09 AM: 80975ba7-f0a6-4abf-9201-63d0bd1a90b5 - TokenCache: Storing token in the cache...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:46:09 AM: 80975ba7-f0a6-4abf-9201-63d0bd1a90b5 - TokenCache: An item was stored in the cache
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:46:09 AM: 80975ba7-f0a6-4abf-9201-63d0bd1a90b5 - AcquireTokenHandlerBase: === Token Acquisition finished successfully. An access token was retuned:
+	Access Token Hash: ZFNBEFUyWVDE0kTBnvcmleNXl9yP6w+YbOUGWRx4nO0=
+	Refresh Token Hash: nq0qHTv1e+vDGVYt3Yg7ZCMk5j3biYboDJzMnsNCcDI=
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:07 AM:  - AuthenticationContext: ADAL .NET with assembly version '2.23.0.0', file version '2.23.30226.1847' and informational version '0b5f258db72d0632d3693d262acbf77b634e9136' is running...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:07 AM: f77af9e0-4b3a-4600-903f-cac414392f51 - AcquireTokenHandlerBase: === Token Acquisition started:
+	Authority: https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/
+	Resource: https://graph.microsoft.com/
+	ClientId: 9e827b51-5206-432c-9d4d-6be8cd20407e
+	CacheType: Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache (0 items)
+	Authentication Target: User
+	
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:07 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=f77af9e0-4b3a-4600-903f-cac414392f51&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:08 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigated to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=f77af9e0-4b3a-4600-903f-cac414392f51&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:15 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/login'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:16 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state: IsBusy: True, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:16 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state (after Stop): IsBusy: False, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:16 AM: f77af9e0-4b3a-4600-903f-cac414392f51 - TokenCache: Storing token in the cache...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:16 AM: f77af9e0-4b3a-4600-903f-cac414392f51 - TokenCache: An item was stored in the cache
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:47:16 AM: f77af9e0-4b3a-4600-903f-cac414392f51 - AcquireTokenHandlerBase: === Token Acquisition finished successfully. An access token was retuned:
+	Access Token Hash: PlcuHyDFjgJGGuxIrW49bFm6uP5BkZ0hd1SaZfj7Xhk=
+	Refresh Token Hash: 2ruSsHHeOIX/OSpsrqTfUPrq/ipHJiHXJ920DKvEwi8=
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:45 AM:  - AuthenticationContext: ADAL .NET with assembly version '2.23.0.0', file version '2.23.30226.1847' and informational version '0b5f258db72d0632d3693d262acbf77b634e9136' is running...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:45 AM: e03ea0b6-c5cd-4919-8f9b-d8c0936716ca - AcquireTokenHandlerBase: === Token Acquisition started:
+	Authority: https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/
+	Resource: https://graph.microsoft.com/
+	ClientId: 9e827b51-5206-432c-9d4d-6be8cd20407e
+	CacheType: Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache (0 items)
+	Authentication Target: User
+	
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:45 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=e03ea0b6-c5cd-4919-8f9b-d8c0936716ca&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:46 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigated to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=e03ea0b6-c5cd-4919-8f9b-d8c0936716ca&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:53 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/login'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:53 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state: IsBusy: True, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:53 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state (after Stop): IsBusy: False, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:54 AM: e03ea0b6-c5cd-4919-8f9b-d8c0936716ca - TokenCache: Storing token in the cache...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:54 AM: e03ea0b6-c5cd-4919-8f9b-d8c0936716ca - TokenCache: An item was stored in the cache
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:50:54 AM: e03ea0b6-c5cd-4919-8f9b-d8c0936716ca - AcquireTokenHandlerBase: === Token Acquisition finished successfully. An access token was retuned:
+	Access Token Hash: YSZ6HWenlb0p+7ZcNX3jjbZ++bGgPcvn9TUTlymu+i4=
+	Refresh Token Hash: N+AzKeFBHYy1j+aXbXu6UAsZ2juQL/v1udo6OkksatY=
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:29 AM:  - AuthenticationContext: ADAL .NET with assembly version '2.23.0.0', file version '2.23.30226.1847' and informational version '0b5f258db72d0632d3693d262acbf77b634e9136' is running...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:29 AM: 4dedb0c9-e1b7-47c3-ad22-d3e80572b88d - AcquireTokenHandlerBase: === Token Acquisition started:
+	Authority: https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/
+	Resource: https://graph.microsoft.com/
+	ClientId: 9e827b51-5206-432c-9d4d-6be8cd20407e
+	CacheType: Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache (0 items)
+	Authentication Target: User
+	
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:29 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=4dedb0c9-e1b7-47c3-ad22-d3e80572b88d&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:30 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigated to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=4dedb0c9-e1b7-47c3-ad22-d3e80572b88d&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:36 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/login'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:37 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state: IsBusy: True, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:37 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state (after Stop): IsBusy: False, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:37 AM: 4dedb0c9-e1b7-47c3-ad22-d3e80572b88d - TokenCache: Storing token in the cache...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:37 AM: 4dedb0c9-e1b7-47c3-ad22-d3e80572b88d - TokenCache: An item was stored in the cache
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 5:52:37 AM: 4dedb0c9-e1b7-47c3-ad22-d3e80572b88d - AcquireTokenHandlerBase: === Token Acquisition finished successfully. An access token was retuned:
+	Access Token Hash: NVVQ5Y6pHk8NxDqy8nEGch8kCP9990XAbtJ4lRe9VfQ=
+	Refresh Token Hash: dO5Xs5RKLbcA+RMF8TLs179jkPSMpmiNKedgMvVatD8=
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:09 AM:  - AuthenticationContext: ADAL .NET with assembly version '2.23.0.0', file version '2.23.30226.1847' and informational version '0b5f258db72d0632d3693d262acbf77b634e9136' is running...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:09 AM: 788f38f6-2083-4b7f-ab8f-fc8b08d8ffb1 - AcquireTokenHandlerBase: === Token Acquisition started:
+	Authority: https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/
+	Resource: https://graph.microsoft.com/
+	ClientId: 9e827b51-5206-432c-9d4d-6be8cd20407e
+	CacheType: Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache (0 items)
+	Authentication Target: User
+	
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:09 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=788f38f6-2083-4b7f-ab8f-fc8b08d8ffb1&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:10 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigated to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=788f38f6-2083-4b7f-ab8f-fc8b08d8ffb1&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:16 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/login'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:17 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state: IsBusy: True, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:17 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state (after Stop): IsBusy: False, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:17 AM: 788f38f6-2083-4b7f-ab8f-fc8b08d8ffb1 - TokenCache: Storing token in the cache...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:17 AM: 788f38f6-2083-4b7f-ab8f-fc8b08d8ffb1 - TokenCache: An item was stored in the cache
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:03:17 AM: 788f38f6-2083-4b7f-ab8f-fc8b08d8ffb1 - AcquireTokenHandlerBase: === Token Acquisition finished successfully. An access token was retuned:
+	Access Token Hash: tS2LdifBfkZWQi9ZE1TKg4T5+4MY/QGjd3XeDfRJgL8=
+	Refresh Token Hash: LNid0KT7TDbrFm+V2rm6LbRXJBPxWRgS+T0kjBw7x4Q=
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:27 AM:  - AuthenticationContext: ADAL .NET with assembly version '2.23.0.0', file version '2.23.30226.1847' and informational version '0b5f258db72d0632d3693d262acbf77b634e9136' is running...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:27 AM: 685dcab8-f1ae-460a-8fb0-029e25a57b5e - AcquireTokenHandlerBase: === Token Acquisition started:
+	Authority: https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/
+	Resource: https://graph.microsoft.com/
+	ClientId: 9e827b51-5206-432c-9d4d-6be8cd20407e
+	CacheType: Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache (0 items)
+	Authentication Target: User
+	
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:27 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=685dcab8-f1ae-460a-8fb0-029e25a57b5e&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:27 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigated to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=685dcab8-f1ae-460a-8fb0-029e25a57b5e&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:35 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/login'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:35 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state: IsBusy: True, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:35 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state (after Stop): IsBusy: False, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:35 AM: 685dcab8-f1ae-460a-8fb0-029e25a57b5e - TokenCache: Storing token in the cache...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:35 AM: 685dcab8-f1ae-460a-8fb0-029e25a57b5e - TokenCache: An item was stored in the cache
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:05:35 AM: 685dcab8-f1ae-460a-8fb0-029e25a57b5e - AcquireTokenHandlerBase: === Token Acquisition finished successfully. An access token was retuned:
+	Access Token Hash: hwN6zEjC1U1nviAcotAvJ1ulNz6ToLpATD/JGecTMC0=
+	Refresh Token Hash: 1MUAFMAWBqFBjJpQiIAAU3e+IUbEEnap0Jc+CA/uUnY=
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:32 AM:  - AuthenticationContext: ADAL .NET with assembly version '2.23.0.0', file version '2.23.30226.1847' and informational version '0b5f258db72d0632d3693d262acbf77b634e9136' is running...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:32 AM: a4b985f1-d794-4bef-bcc9-9bc91aa22cc1 - AcquireTokenHandlerBase: === Token Acquisition started:
+	Authority: https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/
+	Resource: https://graph.microsoft.com/
+	ClientId: 9e827b51-5206-432c-9d4d-6be8cd20407e
+	CacheType: Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache (0 items)
+	Authentication Target: User
+	
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:32 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=a4b985f1-d794-4bef-bcc9-9bc91aa22cc1&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:33 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigated to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=a4b985f1-d794-4bef-bcc9-9bc91aa22cc1&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:40 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/login'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:41 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state: IsBusy: True, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:41 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state (after Stop): IsBusy: False, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:41 AM: a4b985f1-d794-4bef-bcc9-9bc91aa22cc1 - TokenCache: Storing token in the cache...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:41 AM: a4b985f1-d794-4bef-bcc9-9bc91aa22cc1 - TokenCache: An item was stored in the cache
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:07:41 AM: a4b985f1-d794-4bef-bcc9-9bc91aa22cc1 - AcquireTokenHandlerBase: === Token Acquisition finished successfully. An access token was retuned:
+	Access Token Hash: vK2LLmtDa7yR6XbySTX8lP3AxdRoCh4vBAJje+LEFAg=
+	Refresh Token Hash: K4NiBI3zS0/WMfUXAIAt7O2m3Cy4o5DuHlQIb9NujHU=
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:11:56 AM:  - AuthenticationContext: ADAL .NET with assembly version '2.23.0.0', file version '2.23.30226.1847' and informational version '0b5f258db72d0632d3693d262acbf77b634e9136' is running...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:11:56 AM: a7c3ace2-4ac1-4b1c-ae37-40a1eae96b81 - AcquireTokenHandlerBase: === Token Acquisition started:
+	Authority: https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/
+	Resource: https://graph.microsoft.com/
+	ClientId: 9e827b51-5206-432c-9d4d-6be8cd20407e
+	CacheType: Microsoft.IdentityModel.Clients.ActiveDirectory.TokenCache (0 items)
+	Authentication Target: User
+	
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:11:56 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=a7c3ace2-4ac1-4b1c-ae37-40a1eae96b81&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:11:56 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigated to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/oauth2/authorize?resource=https://graph.microsoft.com/&client_id=9e827b51-5206-432c-9d4d-6be8cd20407e&response_type=code&redirect_uri=http://localhost/847638cc454f53f487be703a89279f11&client-request-id=a7c3ace2-4ac1-4b1c-ae37-40a1eae96b81&prompt=login&x-client-SKU=.NET&x-client-Ver=2.23.0.0&x-client-CPU=x64&x-client-OS=Microsoft Windows NT 6.2.9200.0'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:12:05 AM:  - WindowsFormsWebAuthenticationDialogBase: Navigating to 'https://login.microsoftonline.com/desjarlaisdev.onmicrosoft.com/login'.
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:12:05 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state: IsBusy: True, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:12:05 AM:  - WindowsFormsWebAuthenticationDialogBase: WebBrowser state (after Stop): IsBusy: False, ReadyState: Complete, Created: True, Disposing: False, IsDisposed: False, IsOffline: False
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:12:06 AM: a7c3ace2-4ac1-4b1c-ae37-40a1eae96b81 - TokenCache: Storing token in the cache...
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:12:06 AM: a7c3ace2-4ac1-4b1c-ae37-40a1eae96b81 - TokenCache: An item was stored in the cache
+RESTfulOutlook.vshost.exe Information: 0 : 4/9/2016 6:12:06 AM: a7c3ace2-4ac1-4b1c-ae37-40a1eae96b81 - AcquireTokenHandlerBase: === Token Acquisition finished successfully. An access token was retuned:
+	Access Token Hash: p9D590bWRWj5oX3gaGfHaFYV9gW+HHPtzZ4Eg2+okOg=
+	Refresh Token Hash: b3ZIiO/fUUNeZ7+c3vRVJYiEqLk7DHvvhxe/vb+66hk=

@@ -50,9 +50,11 @@ namespace RESTfulOutlook.Forms
             dictionary.Add("OutlookMail-GetImportanUnreadMessages", "me/messages/?$filter=importance%20eq%20%27high%27%20and%20isread%20eq%20false");
             dictionary.Add("OutlookMail-SendTestMessage", "me/sendmail");
             dictionary.Add("OutlookCalendar-ListCalendars", "me/calendars");
+            dictionary.Add("OutlookCalendar-CreateTestEvent", "me/events");
             dictionary.Add("OutlookCalendar-ListCalendarGroups", "me/calendarGroups");
             dictionary.Add("OutlookCalendar-ListCalendarView", "me/calendarView");
             dictionary.Add("OutlookContacts-ListContacts", "me/contacts");
+            dictionary.Add("OutlookContacts-CreateTestContact", "me/contacts");
             dictionary.Add("OutlookContacts-ListContactFolders", "me/contactFolders");
             dictionary.Add("OutlookGroups-ListGroups", "groups");
             dictionary.Add("OutlookGroups-ListMemberOf", "me/memberOf");
@@ -242,7 +244,8 @@ namespace RESTfulOutlook.Forms
                         // set the emailaddress info for the recip
                         JsonHelpers.ToRecipient recip = new JsonHelpers.ToRecipient();
                         JsonHelpers.EmailAddress email = new JsonHelpers.EmailAddress();
-                        email.Address = "email@domain.com";
+                        email.Address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
+                        email.Name = "Pavel Bansky";
 
                         // add the email address object to the recipient
                         // then add the recip to the list
@@ -260,7 +263,72 @@ namespace RESTfulOutlook.Forms
 
                         // set headers and POST
                         cmbHttpMethod.Text = "POST";
-                        AddRequestHeader("Accept", "text/*, application/xml, application/json; odata.metadata=none");
+                    }
+                    else if (pair.Key == "OutlookCalendar-CreateTestEvent")
+                    {
+                        // create the event object
+                        JsonHelpers.Event evt = new JsonHelpers.Event();
+                        evt.Subject = "Discuss the Calendar REST API";
+
+                        // create the body object
+                        JsonHelpers.Body body = new JsonHelpers.Body();
+                        body.ContentType = "HTML";
+                        body.Content = "I think it will meet our requirements!";
+                        evt.Body = body;
+
+                        JsonHelpers.Start start = new JsonHelpers.Start();
+                        start.DateTime = "2016-02-02T18:00:00";
+                        start.TimeZone = "Pacific Standard Time";
+                        evt.Start = start;
+
+                        JsonHelpers.End end = new JsonHelpers.End();                       
+                        end.DateTime = "2016-02-02T19:00:00";
+                        end.TimeZone = "Pacific Standard Time";
+                        evt.End = end;
+
+                        List<JsonHelpers.Attendee> attendeesList = new List<JsonHelpers.Attendee>();
+                        JsonHelpers.Attendee attendee = new JsonHelpers.Attendee();
+                        JsonHelpers.EmailAddress email = new JsonHelpers.EmailAddress();
+                        email.Address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
+                        email.Name = "Pavel Bansky";
+                        attendee.EmailAddress = email;
+                        attendee.Type = "Required";
+                        attendeesList.Add(attendee);
+
+                        evt.Attendees = attendeesList;
+
+                        // serialize the .net object -> json and display in the textbox
+                        string json = JsonConvert.SerializeObject(evt);
+                        tbRequestBody.Text = json;
+
+                        // set headers and POST
+                        cmbHttpMethod.Text = "POST";
+                        AddRequestHeader("Accept", "application/json");
+                    }
+                    else if (pair.Key == "OutlookContacts-CreateTestContact")
+                    {
+                        JsonHelpers.Contact contact = new JsonHelpers.Contact();
+                        contact.GivenName = "Pavel";
+                        contact.Surname = "Bansky";
+
+                        List<JsonHelpers.EmailAddress> emailAddresses = new List<JsonHelpers.EmailAddress>();
+                        JsonHelpers.EmailAddress email = new JsonHelpers.EmailAddress();
+                        email.Address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
+                        email.Name = "Pavel Bansky";
+                        emailAddresses.Add(email);
+
+                        contact.EmailAddresses = emailAddresses;
+                        List<string> businessPhoneNumbers = new List<string>();
+                        businessPhoneNumbers.Add("+1 732 555 0102");
+                        contact.BusinessPhones = businessPhoneNumbers;
+
+                        // serialize the .net object -> json and display in the textbox
+                        string json = JsonConvert.SerializeObject(contact);
+                        tbRequestBody.Text = json;
+
+                        // set headers and POST
+                        cmbHttpMethod.Text = "POST";
+                        AddRequestHeader("Accept", "application/json");
                     }
                     else
                     {
