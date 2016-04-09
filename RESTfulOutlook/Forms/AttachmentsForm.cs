@@ -11,6 +11,7 @@ namespace RESTfulOutlook.Forms
         public Dictionary<string, object> dAdditionalFileData;
         public Dictionary<string, object> dAdditionalItemData;
         public Dictionary<string, object> dAdditionalRefData;
+        public Dictionary<string, byte[]> dContentBytes;
 
         public AttachmentsForm(string id, List<FileAttachment> fAttachments, List<ItemAttachment> iAttachments, List<ReferenceAttachment> rAttachments)
         {
@@ -20,6 +21,7 @@ namespace RESTfulOutlook.Forms
             dAdditionalFileData = new Dictionary<string, object>();
             dAdditionalItemData = new Dictionary<string, object>();
             dAdditionalRefData = new Dictionary<string, object>();
+            dContentBytes = new Dictionary<string, byte[]>();
 
             try
             {
@@ -29,7 +31,11 @@ namespace RESTfulOutlook.Forms
                     {
                         // populate the grid view for file attachments
                         int n = dgFileAttachments.Rows.Add();
-                        dgFileAttachments.Rows[n].Cells[0].Value = AttachmentHelper.GetHexStringFromByteArray(fItem.ContentBytes);
+                        if (fItem.ContentBytes != null)
+                        {
+                            dgFileAttachments.Rows[n].Cells[0].Value = "View Data";
+                            dContentBytes.Add(fItem.Id, fItem.ContentBytes);
+                        }
                         dgFileAttachments.Rows[n].Cells[1].Value = fItem.ContentId;
                         dgFileAttachments.Rows[n].Cells[2].Value = fItem.ContentLocation;
                         dgFileAttachments.Rows[n].Cells[3].Value = fItem.ContentType;
@@ -101,7 +107,6 @@ namespace RESTfulOutlook.Forms
             }
             catch (Exception)
             {
-
             }
         }
         
@@ -139,11 +144,9 @@ namespace RESTfulOutlook.Forms
             }
             catch (NullReferenceException)
             {
-
             }
             catch (Exception)
             {
-
             }
             
         }
@@ -158,16 +161,17 @@ namespace RESTfulOutlook.Forms
             }
             catch (NullReferenceException)
             {
-
             }
             catch (Exception)
             {
-
             }
         }
 
         private void dgFileAttachments_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            // get the selected item Id
+            string mId = dgFileAttachments.Rows[e.RowIndex].Cells[5].Value.ToString();
+
             if (e.ColumnIndex == 9)
             {
                 List<string> tempAdditionalData = new List<string>();
@@ -186,6 +190,22 @@ namespace RESTfulOutlook.Forms
                 CategoriesForm mCategories = new CategoriesForm(tempAdditionalData);
                 mCategories.Owner = this;
                 mCategories.ShowDialog(this);
+            }
+
+            if (e.ColumnIndex == 0)
+            {
+                byte[] tempByteArray = null;
+                foreach (KeyValuePair<string, byte[]> pair in dContentBytes)
+                {
+                    if (pair.Key == mId)
+                    {
+                        tempByteArray = pair.Value;
+                    }
+                }
+
+                ContentBytesForm cBytes = new ContentBytesForm(tempByteArray);
+                cBytes.Owner = this;
+                cBytes.ShowDialog(this);
             }
         }
 

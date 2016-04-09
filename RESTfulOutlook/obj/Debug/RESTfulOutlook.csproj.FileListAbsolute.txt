@@ -275,3 +275,4 @@ D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.User
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.frmMain.resources
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Properties.Resources.resources
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.csproj.GenerateResource.Cache
+F:\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.ContentBytesForm.resources

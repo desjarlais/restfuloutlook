@@ -37,5 +37,10 @@ namespace RESTfulOutlook.Utils
         {
             return BitConverter.ToString(byteArray); 
         }
+
+        public static string GetBinaryFromByteArray(byte[] byteArray)
+        {
+            return BitConverter.ToInt32(byteArray,0).ToString();
+        }
     }
 }

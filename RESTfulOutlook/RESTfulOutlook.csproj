@@ -137,6 +137,12 @@
     <Compile Include="Forms\ContactsAPI.Designer.cs">
       <DependentUpon>ContactsAPI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ContentBytesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ContentBytesForm.Designer.cs">
+      <DependentUpon>ContentBytesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GraphAPI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ContactsAPI.resx">
       <DependentUpon>ContactsAPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ContentBytesForm.resx">
+      <DependentUpon>ContentBytesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GraphAPI.resx">
       <DependentUpon>GraphAPI.cs</DependentUpon>

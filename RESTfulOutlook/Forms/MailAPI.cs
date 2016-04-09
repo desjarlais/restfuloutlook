@@ -347,7 +347,7 @@ namespace RESTfulOutlook.Forms
                             }
                         }
 
-                        Forms.AttachmentsForm mAttachment = new Forms.AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments);
+                        AttachmentsForm mAttachment = new AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments);
                         mAttachment.Owner = this;
                         mAttachment.ShowDialog(this);
                     }

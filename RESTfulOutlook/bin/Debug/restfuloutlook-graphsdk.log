@@ -83,3 +83,88 @@
 {
   SdkVersion: graph-dotnet-1.0.0
 }
+04/08/16 9:51:18 AM ==> REQUEST
+04/08/16 9:51:18 AM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 12:38:36 PM ==> REQUEST
+04/08/16 12:38:36 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 12:39:50 PM ==> REQUEST
+04/08/16 12:39:50 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 12:40:57 PM ==> REQUEST
+04/08/16 12:40:57 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 12:42:28 PM ==> REQUEST
+04/08/16 12:42:28 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 12:43:26 PM ==> REQUEST
+04/08/16 12:43:26 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 12:45:27 PM ==> REQUEST
+04/08/16 12:45:27 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 12:45:31 PM ==> REQUEST
+04/08/16 12:45:31 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAAAAAAEMAAA=/messages', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 12:48:05 PM ==> REQUEST
+04/08/16 12:48:05 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 1:06:16 PM ==> REQUEST
+04/08/16 1:06:16 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 1:06:58 PM ==> REQUEST
+04/08/16 1:06:58 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 1:07:42 PM ==> REQUEST
+04/08/16 1:07:42 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 1:10:59 PM ==> REQUEST
+04/08/16 1:10:59 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 2:07:46 PM ==> REQUEST
+04/08/16 2:07:46 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 2:38:52 PM ==> REQUEST
+04/08/16 2:38:52 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 5:29:42 PM ==> REQUEST
+04/08/16 5:29:42 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/08/16 5:38:18 PM ==> REQUEST
+04/08/16 5:38:18 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/events', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
