@@ -62,6 +62,7 @@ namespace RESTfulOutlook.Forms
             }
             catch (Exception ex)
             {
+                sdklogger.Log("GetFolderAsync Error:");
                 sdklogger.Log(ex.ToString());
                 sdklogger.Log(ex.Message);
                 sdklogger.Log(ex.StackTrace);
@@ -201,34 +202,35 @@ namespace RESTfulOutlook.Forms
                         dgContactsList.Rows[n].Cells[(int)columns.BusinessAddress].Value = "View Address";
                     }
                 }
-                toolStripStatus.Text = "Ready...";
+                
             }
-            catch (Microsoft.Graph.ServiceException se)
+            catch (ServiceException se)
             {
-                applogger.Log("GraphServiceException:");
+                applogger.Log("GetContactAsync GraphServiceException:");
                 applogger.Log(se.Message);
             }
             catch (ArgumentOutOfRangeException aor)
             {
-                applogger.Log("ArgumentOutOfRangeException:");
+                applogger.Log("GetContactAsync ArgumentOutOfRangeException:");
                 applogger.Log(aor.Message);
                 return;
             }
             catch (AdalException ae)
             {
-                applogger.Log("AdalException:");
+                applogger.Log("GetContactAsync AdalException:");
                 applogger.Log(ae.Message);
                 return;
             }
             catch (Exception ex)
             {
-                applogger.Log("Exception");
+                applogger.Log("GetContactAsync Exception:");
                 applogger.Log(ex.Message);
                 return;
             }
             finally
             {
                 Cursor = Cursors.Default;
+                toolStripStatus.Text = "Ready";
             }
         }
 
@@ -400,11 +402,14 @@ namespace RESTfulOutlook.Forms
                 int y = dgContactsList.CurrentCell.ColumnIndex;
                 Clipboard.SetText(dgContactsList.Rows[x].Cells[y].Value.ToString());
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException nre)
             {
+                applogger.Log("Copy Error:");
+                applogger.Log(nre.Message);
             }
             catch (Exception ex)
             {
+                applogger.Log("Copy Error:");
                 applogger.Log(ex.Message);
             }
         }

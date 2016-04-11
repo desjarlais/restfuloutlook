@@ -13,10 +13,13 @@ namespace RESTfulOutlook.Forms
         public Dictionary<string, object> dAdditionalRefData;
         public Dictionary<string, byte[]> dContentBytes;
 
-        public AttachmentsForm(string id, List<FileAttachment> fAttachments, List<ItemAttachment> iAttachments, List<ReferenceAttachment> rAttachments)
+        ClassLogger applogger = null;
+
+        public AttachmentsForm(string id, List<FileAttachment> fAttachments, List<ItemAttachment> iAttachments, List<ReferenceAttachment> rAttachments, ClassLogger appLogger)
         {
             InitializeComponent();
-
+            applogger = appLogger;
+            
             // init dictionaries
             dAdditionalFileData = new Dictionary<string, object>();
             dAdditionalItemData = new Dictionary<string, object>();
@@ -25,6 +28,8 @@ namespace RESTfulOutlook.Forms
 
             try
             {
+                Cursor = Cursors.WaitCursor;
+
                 if (fAttachments != null)
                 {
                     foreach (var fItem in fAttachments)
@@ -105,8 +110,14 @@ namespace RESTfulOutlook.Forms
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                applogger.Log("ctor exception:");
+                applogger.Log(ex.Message);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
             }
         }
         
@@ -118,11 +129,15 @@ namespace RESTfulOutlook.Forms
                 int y = dgFileAttachments.CurrentCell.ColumnIndex;
                 Clipboard.SetText(dgFileAttachments.Rows[x].Cells[y].Value.ToString());
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException nre)
             {
+                applogger.Log("Copy Error: ");
+                applogger.Log(nre.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                applogger.Log("Copy Error: " + ex.Message);
+                applogger.Log(ex.Message);
             }
         }
 
@@ -142,13 +157,16 @@ namespace RESTfulOutlook.Forms
                 int y = dgItemAttachments.CurrentCell.ColumnIndex;
                 Clipboard.SetText(dgItemAttachments.Rows[x].Cells[y].Value.ToString());
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException nre)
             {
+                applogger.Log("Copy Error: ");
+                applogger.Log(nre.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                applogger.Log("Copy Error: " + ex.Message);
+                applogger.Log(ex.Message);
             }
-            
         }
 
         private void copyToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -159,11 +177,15 @@ namespace RESTfulOutlook.Forms
                 int y = dgRefAttachments.CurrentCell.ColumnIndex;
                 Clipboard.SetText(dgRefAttachments.Rows[x].Cells[y].Value.ToString());
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException nre)
             {
+                applogger.Log("Copy Error: ");
+                applogger.Log(nre.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                applogger.Log("Copy Error: " + ex.Message);
+                applogger.Log(ex.Message);
             }
         }
 

@@ -31,8 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttachmentsForm));
             this.dgFileAttachments = new System.Windows.Forms.DataGridView();
+            this.bytes = new System.Windows.Forms.DataGridViewButtonColumn();
             this.mnuContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastmodified = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.additionalfiledata = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgItemAttachments = new System.Windows.Forms.DataGridView();
             this.contenttype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -57,16 +67,6 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.additionalrefdata = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.bytes = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastmodified = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.additionalfiledata = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgFileAttachments)).BeginInit();
             this.mnuContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItemAttachments)).BeginInit();
@@ -101,6 +101,15 @@
             this.dgFileAttachments.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFileAttachments_CellContentDoubleClick);
             this.dgFileAttachments.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgAttachments_CellMouseDown);
             // 
+            // bytes
+            // 
+            this.bytes.ContextMenuStrip = this.mnuContextMenu;
+            this.bytes.HeaderText = "ContentBytes";
+            this.bytes.Name = "bytes";
+            this.bytes.ReadOnly = true;
+            this.bytes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bytes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // mnuContextMenu
             // 
             this.mnuContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -115,6 +124,68 @@
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // cid
+            // 
+            this.cid.ContextMenuStrip = this.mnuContextMenu;
+            this.cid.HeaderText = "ContentId";
+            this.cid.Name = "cid";
+            this.cid.ReadOnly = true;
+            // 
+            // location
+            // 
+            this.location.ContextMenuStrip = this.mnuContextMenu;
+            this.location.HeaderText = "ContentLocation";
+            this.location.Name = "location";
+            this.location.ReadOnly = true;
+            // 
+            // type
+            // 
+            this.type.ContextMenuStrip = this.mnuContextMenu;
+            this.type.HeaderText = "ContentType";
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            // 
+            // lastmodified
+            // 
+            this.lastmodified.ContextMenuStrip = this.mnuContextMenu;
+            this.lastmodified.HeaderText = "LastModifiedDateTime";
+            this.lastmodified.Name = "lastmodified";
+            this.lastmodified.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.ContextMenuStrip = this.mnuContextMenu;
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // inline
+            // 
+            this.inline.ContextMenuStrip = this.mnuContextMenu;
+            this.inline.HeaderText = "IsInline";
+            this.inline.Name = "inline";
+            this.inline.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.ContextMenuStrip = this.mnuContextMenu;
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // size
+            // 
+            this.size.ContextMenuStrip = this.mnuContextMenu;
+            this.size.HeaderText = "Size";
+            this.size.Name = "size";
+            this.size.ReadOnly = true;
+            // 
+            // additionalfiledata
+            // 
+            this.additionalfiledata.HeaderText = "AdditionalData";
+            this.additionalfiledata.Name = "additionalfiledata";
+            this.additionalfiledata.ReadOnly = true;
             // 
             // dgItemAttachments
             // 
@@ -323,82 +394,11 @@
             this.additionalrefdata.Name = "additionalrefdata";
             this.additionalrefdata.ReadOnly = true;
             // 
-            // bytes
-            // 
-            this.bytes.ContextMenuStrip = this.mnuContextMenu;
-            this.bytes.HeaderText = "ContentBytes";
-            this.bytes.Name = "bytes";
-            this.bytes.ReadOnly = true;
-            this.bytes.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.bytes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // cid
-            // 
-            this.cid.ContextMenuStrip = this.mnuContextMenu;
-            this.cid.HeaderText = "ContentId";
-            this.cid.Name = "cid";
-            this.cid.ReadOnly = true;
-            // 
-            // location
-            // 
-            this.location.ContextMenuStrip = this.mnuContextMenu;
-            this.location.HeaderText = "ContentLocation";
-            this.location.Name = "location";
-            this.location.ReadOnly = true;
-            // 
-            // type
-            // 
-            this.type.ContextMenuStrip = this.mnuContextMenu;
-            this.type.HeaderText = "ContentType";
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            // 
-            // lastmodified
-            // 
-            this.lastmodified.ContextMenuStrip = this.mnuContextMenu;
-            this.lastmodified.HeaderText = "LastModifiedDateTime";
-            this.lastmodified.Name = "lastmodified";
-            this.lastmodified.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.ContextMenuStrip = this.mnuContextMenu;
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // inline
-            // 
-            this.inline.ContextMenuStrip = this.mnuContextMenu;
-            this.inline.HeaderText = "IsInline";
-            this.inline.Name = "inline";
-            this.inline.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.ContextMenuStrip = this.mnuContextMenu;
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // size
-            // 
-            this.size.ContextMenuStrip = this.mnuContextMenu;
-            this.size.HeaderText = "Size";
-            this.size.Name = "size";
-            this.size.ReadOnly = true;
-            // 
-            // additionalfiledata
-            // 
-            this.additionalfiledata.HeaderText = "AdditionalData";
-            this.additionalfiledata.Name = "additionalfiledata";
-            this.additionalfiledata.ReadOnly = true;
-            // 
             // AttachmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 481);
+            this.ClientSize = new System.Drawing.Size(833, 473);
             this.Controls.Add(this.dgRefAttachments);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

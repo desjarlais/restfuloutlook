@@ -73,25 +73,23 @@ namespace RESTfulOutlook.Forms
                     cmbFolders.Items.Add(mailFolder.DisplayName);
                     cmbFolders.SelectedIndex = 0;
                 }
-                toolStripStatus.Text = "Ready";
             }
             catch (ServiceException se)
             {
-                sdklogger.Log(se.ToString());
+                sdklogger.Log("GetFoldersAsync ServiceException");
                 sdklogger.Log(se.Message);
                 sdklogger.Log(se.StackTrace);
-                toolStripStatus.Text = "Ready";
             }
             catch (Exception ex)
             {
-                sdklogger.Log(ex.ToString());
+                sdklogger.Log("GetFoldersAsync Exception:");
                 sdklogger.Log(ex.Message);
                 sdklogger.Log(ex.StackTrace);
-                toolStripStatus.Text = "Ready";
             }
             finally
             {
                 Cursor = Cursors.Default;
+                toolStripStatus.Text = "Ready";
             }
         }
 
@@ -122,7 +120,7 @@ namespace RESTfulOutlook.Forms
                 }
 
                 int msgLimit = (Int32)nudMessages.Value;
-                
+
                 // log the request
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.MailFolders[folderId].Messages.Request().GetHttpRequestMessage().ToString());
@@ -132,9 +130,9 @@ namespace RESTfulOutlook.Forms
                     .Expand("attachments")
                     .Top(msgLimit)
                     .GetAsync();
-                
+
                 foreach (var msg in messages.CurrentPage)
-                {    
+                {
                     // populate the new grid view rows
                     int n = dgMessages.Rows.Add();
                     dgMessages.Rows[n].Cells[(int)columns.Id].Value = msg.Id;
@@ -263,20 +261,20 @@ namespace RESTfulOutlook.Forms
                     }
                 }
             }
-            catch (Microsoft.Graph.ServiceException se)
-            {                
-                applogger.Log("GraphServiceException:");
-                applogger.Log(se.Message);
+            catch (ServiceException se)
+            {
+                sdklogger.Log("GetMessagesAsync GraphServiceException:");
+                sdklogger.Log(se.Message);
             }
             catch (ArgumentOutOfRangeException aor)
             {
-                applogger.Log("ArgumentOutOfRangeException:");
-                applogger.Log(aor.Message);
+                sdklogger.Log("GetMessagesAsync ArgumentOutOfRangeException:");
+                sdklogger.Log(aor.Message);
             }
             catch (Exception ex)
             {
-                applogger.Log("Exception:");
-                applogger.Log(ex.Message);
+                sdklogger.Log("GetMessagesAsync Exception:");
+                sdklogger.Log(ex.Message);
             }
             finally
             {
@@ -322,7 +320,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.RecipientCollection mRecipients = new Forms.RecipientCollection(mId, tRecips);
+                    RecipientCollection mRecipients = new RecipientCollection(mId, tRecips);
                     mRecipients.Owner = this;
                     mRecipients.ShowDialog(this);
                 }
@@ -358,7 +356,7 @@ namespace RESTfulOutlook.Forms
                             }
                         }
 
-                        AttachmentsForm mAttachment = new AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments);
+                        AttachmentsForm mAttachment = new AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments, applogger);
                         mAttachment.Owner = this;
                         mAttachment.ShowDialog(this);
                     }
@@ -375,7 +373,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.RecipientCollection mRecipients = new Forms.RecipientCollection(mId, tRecips);
+                    RecipientCollection mRecipients = new RecipientCollection(mId, tRecips);
                     mRecipients.Owner = this;
                     mRecipients.ShowDialog(this);
                 }
@@ -391,7 +389,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.RecipientCollection mRecipients = new Forms.RecipientCollection(mId, tRecips);
+                    RecipientCollection mRecipients = new RecipientCollection(mId, tRecips);
                     mRecipients.Owner = this;
                     mRecipients.ShowDialog(this);                    
                 }
@@ -407,7 +405,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.RecipientCollection mRecipients = new Forms.RecipientCollection(mId, tRecips);
+                    RecipientCollection mRecipients = new RecipientCollection(mId, tRecips);
                     mRecipients.Owner = this;
                     mRecipients.ShowDialog(this);
                 }
@@ -422,7 +420,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.ItemBodyForm mItemBodyCollection = new Forms.ItemBodyForm(mId, lBody);
+                    ItemBodyForm mItemBodyCollection = new ItemBodyForm(mId, lBody);
                     mItemBodyCollection.Owner = this;
                     mItemBodyCollection.ShowDialog(this);
                 }
@@ -437,13 +435,14 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.CategoriesForm mCategories = new Forms.CategoriesForm(lCategories);
+                    CategoriesForm mCategories = new CategoriesForm(lCategories);
                     mCategories.Owner = this;
                     mCategories.ShowDialog(this);
                 }
             }
             catch (Exception ex)
             {
+                applogger.Log("Double-click Error:");
                 applogger.Log(ex.Message);
             }
         }
@@ -458,11 +457,13 @@ namespace RESTfulOutlook.Forms
             }
             catch (NullReferenceException nre)
             {
+                applogger.Log("Copy Error:");
                 applogger.Log(nre.Message);
                 applogger.Log(nre.StackTrace);
             }
             catch (Exception ex)
             {
+                applogger.Log("Copy Error:");
                 applogger.Log(ex.Message);
                 applogger.Log(ex.StackTrace);
             }

@@ -123,8 +123,11 @@ namespace RESTfulOutlook.Forms
                 HttpResponseMessage response = httpClient.SendAsync(request).Result;              
 
                 if (!response.IsSuccessStatusCode)
+                {
+                    tvw.Nodes.Add(new TreeNode("Request failed. " + response.StatusCode.ToString()));
                     throw new WebException(response.StatusCode.ToString() + ": " + response.ReasonPhrase);
-                    
+                }
+                                        
                 string content = response.Content.ReadAsStringAsync().Result;
 
                 logger.Log("RESPONSE HEADER");
@@ -133,11 +136,14 @@ namespace RESTfulOutlook.Forms
 
                 if (response.StatusCode == HttpStatusCode.Accepted)
                 {
+                    // POST responses that are successful return 202 Accepted,
+                    // there is no return value so display success message
                     tvw.Nodes.Add(new TreeNode("Message sent succesfully."));
                     logger.Log("StatusCode = " + response.StatusCode.ToString());
                 }
                 else if (response.StatusCode == HttpStatusCode.OK)
                 {
+                    // GET responses should have a return type of xml or json
                     if (content[0] == '<')
                     {
                         // check for an xml response and populate the tree
@@ -224,7 +230,7 @@ namespace RESTfulOutlook.Forms
                     {
                         tbRequestUrl.Text = Properties.Settings.Default.GraphEndpoint + apiVersion + pair.Value;
 
-                        // check for examples where we need to create json for the POST,
+                        // check for examples where we need to create json for the POST
                         if (pair.Key == "OutlookMail-SendTestMessage")
                         {
                             CreateMessageJson();
@@ -528,11 +534,13 @@ namespace RESTfulOutlook.Forms
                     Clipboard.SetText(tvw.SelectedNode.Text);
                 }
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException nre)
             {
+                logger.Log("Copy Error: " + nre.Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                logger.Log("Copy Error: " + ex.Message);
             }
         }
 
@@ -557,8 +565,9 @@ namespace RESTfulOutlook.Forms
             }
             catch (Exception ex)
             {
-                logger.Log("Error: " + ex.Message);
-                logger.Log("StackTrace: " + ex.StackTrace);
+                logger.Log("Add Header Error:");
+                logger.Log(ex.Message);
+                logger.Log(ex.StackTrace);
             }
         }
 
@@ -581,7 +590,8 @@ namespace RESTfulOutlook.Forms
                 }
                 else
                 {
-                    logger.Log("Error: " + nre.Message);
+                    logger.Log("Delete Header Error:");
+                    logger.Log(nre.Message);
                     logger.Log("StackTrace: " + nre.StackTrace);
                     logger.Log("Inner Exception: " + nre.InnerException);
                 }
@@ -589,7 +599,8 @@ namespace RESTfulOutlook.Forms
             }
             catch (Exception ex)
             {
-                logger.Log("Error: " + ex.Message);
+                logger.Log("Delete Header Error: ");
+                logger.Log(ex.Message);
                 logger.Log("StackTrace: " + ex.StackTrace);
             }
         }

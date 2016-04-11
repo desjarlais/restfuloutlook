@@ -8,7 +8,9 @@ namespace RESTfulOutlook.Forms
         public ContentBytesForm(byte[] byteArray)
         {
             InitializeComponent();
+            Cursor = Cursors.WaitCursor;
             tbContent.Text = AttachmentHelper.GetHexStringFromByteArray(byteArray);
+            Cursor = Cursors.Default;
         }
     }
 }
