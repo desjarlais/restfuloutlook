@@ -50,6 +50,8 @@ namespace RESTfulOutlook.Forms
             try
             {
                 toolStripStatus.Text = "Getting folders...";
+                Cursor = Cursors.WaitCursor;
+
                 var contactFolders = await graphClient.Me.ContactFolders.Request()
                     .GetAsync();
                 foreach (var contactFolder in contactFolders.CurrentPage)
@@ -57,13 +59,17 @@ namespace RESTfulOutlook.Forms
                     cmbFolders.Items.Add(contactFolder.DisplayName);
                     cmbFolders.SelectedIndex = 0;
                 }
-                toolStripStatus.Text = "Ready";
             }
             catch (Exception ex)
             {
                 sdklogger.Log(ex.ToString());
                 sdklogger.Log(ex.Message);
                 sdklogger.Log(ex.StackTrace);
+            }
+            finally
+            {
+                toolStripStatus.Text = "Ready";
+                Cursor = Cursors.Default;
             }
         }
 
@@ -80,6 +86,8 @@ namespace RESTfulOutlook.Forms
             {
                 int mLimit = (Int32)nudContacts.Value;
                 toolStripStatus.Text = "Getting Contacts...";
+                Cursor = Cursors.WaitCursor;
+
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.Contacts.Request().GetHttpRequestMessage().ToString());
                 var contacts = await graphClient.Me.Contacts.Request()
@@ -220,7 +228,7 @@ namespace RESTfulOutlook.Forms
             }
             finally
             {
-                
+                Cursor = Cursors.Default;
             }
         }
 
@@ -261,7 +269,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.PhysicalAddressForm mPhysicalAddress = new Forms.PhysicalAddressForm(tHomeAddress);
+                    PhysicalAddressForm mPhysicalAddress = new PhysicalAddressForm(tHomeAddress);
                     mPhysicalAddress.Owner = this;
                     mPhysicalAddress.ShowDialog(this);
                 }
@@ -277,7 +285,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.PhysicalAddressForm mPhysicalAddress = new Forms.PhysicalAddressForm(tBusinessAddress);
+                    PhysicalAddressForm mPhysicalAddress = new PhysicalAddressForm(tBusinessAddress);
                     mPhysicalAddress.Owner = this;
                     mPhysicalAddress.ShowDialog(this);
                 }
@@ -293,7 +301,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.PhysicalAddressForm mPhysicalAddress = new Forms.PhysicalAddressForm(tOtherAddress);
+                    PhysicalAddressForm mPhysicalAddress = new PhysicalAddressForm(tOtherAddress);
                     mPhysicalAddress.Owner = this;
                     mPhysicalAddress.ShowDialog(this);
                 }
@@ -308,7 +316,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.CategoriesForm mCategories = new Forms.CategoriesForm(lBusinessPhones);
+                    CategoriesForm mCategories = new CategoriesForm(lBusinessPhones);
                     mCategories.Owner = this;
                     mCategories.ShowDialog(this);
                 }
@@ -323,7 +331,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.CategoriesForm mCategories = new Forms.CategoriesForm(lCategories);
+                    CategoriesForm mCategories = new CategoriesForm(lCategories);
                     mCategories.Owner = this;
                     mCategories.ShowDialog(this);
                 }
@@ -338,7 +346,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.CategoriesForm mCategories = new Forms.CategoriesForm(lHomePhones);
+                    CategoriesForm mCategories = new CategoriesForm(lHomePhones);
                     mCategories.Owner = this;
                     mCategories.ShowDialog(this);
                 }
@@ -353,7 +361,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.CategoriesForm mCategories = new Forms.CategoriesForm(lImAddress);
+                    CategoriesForm mCategories = new CategoriesForm(lImAddress);
                     mCategories.Owner = this;
                     mCategories.ShowDialog(this);                    
                 }
@@ -368,7 +376,7 @@ namespace RESTfulOutlook.Forms
                         }
                     }
 
-                    Forms.CategoriesForm mCategories = new Forms.CategoriesForm(lEmailAddresses);
+                    CategoriesForm mCategories = new CategoriesForm(lEmailAddresses);
                     mCategories.Owner = this;
                     mCategories.ShowDialog(this);
                 }

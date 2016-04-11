@@ -54,6 +54,8 @@ namespace RESTfulOutlook.Forms
             {
                 int mLimit = (Int32)nudEvents.Value;
                 toolStripStatus.Text = "Getting Events...";
+                Cursor = Cursors.WaitCursor;
+
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.Events.Request().GetHttpRequestMessage().ToString());
                 var calEvents = await graphClient.Me.Events.Request()
@@ -206,6 +208,7 @@ namespace RESTfulOutlook.Forms
             finally
             {
                 toolStripStatus.Text = "Ready";
+                Cursor = Cursors.Default;
             }
         }
 

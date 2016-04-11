@@ -40,7 +40,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tbRequest = new System.Windows.Forms.TextBox();
+            this.tbRequestUrl = new System.Windows.Forms.TextBox();
             this.cmbHttpMethod = new System.Windows.Forms.ComboBox();
             this.tvw = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -186,13 +186,13 @@
             this.toolStripStatus.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatus.Text = "Ready";
             // 
-            // tbRequest
+            // tbRequestUrl
             // 
-            this.tbRequest.Location = new System.Drawing.Point(109, 53);
-            this.tbRequest.MaxLength = 2083;
-            this.tbRequest.Name = "tbRequest";
-            this.tbRequest.Size = new System.Drawing.Size(490, 20);
-            this.tbRequest.TabIndex = 9;
+            this.tbRequestUrl.Location = new System.Drawing.Point(109, 53);
+            this.tbRequestUrl.MaxLength = 2083;
+            this.tbRequestUrl.Name = "tbRequestUrl";
+            this.tbRequestUrl.Size = new System.Drawing.Size(490, 20);
+            this.tbRequestUrl.TabIndex = 9;
             // 
             // cmbHttpMethod
             // 
@@ -431,7 +431,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cmbHttpMethod);
-            this.Controls.Add(this.tbRequest);
+            this.Controls.Add(this.tbRequestUrl);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.cbRESTQuery);
             this.Controls.Add(this.label1);
@@ -469,7 +469,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatus;
-        private System.Windows.Forms.TextBox tbRequest;
+        private System.Windows.Forms.TextBox tbRequestUrl;
         private System.Windows.Forms.ComboBox cmbHttpMethod;
         private System.Windows.Forms.TreeView tvw;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;

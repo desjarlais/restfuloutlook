@@ -52,7 +52,10 @@ namespace RESTfulOutlook.Forms
             // TODO: return subfolders
             try
             {
+                // adjust UI so user knows work is happening
                 toolStripStatus.Text = "Getting Folders...";
+                Cursor = Cursors.WaitCursor;
+
                 // log the request
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.MailFolders.Request().GetHttpRequestMessage().ToString());
@@ -86,6 +89,10 @@ namespace RESTfulOutlook.Forms
                 sdklogger.Log(ex.StackTrace);
                 toolStripStatus.Text = "Ready";
             }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
         }
 
         private async void btnGetMessages_Click(object sender, EventArgs e)
@@ -99,6 +106,9 @@ namespace RESTfulOutlook.Forms
 
             try
             {
+                toolStripStatus.Text = "Getting Messages...";
+                Cursor = Cursors.WaitCursor;
+
                 // get folder name from selected dropdown item and convert to folder id
                 string folderName = cmbFolders.SelectedItem.ToString();
                 string folderId = null;
@@ -112,7 +122,7 @@ namespace RESTfulOutlook.Forms
                 }
 
                 int msgLimit = (Int32)nudMessages.Value;
-                toolStripStatus.Text = "Getting Messages...";
+                
                 // log the request
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.MailFolders[folderId].Messages.Request().GetHttpRequestMessage().ToString());
@@ -271,6 +281,7 @@ namespace RESTfulOutlook.Forms
             finally
             {
                 toolStripStatus.Text = "Ready";
+                Cursor = Cursors.Default;
             }
         }
 
