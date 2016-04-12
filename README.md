@@ -3,7 +3,7 @@
 ![image] (http://i.imgur.com/I8MIiAV.jpg)
 
 ## Introduction
-This sample app is a .net/winform tool to test making REST calls for Outlook/Exchange data, using either the client SDK or sending the calls directly to the Office365 REST API, similar to the Graph Explorer 
+This sample app is a .net/winform tool to test making REST calls for Outlook/Exchange data, using either the Graph client SDK or sending the calls directly to the Microsoft Graph endpoint, similar to the [MS Graph Explorer](https://graph.microsoft.io/en-us/graph-explorer#/).
 
 ## Prerequisites
 This sample requires the following:  
@@ -12,8 +12,11 @@ This sample requires the following:
   * Either a [Microsoft](http://www.outlook.com) or [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account).
  
 ##Register and configure the app
+There are a couple ways to register the application.  First, you can manually register the application using the steps in the following article:
 
-**Note**: I did include my registration details in the settings, so you can just use the tool as-is without registering and login without going through the following steps.  If you want to actually register the app against your tenant, then continue with the following steps.
+[Manually register your app with Azure AD so it can access Office 365 APIs](https://msdn.microsoft.com/en-us/office/office365/howto/add-common-consent-manually)
+
+Another way to manually register is using the following steps, but these are for the v2 authentication model which are typically only if you need to usee outlook.com accounts.
 
 1. Sign into the [App Registration Portal](https://apps.dev.microsoft.com/) using either your personal or work or school account.
 2. Select **Add an app**.
@@ -31,6 +34,8 @@ This sample requires the following:
 8. Open the restfuloutlook app and click on Settings
 9. Check the box for Edit Registration and populate the clientid and uri
 10. Click on **Save**.
+
+There is also another option.  I did include my registration details in the settings, but currently you can't use the tool as-is without registering the app in your tenant.  I think this is because I'm using ADAL.NET and there is no option to prompt for consent so logging in with an account outside where the app is registered is going to fail.
 
 ##Questions and comments
 
