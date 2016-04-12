@@ -76,20 +76,21 @@ namespace RESTfulOutlook.Forms
             }
             catch (ServiceException se)
             {
-                sdklogger.Log("GetFoldersAsync ServiceException");
+                sdklogger.Log("GetFoldersAsync ServiceException:");
                 sdklogger.Log(se.Message);
                 sdklogger.Log(se.StackTrace);
+                toolStripStatus.Text = "GetFoldersAsync ServiceException";
             }
             catch (Exception ex)
             {
                 sdklogger.Log("GetFoldersAsync Exception:");
                 sdklogger.Log(ex.Message);
                 sdklogger.Log(ex.StackTrace);
+                toolStripStatus.Text = "GetFoldersAsync Exception";
             }
             finally
             {
                 Cursor = Cursors.Default;
-                toolStripStatus.Text = "Ready";
             }
         }
 
@@ -265,20 +266,22 @@ namespace RESTfulOutlook.Forms
             {
                 sdklogger.Log("GetMessagesAsync GraphServiceException:");
                 sdklogger.Log(se.Message);
+                toolStripStatus.Text = "GetMessagesAsync GraphServiceException";
             }
             catch (ArgumentOutOfRangeException aor)
             {
                 sdklogger.Log("GetMessagesAsync ArgumentOutOfRangeException:");
                 sdklogger.Log(aor.Message);
+                toolStripStatus.Text = "GetMessagesAsync ArgumentOutOfRangeException";
             }
             catch (Exception ex)
             {
                 sdklogger.Log("GetMessagesAsync Exception:");
                 sdklogger.Log(ex.Message);
+                toolStripStatus.Text = "GetMessagesAsync Exception";
             }
             finally
             {
-                toolStripStatus.Text = "Ready";
                 Cursor = Cursors.Default;
             }
         }

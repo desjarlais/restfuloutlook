@@ -115,24 +115,51 @@ namespace RESTfulOutlook.Forms
                     request.Content = new StringContent(tbRequestBody.Text, System.Text.Encoding.UTF8, "application/json");
                 }
 
-                logger.Log("REQUEST HEADER");
+                logger.Log("REQUEST HEADER:");
                 logger.Log(request.Headers.ToString());
-                logger.Log("REQUEST");
+                logger.Log("REQUEST:");
                 logger.Log(request.ToString());
 
                 HttpResponseMessage response = httpClient.SendAsync(request).Result;              
 
+                // handle non-success response
                 if (!response.IsSuccessStatusCode)
                 {
-                    tvw.Nodes.Add(new TreeNode("Request failed. " + response.StatusCode.ToString()));
+                    string errorJsonContent = response.Content.ReadAsStringAsync().Result;
+
+                    JObject jResult = JObject.Parse(errorJsonContent);
+
+                    // check for odata error
+                    if (jResult["odata.error"] != null)
+                    {
+                        throw new Exception((string)jResult["odata.error"]["message"]["value"]);
+                    }
+
+                    // check for null result
+                    if (jResult[""] != null)
+                    {
+                        logger.Log("## null response ##");
+                    }
+
+                    // log non-odata errors
+                    logger.Log("RESPONSE JSON CONTENT:");
+                    logger.Log(jResult.ToString());
+
+                    // display error details in the UI
+                    TreeNode errorParent = Json2Tree(jResult);
+                    errorParent.Text = "Request failed.";
+                    tvw.Nodes.Add(errorParent);
+
+                    // finally throw the exception to prevent further processing of the request
                     throw new WebException(response.StatusCode.ToString() + ": " + response.ReasonPhrase);
                 }
-                                        
+                
+                // process successful responses                      
                 string content = response.Content.ReadAsStringAsync().Result;
 
-                logger.Log("RESPONSE HEADER");
+                logger.Log("RESPONSE HEADER:");
                 logger.Log(response.Headers.ToString());
-                logger.Log("RESPONSE");
+                logger.Log("RESPONSE:");
 
                 if (response.StatusCode == HttpStatusCode.Accepted)
                 {
@@ -190,8 +217,7 @@ namespace RESTfulOutlook.Forms
             }
             catch (Exception ex)
             {
-                logger.Log("Error: " + ex.Message);
-                logger.Log(ex.StackTrace);
+                logger.Log(ex.Message);
             }
             finally
             {

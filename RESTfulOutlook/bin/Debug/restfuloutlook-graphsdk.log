@@ -1,0 +1,68 @@
+04/11/16 6:07:13 PM ==> REQUEST
+04/11/16 6:07:13 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/11/16 6:07:25 PM ==> REQUEST
+04/11/16 6:07:25 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAAAAAAEMAAA=/messages', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/12/16 10:57:53 AM ==> REQUEST
+04/12/16 10:57:53 AM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/12/16 10:57:56 AM ==> GetFoldersAsync ServiceException
+04/12/16 10:57:56 AM ==> Exception of type 'Microsoft.Graph.ServiceException' was thrown.
+04/12/16 10:57:56 AM ==>    at Microsoft.Graph.HttpProvider.<SendAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.BaseRequest.<SendRequestAsync>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.BaseRequest.<SendAsync>d__27`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.UserMailFoldersCollectionRequest.<GetAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at RESTfulOutlook.Forms.MailAPI.<GetFoldersAsync>d__14.MoveNext() in F:\GitHub\restfuloutlook\RESTfulOutlook\Forms\MailAPI.cs:line 64
+04/12/16 10:58:13 AM ==> GetMessagesAsync Exception:
+04/12/16 10:58:13 AM ==> Object reference not set to an instance of an object.
+04/12/16 1:26:02 PM ==> REQUEST
+04/12/16 1:26:04 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/12/16 1:26:10 PM ==> GetFoldersAsync ServiceException:
+04/12/16 2:39:05 PM ==> REQUEST
+04/12/16 2:39:05 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.0
+}
+04/12/16 2:39:06 PM ==> GetFoldersAsync ServiceException:
+04/12/16 2:39:06 PM ==> Exception of type 'Microsoft.Graph.ServiceException' was thrown.
+04/12/16 2:39:06 PM ==>    at Microsoft.Graph.HttpProvider.<SendAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.BaseRequest.<SendRequestAsync>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.BaseRequest.<SendAsync>d__27`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.UserMailFoldersCollectionRequest.<GetAsync>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at RESTfulOutlook.Forms.MailAPI.<GetFoldersAsync>d__14.MoveNext() in F:\GitHub\restfuloutlook\RESTfulOutlook\Forms\MailAPI.cs:line 64

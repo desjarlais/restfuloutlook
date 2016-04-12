@@ -185,30 +185,34 @@ namespace RESTfulOutlook.Forms
             {
                 sdklogger.Log("GetEventsAsync GraphServiceException:");
                 sdklogger.Log(se.Message);
+                toolStripStatus.Text = "GetEventsAsync GraphServiceException";
             }
             catch (NullReferenceException nre)
             {
                 sdklogger.Log("GetEventsAsync NullReferenceException:");
                 sdklogger.Log(nre.Message);
+                toolStripStatus.Text = "GetEventsAsync NullReferenceException";
             }
             catch (ArgumentOutOfRangeException aor)
             {
                 sdklogger.Log("GetEventsAsync ArgumentOutOfRangeException:");
                 sdklogger.Log(aor.Message);
+                toolStripStatus.Text = "GetEventsAsync ArgumentOutOfRangeException";
             }
             catch (AdalException ae)
             {
                 sdklogger.Log("GetEventsAsync AdalException:");
                 sdklogger.Log(ae.Message);
+                toolStripStatus.Text = "GetEventsAsync AdalException";
             }
             catch (Exception ex)
             {
                 sdklogger.Log("GetEventsAsync Exception:");
                 sdklogger.Log(ex.Message);
+                toolStripStatus.Text = "GetEventsAsync Exception";
             }
             finally
-            {
-                toolStripStatus.Text = "Ready";
+            {                
                 Cursor = Cursors.Default;
             }
         }

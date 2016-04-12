@@ -1,0 +1,17 @@
+04/12/16 10:42:35 AM ==> authentication_canceled: User canceled authentication
+04/12/16 10:42:35 AM ==> Object reference not set to an instance of an object.
+04/12/16 11:06:26 AM ==> AADSTS70001: Application '357a1f50-23b3-4cea-851b-abd005237d1c' is not supported for this API version.
+Trace ID: 693e4689-bde2-4a9f-afc4-5c951d5f7c92
+Correlation ID: 4252f1e0-47b5-4356-81b2-a56122e9464f
+Timestamp: 2016-04-12 16:06:26Z
+04/12/16 11:06:26 AM ==> Object reference not set to an instance of an object.
+04/12/16 11:06:33 AM ==> AADSTS70001: Application '357a1f50-23b3-4cea-851b-abd005237d1c' is not supported for this API version.
+Trace ID: 1563e7ed-cf8f-4054-865b-e628c272c5f8
+Correlation ID: a37da2d9-e991-4e43-8859-09579ac5865f
+Timestamp: 2016-04-12 16:06:32Z
+04/12/16 11:06:33 AM ==> Object reference not set to an instance of an object.
+04/12/16 11:06:51 AM ==> AADSTS70001: Application '357a1f50-23b3-4cea-851b-abd005237d1c' is not supported for this API version.
+Trace ID: b79a4855-98a6-4fef-af9a-b893b487c051
+Correlation ID: b3f061a7-d22f-43ed-8bb0-f6ce8ff93f74
+Timestamp: 2016-04-12 16:06:51Z
+04/12/16 11:06:51 AM ==> Object reference not set to an instance of an object.

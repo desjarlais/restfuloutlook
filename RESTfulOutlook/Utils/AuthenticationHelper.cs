@@ -1,6 +1,5 @@
-﻿using Microsoft.Graph;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
-using System;
+﻿using System;
+
 
 namespace RESTfulOutlook.Utils
 {
@@ -16,12 +15,8 @@ namespace RESTfulOutlook.Utils
         {
             if (TokenForUser == null)
             {
-                //var redirectUri = new Uri(SettingsHelper.RedirectUri);
-                //string authority = "https://login.microsoftonline.com/common";
-                //AuthenticationContext authenticationContext = new AuthenticationContext(authority, false);
-                //AuthenticationResult userAuthnResult = authenticationContext.AcquireToken(SettingsHelper.GraphEndpoint,
-                //    SettingsHelper.ClientId, redirectUri, PromptBehavior.RefreshSession);
-                //TokenForUser = userAuthnResult.AccessToken;
+                // need to implement manually handling auth outside adal.net for test purposes
+                    
             }
 
             return TokenForUser;

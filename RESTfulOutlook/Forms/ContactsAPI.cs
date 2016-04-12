@@ -62,14 +62,14 @@ namespace RESTfulOutlook.Forms
             }
             catch (Exception ex)
             {
-                sdklogger.Log("GetFolderAsync Error:");
+                sdklogger.Log("GetFolderAsync Exception:");
                 sdklogger.Log(ex.ToString());
                 sdklogger.Log(ex.Message);
                 sdklogger.Log(ex.StackTrace);
+                toolStripStatus.Text = "GetFolderAsync Exception";
             }
             finally
             {
-                toolStripStatus.Text = "Ready";
                 Cursor = Cursors.Default;
             }
         }
@@ -206,31 +206,35 @@ namespace RESTfulOutlook.Forms
             }
             catch (ServiceException se)
             {
-                applogger.Log("GetContactAsync GraphServiceException:");
-                applogger.Log(se.Message);
+                sdklogger.Log("GetContactAsync GraphServiceException:");
+                sdklogger.Log(se.Message);
+                toolStripStatus.Text = "GetContactAsync GraphServiceException";
+                return;
             }
             catch (ArgumentOutOfRangeException aor)
             {
-                applogger.Log("GetContactAsync ArgumentOutOfRangeException:");
-                applogger.Log(aor.Message);
+                sdklogger.Log("GetContactAsync ArgumentOutOfRangeException:");
+                sdklogger.Log(aor.Message);
+                toolStripStatus.Text = "GetContactAsync ArgumentOutOfRangeException";
                 return;
             }
             catch (AdalException ae)
             {
-                applogger.Log("GetContactAsync AdalException:");
-                applogger.Log(ae.Message);
+                sdklogger.Log("GetContactAsync AdalException:");
+                sdklogger.Log(ae.Message);
+                toolStripStatus.Text = "GetContactAsync AdalException";
                 return;
             }
             catch (Exception ex)
             {
-                applogger.Log("GetContactAsync Exception:");
-                applogger.Log(ex.Message);
+                sdklogger.Log("GetContactAsync Exception:");
+                sdklogger.Log(ex.Message);
+                toolStripStatus.Text = "GetContactAsync Exception";
                 return;
             }
             finally
             {
                 Cursor = Cursors.Default;
-                toolStripStatus.Text = "Ready";
             }
         }
 
