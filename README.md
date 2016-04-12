@@ -35,7 +35,7 @@ Another way to manually register is using the following steps, but these are for
 9. Check the box for Edit Registration and populate the clientid and uri
 10. Click on **Save**.
 
-There is also another option.  I did include my registration details in the settings, so you can just use the tool as-is without registering the app, but there are still problems I'm trying to sort out for that to always work.  It works with some accounts, but not others so it isn't going to be a consistent experience yet.
+There is also another option.  I did include my registration details in the settings, but currently you can't use the tool as-is without registering the app in your tenant.  I think this is because I'm using ADAL.NET and there is no option to prompt for consent so logging in with an account outside where the app is registered is going to fail.
 
 ##Questions and comments
 
