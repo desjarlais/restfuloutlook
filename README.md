@@ -12,12 +12,11 @@ This sample requires the following:
   * Either a [Microsoft](http://www.outlook.com) or [Office 365 for business account](https://msdn.microsoft.com/en-us/office/office365/howto/setup-development-environment#bk_Office365Account).
  
 ##Register and configure the app
-
-You can manually register the application using the steps in the following article:
+There are a couple ways to register the application.  First, you can manually register the application using the steps in the following article:
 
 [Manually register your app with Azure AD so it can access Office 365 APIs](https://msdn.microsoft.com/en-us/office/office365/howto/add-common-consent-manually)
 
-**Note**: I did include my registration details in the settings, so you can just use the tool as-is without registering and login without going through the following steps.  If you want to actually register the app against your tenant, then continue with the following steps.
+Another way to manually register is using the following steps, but these are for the v2 authentication model which are typically only if you need to usee outlook.com accounts.
 
 1. Sign into the [App Registration Portal](https://apps.dev.microsoft.com/) using either your personal or work or school account.
 2. Select **Add an app**.
@@ -35,6 +34,8 @@ You can manually register the application using the steps in the following artic
 8. Open the restfuloutlook app and click on Settings
 9. Check the box for Edit Registration and populate the clientid and uri
 10. Click on **Save**.
+
+There is also another option.  I did include my registration details in the settings, so you can just use the tool as-is without registering the app, but there are still problems I'm trying to sort out for that to always work.  It works with some accounts, but not others so it isn't going to be a consistent experience yet.
 
 ##Questions and comments
 
