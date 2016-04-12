@@ -13,6 +13,10 @@ This sample requires the following:
  
 ##Register and configure the app
 
+You can manually register the application using the steps in the following article:
+
+[Manually register your app with Azure AD so it can access Office 365 APIs](https://msdn.microsoft.com/en-us/office/office365/howto/add-common-consent-manually)
+
 **Note**: I did include my registration details in the settings, so you can just use the tool as-is without registering and login without going through the following steps.  If you want to actually register the app against your tenant, then continue with the following steps.
 
 1. Sign into the [App Registration Portal](https://apps.dev.microsoft.com/) using either your personal or work or school account.
