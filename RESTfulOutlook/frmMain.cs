@@ -40,7 +40,6 @@ namespace RESTfulOutlook
         ClassLogger applogger = null;
         ClassLogger sdklogger = null;
         ConfigHelper config = null;
-        Stream logFile = null;
 
         public frmMain()
         {
@@ -49,14 +48,13 @@ namespace RESTfulOutlook
             // init config helper
             config = new ConfigHelper();
             config.clientId = Properties.Settings.Default.ClientId;
-            config.authority = Properties.Settings.Default.Authority;
-            config.tenantId = Properties.Settings.Default.TenantId;
             config.graphEndpoint = Properties.Settings.Default.GraphEndpoint;
             config.redirectUri = Properties.Settings.Default.RedirectUri;
+            
 
             // init config values
             redirectUri = new Uri(config.redirectUri);
-            authority = String.Format(CultureInfo.InvariantCulture, config.authority, config.tenantId);
+            authority = String.Format(CultureInfo.InvariantCulture, config.aadInstance, "common");
             clientId = config.clientId;
             graphApiEndpoint = config.graphEndpoint;
 
@@ -73,43 +71,6 @@ namespace RESTfulOutlook
             btnContactsAPI.Enabled = false;
             btnCalendarAPI.Enabled = false;
             btnReportingService.Enabled = false;
-
-            // setup adal tracing
-            logFile = System.IO.File.Open("restfuloutlook-adal.log", FileMode.Append, FileAccess.Write);
-            Trace.Listeners.Add(new TextWriterTraceListener(logFile));
-            SetAdalTracing();
-        }
-
-        public void SetAdalTracing()
-        {
-            // set the trace level
-            switch (Properties.Settings.Default.AdalTraceLevel)
-            {
-                case "Info":
-                    AdalTrace.TraceSource.Switch.Level = SourceLevels.Information;
-                    break;
-                case "Warning":
-                    AdalTrace.TraceSource.Switch.Level = SourceLevels.Warning;
-                    break;
-                case "Error":
-                    AdalTrace.TraceSource.Switch.Level = SourceLevels.Error;
-                    break;
-                case "Verbose":
-                    AdalTrace.TraceSource.Switch.Level = SourceLevels.Verbose;
-                    break;
-                case "All":
-                    AdalTrace.TraceSource.Switch.Level = SourceLevels.All;
-                    break;
-                case "ActivityTracing":
-                    AdalTrace.TraceSource.Switch.Level = SourceLevels.ActivityTracing;
-                    break;
-                case "Critical":
-                    AdalTrace.TraceSource.Switch.Level = SourceLevels.Critical;
-                    break;
-                default:
-                    AdalTrace.TraceSource.Switch.Level = SourceLevels.Off;
-                    break;
-            }
         }
 
         public void ToggleButtons()
@@ -211,25 +172,25 @@ namespace RESTfulOutlook
                 else
                 {
                     authContext = new AuthenticationContext(authority, fc);
-                }
+                }               
                 
                 // get access token
                 switch (Properties.Settings.Default.AuthPromptBehavior)
                 {
                     case "Auto":
-                        authResult = authContext.AcquireToken(graphApiEndpoint, clientId, redirectUri, PromptBehavior.Auto);
+                        authResult = await authContext.AcquireTokenAsync(graphApiEndpoint, clientId, redirectUri, new PlatformParameters(PromptBehavior.Auto, null));
                         break;
                     case "Never":
-                        authResult = authContext.AcquireToken(graphApiEndpoint, clientId, redirectUri, PromptBehavior.Never);
+                        authResult = await authContext.AcquireTokenAsync(graphApiEndpoint, clientId, redirectUri, new PlatformParameters(PromptBehavior.Never, null));
                         break;
                     case "RefreshSession":
-                        authResult = authContext.AcquireToken(graphApiEndpoint, clientId, redirectUri, PromptBehavior.RefreshSession);
+                        authResult = await authContext.AcquireTokenAsync(graphApiEndpoint, clientId, redirectUri, new PlatformParameters(PromptBehavior.RefreshSession, null));
                         break;
                     default:
-                        authResult = authContext.AcquireToken(graphApiEndpoint, clientId, redirectUri, PromptBehavior.Always);
+                        authResult = await authContext.AcquireTokenAsync(graphApiEndpoint, clientId, redirectUri, new PlatformParameters(PromptBehavior.Always, null));
                         break;
                 }
-
+                
                 // create the graph client
                 graphClient = new GraphServiceClient(
                     new DelegateAuthenticationProvider(
@@ -265,7 +226,6 @@ namespace RESTfulOutlook
             user.FamilyName = authResult.UserInfo.FamilyName;
             user.AccessToken = authResult.AccessToken;
             user.IdToken = authResult.IdToken;
-            user.RefreshToken = authResult.RefreshToken;
             user.ExpiresOn = authResult.ExpiresOn;
             user.AccessTokenType = authResult.AccessTokenType;
         }
@@ -401,7 +361,7 @@ namespace RESTfulOutlook
 
         private void btnGraphAPI_Click(object sender, EventArgs e)
         {
-            Forms.GraphAPI mGraph = new Forms.GraphAPI(authResult);
+            Forms.GraphAPI mGraph = new Forms.GraphAPI(authResult, user.DisplayableId);
             mGraph.Owner = this;
             mGraph.ShowDialog(this);
         }
@@ -411,7 +371,6 @@ namespace RESTfulOutlook
             Forms.Settings mSettings = new Forms.Settings();
             mSettings.Owner = this;
             mSettings.ShowDialog();
-            SetAdalTracing();
         }
 
         private void btnUserInfo_Click(object sender, EventArgs e)
@@ -473,8 +432,6 @@ namespace RESTfulOutlook
             // cleanup resources on exit
             applogger.Dispose();
             sdklogger.Dispose();
-            Trace.Listeners.Clear();
-            logFile.Close();
         }
     }
 }

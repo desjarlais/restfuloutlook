@@ -48,13 +48,12 @@ namespace RESTfulOutlook.Forms
 
         private async Task GetEventsAsync()
         {
-            dgCleanup();
-
             try
             {
-                int mLimit = (Int32)nudEvents.Value;
-                toolStripStatus.Text = "Getting Events...";
                 Cursor = Cursors.WaitCursor;
+                dgCleanup();
+
+                int mLimit = (Int32)nudEvents.Value;                
 
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.Events.Request().GetHttpRequestMessage().ToString());
@@ -185,31 +184,26 @@ namespace RESTfulOutlook.Forms
             {
                 sdklogger.Log("GetEventsAsync GraphServiceException:");
                 sdklogger.Log(se.Message);
-                toolStripStatus.Text = "GetEventsAsync GraphServiceException";
             }
             catch (NullReferenceException nre)
             {
                 sdklogger.Log("GetEventsAsync NullReferenceException:");
                 sdklogger.Log(nre.Message);
-                toolStripStatus.Text = "GetEventsAsync NullReferenceException";
             }
             catch (ArgumentOutOfRangeException aor)
             {
                 sdklogger.Log("GetEventsAsync ArgumentOutOfRangeException:");
                 sdklogger.Log(aor.Message);
-                toolStripStatus.Text = "GetEventsAsync ArgumentOutOfRangeException";
             }
             catch (AdalException ae)
             {
                 sdklogger.Log("GetEventsAsync AdalException:");
                 sdklogger.Log(ae.Message);
-                toolStripStatus.Text = "GetEventsAsync AdalException";
             }
             catch (Exception ex)
             {
                 sdklogger.Log("GetEventsAsync Exception:");
                 sdklogger.Log(ex.Message);
-                toolStripStatus.Text = "GetEventsAsync Exception";
             }
             finally
             {                
@@ -360,10 +354,6 @@ namespace RESTfulOutlook.Forms
             {
                 applogger.Log("Double-click Error:");
                 applogger.Log(ex.Message);
-            }
-            finally
-            {
-                toolStripStatus.Text = "Ready";
             }
         }
 

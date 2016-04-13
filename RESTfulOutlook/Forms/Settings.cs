@@ -42,34 +42,6 @@ namespace RESTfulOutlook.Forms
                     break;
             }
 
-            switch (tracelevel)
-            {
-                case "All":
-                    rdoAll.Checked = true;
-                    break;
-                case "ActivityTracing":
-                    rdoActivity.Checked = true;
-                    break;
-                case "Critical":
-                    rdoCritical.Checked = true;
-                    break;
-                case "Warning":
-                    rdoWarning.Checked = true;
-                    break;
-                case "Info":
-                    rdoInfo.Checked = true;
-                    break;
-                case "Error":
-                    rdoError.Checked = true;
-                    break;
-                case "Verbose":
-                    rdoVerbose.Checked = true;
-                    break;
-                default:
-                    rdoOff.Checked = true;
-                    break;
-            }
-
             // set the token cache value
             if (Properties.Settings.Default.TokenCache != "Adal")
             {
@@ -78,47 +50,11 @@ namespace RESTfulOutlook.Forms
 
             // set the initial config values
             txtClientId.Text = Properties.Settings.Default.ClientId;
-            txtAuthority.Text = Properties.Settings.Default.Authority;
             txtRedirectUri.Text = Properties.Settings.Default.RedirectUri;
-            txtTenantId.Text = Properties.Settings.Default.TenantId;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            // set the adal tracing level for the app
-            if (rdoInfo.Checked)
-            {
-                Properties.Settings.Default.AdalTraceLevel = "Info";
-            }
-            else if (rdoWarning.Checked)
-            {
-                Properties.Settings.Default.AdalTraceLevel = "Warning";
-            }
-            else if (rdoError.Checked)
-            {
-                Properties.Settings.Default.AdalTraceLevel = "Error";
-            }
-            else if (rdoVerbose.Checked)
-            {
-                Properties.Settings.Default.AdalTraceLevel = "Verbose";
-            }
-            else if (rdoActivity.Checked)
-            {
-                Properties.Settings.Default.AdalTraceLevel = "ActivityTracing";
-            }
-            else if (rdoAll.Checked)
-            {
-                Properties.Settings.Default.AdalTraceLevel = "All";
-            }
-            else if (rdoCritical.Checked)
-            {
-                Properties.Settings.Default.AdalTraceLevel = "Critical";
-            }
-            else
-            {
-                Properties.Settings.Default.AdalTraceLevel = "Off";
-            }
-
             // set the prompt behavior setting
             if (rdoAuto.Checked)
             {
@@ -159,9 +95,7 @@ namespace RESTfulOutlook.Forms
 
             // set config values
             Properties.Settings.Default.ClientId = txtClientId.Text;
-            Properties.Settings.Default.Authority = txtAuthority.Text;
             Properties.Settings.Default.RedirectUri = txtRedirectUri.Text;
-            Properties.Settings.Default.TenantId = txtTenantId.Text;
 
             // save settings and close form
             Properties.Settings.Default.Save();
@@ -204,18 +138,14 @@ namespace RESTfulOutlook.Forms
         {
             if (chkEditAppRegistration.Checked)
             {
-                txtAuthority.Enabled = true;
                 txtClientId.Enabled = true;
                 txtRedirectUri.Enabled = true;
-                txtTenantId.Enabled = true;
                 btnResetRegistration.Enabled = true;
             }
             else
             {
-                txtAuthority.Enabled = false;
                 txtClientId.Enabled = false;
                 txtRedirectUri.Enabled = false;
-                txtTenantId.Enabled = false;
                 btnResetRegistration.Enabled = false;
             }
         }       
@@ -233,10 +163,8 @@ namespace RESTfulOutlook.Forms
 
         private void btnResetRegistration_Click(object sender, EventArgs e)
         {
-            txtAuthority.Text = "https://login.microsoftonline.com/{0}";
             txtClientId.Text = "9e827b51-5206-432c-9d4d-6be8cd20407e";
             txtRedirectUri.Text = "http://localhost/847638cc454f53f487be703a89279f11";
-            txtTenantId.Text = "desjarlaisdev.onmicrosoft.com";
         }
     }
 }

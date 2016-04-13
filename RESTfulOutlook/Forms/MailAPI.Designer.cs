@@ -61,9 +61,6 @@
             this.parentfolderid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uniquebody = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weblink = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.nudMessages = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,16 +68,14 @@
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgMessages)).BeginInit();
             this.mnuContextMenu.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMessages)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGetMessages
             // 
-            this.btnGetMessages.Location = new System.Drawing.Point(16, 15);
-            this.btnGetMessages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGetMessages.Location = new System.Drawing.Point(12, 12);
             this.btnGetMessages.Name = "btnGetMessages";
-            this.btnGetMessages.Size = new System.Drawing.Size(153, 28);
+            this.btnGetMessages.Size = new System.Drawing.Size(115, 23);
             this.btnGetMessages.TabIndex = 0;
             this.btnGetMessages.Text = "Get Messages";
             this.btnGetMessages.UseVisualStyleBackColor = true;
@@ -120,12 +115,11 @@
             this.parentfolderid,
             this.uniquebody,
             this.weblink});
-            this.dgMessages.Location = new System.Drawing.Point(16, 50);
-            this.dgMessages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgMessages.Location = new System.Drawing.Point(12, 41);
             this.dgMessages.MultiSelect = false;
             this.dgMessages.Name = "dgMessages";
             this.dgMessages.ReadOnly = true;
-            this.dgMessages.Size = new System.Drawing.Size(1297, 546);
+            this.dgMessages.Size = new System.Drawing.Size(973, 444);
             this.dgMessages.TabIndex = 1;
             this.dgMessages.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMessages_CellContentDoubleClick);
             this.dgMessages.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgMessages_CellMouseDown);
@@ -348,51 +342,25 @@
             this.weblink.Name = "weblink";
             this.weblink.ReadOnly = true;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 638);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1329, 22);
-            this.statusStrip1.TabIndex = 2;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(48, 17);
-            this.toolStripStatusLabel1.Text = "Status : ";
-            // 
-            // toolStripStatus
-            // 
-            this.toolStripStatus.Name = "toolStripStatus";
-            this.toolStripStatus.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatus.Text = "Ready";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(943, 601);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(707, 488);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 16);
+            this.label1.Size = new System.Drawing.Size(278, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Double-Click Cell to open collection objects like recipients";
             // 
             // nudMessages
             // 
-            this.nudMessages.Location = new System.Drawing.Point(177, 18);
-            this.nudMessages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudMessages.Location = new System.Drawing.Point(133, 15);
             this.nudMessages.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
             this.nudMessages.Name = "nudMessages";
-            this.nudMessages.Size = new System.Drawing.Size(69, 22);
+            this.nudMessages.Size = new System.Drawing.Size(52, 20);
             this.nudMessages.TabIndex = 4;
             this.nudMessages.Value = new decimal(new int[] {
             10,
@@ -403,48 +371,43 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(255, 21);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(191, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(265, 16);
+            this.label2.Size = new System.Drawing.Size(213, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Number of messages to return (default = 10)";
             // 
             // cmbFolders
             // 
             this.cmbFolders.FormattingEnabled = true;
-            this.cmbFolders.Location = new System.Drawing.Point(1119, 17);
-            this.cmbFolders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbFolders.Location = new System.Drawing.Point(839, 14);
             this.cmbFolders.Name = "cmbFolders";
-            this.cmbFolders.Size = new System.Drawing.Size(193, 24);
+            this.cmbFolders.Size = new System.Drawing.Size(146, 21);
             this.cmbFolders.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1063, 21);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(797, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 16);
+            this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Folder";
             // 
             // MailAPI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1329, 660);
+            this.ClientSize = new System.Drawing.Size(997, 511);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbFolders);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nudMessages);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgMessages);
             this.Controls.Add(this.btnGetMessages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MailAPI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -452,8 +415,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MailAPI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgMessages)).EndInit();
             this.mnuContextMenu.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMessages)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -464,9 +425,6 @@
 
         private System.Windows.Forms.Button btnGetMessages;
         private System.Windows.Forms.DataGridView dgMessages;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatus;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip mnuContextMenu;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;

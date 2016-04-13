@@ -19,12 +19,14 @@ namespace RESTfulOutlook.Forms
         private HttpClient httpClient = new HttpClient();
         Uri redirectUri = new Uri(Properties.Settings.Default.RedirectUri);
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
-        public string hdrName, hdrValue;
+        public string hdrName, hdrValue, xAnchorMbx;
         ClassLogger logger = null;
 
-        public GraphAPI(AuthenticationResult authResult)
+        public GraphAPI(AuthenticationResult authResult, string anchor)
         {
             InitializeComponent();
+
+            xAnchorMbx = anchor;
 
             // setup links
             lnkQueryParams.Links.Add(0, 16, "http://graph.microsoft.io/en-us/docs/overview/query_parameters");
@@ -273,6 +275,7 @@ namespace RESTfulOutlook.Forms
                         {
                             // use the same settings for all GET requests
                             AddRequestHeader("Accept", "application/json");
+                            AddRequestHeader("x-AnchorMailbox", xAnchorMbx);
                             cmbHttpMethod.Text = "GET";
                             tbRequestBody.Text = "";
                         }

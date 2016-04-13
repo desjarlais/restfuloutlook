@@ -191,7 +191,6 @@ D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Azure.ActiveDir
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Data.Edm.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Graph.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
-D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.OData.Client.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.OData.Core.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.OData.Edm.dll
@@ -277,3 +276,5 @@ D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Properties
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.csproj.GenerateResource.Cache
 F:\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.ContentBytesForm.resources
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.ContentBytesForm.resources
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml

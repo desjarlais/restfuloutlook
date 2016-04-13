@@ -73,30 +73,6 @@ namespace RESTfulOutlook.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://login.microsoftonline.com/{0}")]
-        public string Authority {
-            get {
-                return ((string)(this["Authority"]));
-            }
-            set {
-                this["Authority"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("desjarlaisdev.onmicrosoft.com")]
-        public string TenantId {
-            get {
-                return ((string)(this["TenantId"]));
-            }
-            set {
-                this["TenantId"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://graph.microsoft.com/")]
         public string GraphEndpoint {
             get {

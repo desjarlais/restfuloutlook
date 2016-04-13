@@ -49,7 +49,6 @@ namespace RESTfulOutlook.Forms
         {
             try
             {
-                toolStripStatus.Text = "Getting folders...";
                 Cursor = Cursors.WaitCursor;
 
                 var contactFolders = await graphClient.Me.ContactFolders.Request()
@@ -66,7 +65,6 @@ namespace RESTfulOutlook.Forms
                 sdklogger.Log(ex.ToString());
                 sdklogger.Log(ex.Message);
                 sdklogger.Log(ex.StackTrace);
-                toolStripStatus.Text = "GetFolderAsync Exception";
             }
             finally
             {
@@ -81,13 +79,12 @@ namespace RESTfulOutlook.Forms
 
         private async Task GetContactsAsync()
         {
-            dgCleanup();
-
             try
             {
-                int mLimit = (Int32)nudContacts.Value;
-                toolStripStatus.Text = "Getting Contacts...";
                 Cursor = Cursors.WaitCursor;
+                dgCleanup();
+
+                int mLimit = (Int32)nudContacts.Value;
 
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.Contacts.Request().GetHttpRequestMessage().ToString());
@@ -208,28 +205,24 @@ namespace RESTfulOutlook.Forms
             {
                 sdklogger.Log("GetContactAsync GraphServiceException:");
                 sdklogger.Log(se.Message);
-                toolStripStatus.Text = "GetContactAsync GraphServiceException";
                 return;
             }
             catch (ArgumentOutOfRangeException aor)
             {
                 sdklogger.Log("GetContactAsync ArgumentOutOfRangeException:");
                 sdklogger.Log(aor.Message);
-                toolStripStatus.Text = "GetContactAsync ArgumentOutOfRangeException";
                 return;
             }
             catch (AdalException ae)
             {
                 sdklogger.Log("GetContactAsync AdalException:");
                 sdklogger.Log(ae.Message);
-                toolStripStatus.Text = "GetContactAsync AdalException";
                 return;
             }
             catch (Exception ex)
             {
                 sdklogger.Log("GetContactAsync Exception:");
                 sdklogger.Log(ex.Message);
-                toolStripStatus.Text = "GetContactAsync Exception";
                 return;
             }
             finally
@@ -387,13 +380,13 @@ namespace RESTfulOutlook.Forms
                     mCategories.ShowDialog(this);
                 }
             }
-            catch (NullReferenceException)
+            catch (NullReferenceException nre)
             {
                 // likely a cell collection that is empty, just return
+                applogger.Log(nre.Message);
             }
             catch (Exception ex)
             {
-                toolStripStatus.Text = ex.Message;
                 applogger.Log(ex.Message);
             }
         }

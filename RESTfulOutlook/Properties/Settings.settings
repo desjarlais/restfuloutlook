@@ -14,12 +14,6 @@
     <Setting Name="ClientId" Type="System.String" Scope="User">
       <Value Profile="(Default)">9e827b51-5206-432c-9d4d-6be8cd20407e</Value>
     </Setting>
-    <Setting Name="Authority" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://login.microsoftonline.com/{0}</Value>
-    </Setting>
-    <Setting Name="TenantId" Type="System.String" Scope="User">
-      <Value Profile="(Default)">desjarlaisdev.onmicrosoft.com</Value>
-    </Setting>
     <Setting Name="GraphEndpoint" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://graph.microsoft.com/</Value>
     </Setting>

@@ -70,11 +70,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.rdoBasic);
-            this.groupBox1.Location = new System.Drawing.Point(255, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(191, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(473, 197);
+            this.groupBox1.Size = new System.Drawing.Size(355, 186);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "App Authentication / Authorization";
@@ -83,10 +81,9 @@
             // 
             this.rdoGraphAPI.AutoSize = true;
             this.rdoGraphAPI.Checked = true;
-            this.rdoGraphAPI.Location = new System.Drawing.Point(8, 138);
-            this.rdoGraphAPI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoGraphAPI.Location = new System.Drawing.Point(6, 112);
             this.rdoGraphAPI.Name = "rdoGraphAPI";
-            this.rdoGraphAPI.Size = new System.Drawing.Size(184, 20);
+            this.rdoGraphAPI.Size = new System.Drawing.Size(155, 17);
             this.rdoGraphAPI.TabIndex = 8;
             this.rdoGraphAPI.TabStop = true;
             this.rdoGraphAPI.Text = "OAuth 2.0 (Graph API Only)";
@@ -96,69 +93,62 @@
             // mskPassword
             // 
             this.mskPassword.Enabled = false;
-            this.mskPassword.Location = new System.Drawing.Point(112, 91);
-            this.mskPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mskPassword.Location = new System.Drawing.Point(84, 74);
             this.mskPassword.Name = "mskPassword";
-            this.mskPassword.Size = new System.Drawing.Size(352, 22);
+            this.mskPassword.Size = new System.Drawing.Size(265, 20);
             this.mskPassword.TabIndex = 7;
             this.mskPassword.UseSystemPasswordChar = true;
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(96, 175);
-            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsername.Location = new System.Drawing.Point(81, 155);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(121, 16);
+            this.lblUsername.Size = new System.Drawing.Size(97, 13);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "No User Logged In";
             // 
             // tbUsername
             // 
             this.tbUsername.Enabled = false;
-            this.tbUsername.Location = new System.Drawing.Point(112, 55);
-            this.tbUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbUsername.Location = new System.Drawing.Point(84, 45);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(352, 22);
+            this.tbUsername.Size = new System.Drawing.Size(265, 20);
             this.tbUsername.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 175);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(15, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 16);
+            this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "UserName:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 95);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(25, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 16);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Password:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 59);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(25, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 16);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username:";
             // 
             // rdoBasic
             // 
             this.rdoBasic.AutoSize = true;
-            this.rdoBasic.Location = new System.Drawing.Point(8, 27);
-            this.rdoBasic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoBasic.Location = new System.Drawing.Point(6, 22);
             this.rdoBasic.Name = "rdoBasic";
-            this.rdoBasic.Size = new System.Drawing.Size(302, 20);
+            this.rdoBasic.Size = new System.Drawing.Size(246, 17);
             this.rdoBasic.TabIndex = 2;
             this.rdoBasic.Text = "Basic Authentication - (Reporting Service Only)";
             this.rdoBasic.UseVisualStyleBackColor = true;
@@ -166,10 +156,9 @@
             // 
             // btnLoginLogout
             // 
-            this.btnLoginLogout.Location = new System.Drawing.Point(364, 23);
-            this.btnLoginLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoginLogout.Location = new System.Drawing.Point(273, 19);
             this.btnLoginLogout.Name = "btnLoginLogout";
-            this.btnLoginLogout.Size = new System.Drawing.Size(101, 28);
+            this.btnLoginLogout.Size = new System.Drawing.Size(76, 23);
             this.btnLoginLogout.TabIndex = 11;
             this.btnLoginLogout.Text = "Login";
             this.btnLoginLogout.UseVisualStyleBackColor = true;
@@ -180,21 +169,18 @@
             this.groupBox2.Controls.Add(this.btnMailAPI);
             this.groupBox2.Controls.Add(this.btnCalendarAPI);
             this.groupBox2.Controls.Add(this.btnContactsAPI);
-            this.groupBox2.Location = new System.Drawing.Point(16, 15);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(231, 159);
+            this.groupBox2.Size = new System.Drawing.Size(173, 129);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Microsoft Graph SDK";
             // 
             // btnMailAPI
             // 
-            this.btnMailAPI.Location = new System.Drawing.Point(16, 95);
-            this.btnMailAPI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMailAPI.Location = new System.Drawing.Point(12, 77);
             this.btnMailAPI.Name = "btnMailAPI";
-            this.btnMailAPI.Size = new System.Drawing.Size(193, 28);
+            this.btnMailAPI.Size = new System.Drawing.Size(145, 23);
             this.btnMailAPI.TabIndex = 8;
             this.btnMailAPI.Text = "Mail API";
             this.btnMailAPI.UseVisualStyleBackColor = true;
@@ -202,10 +188,9 @@
             // 
             // btnCalendarAPI
             // 
-            this.btnCalendarAPI.Location = new System.Drawing.Point(16, 59);
-            this.btnCalendarAPI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCalendarAPI.Location = new System.Drawing.Point(12, 48);
             this.btnCalendarAPI.Name = "btnCalendarAPI";
-            this.btnCalendarAPI.Size = new System.Drawing.Size(193, 28);
+            this.btnCalendarAPI.Size = new System.Drawing.Size(145, 23);
             this.btnCalendarAPI.TabIndex = 7;
             this.btnCalendarAPI.Text = "Calendar API";
             this.btnCalendarAPI.UseVisualStyleBackColor = true;
@@ -213,10 +198,9 @@
             // 
             // btnContactsAPI
             // 
-            this.btnContactsAPI.Location = new System.Drawing.Point(16, 23);
-            this.btnContactsAPI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnContactsAPI.Location = new System.Drawing.Point(12, 19);
             this.btnContactsAPI.Name = "btnContactsAPI";
-            this.btnContactsAPI.Size = new System.Drawing.Size(193, 28);
+            this.btnContactsAPI.Size = new System.Drawing.Size(145, 23);
             this.btnContactsAPI.TabIndex = 0;
             this.btnContactsAPI.Text = "Contacts API";
             this.btnContactsAPI.UseVisualStyleBackColor = true;
@@ -224,10 +208,9 @@
             // 
             // btnGraphAPI
             // 
-            this.btnGraphAPI.Location = new System.Drawing.Point(8, 23);
-            this.btnGraphAPI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGraphAPI.Location = new System.Drawing.Point(6, 19);
             this.btnGraphAPI.Name = "btnGraphAPI";
-            this.btnGraphAPI.Size = new System.Drawing.Size(201, 28);
+            this.btnGraphAPI.Size = new System.Drawing.Size(151, 23);
             this.btnGraphAPI.TabIndex = 10;
             this.btnGraphAPI.Text = "MS Graph API Explorer";
             this.btnGraphAPI.UseVisualStyleBackColor = true;
@@ -235,10 +218,9 @@
             // 
             // btnReportingService
             // 
-            this.btnReportingService.Location = new System.Drawing.Point(8, 59);
-            this.btnReportingService.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReportingService.Location = new System.Drawing.Point(6, 48);
             this.btnReportingService.Name = "btnReportingService";
-            this.btnReportingService.Size = new System.Drawing.Size(201, 28);
+            this.btnReportingService.Size = new System.Drawing.Size(151, 23);
             this.btnReportingService.TabIndex = 7;
             this.btnReportingService.Text = "Office365 Reporting Service";
             this.btnReportingService.UseVisualStyleBackColor = true;
@@ -250,21 +232,18 @@
             this.groupBox3.Controls.Add(this.btnSettings);
             this.groupBox3.Controls.Add(this.btnUserInfo);
             this.groupBox3.Controls.Add(this.btnLoginLogout);
-            this.groupBox3.Location = new System.Drawing.Point(255, 219);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(191, 204);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(473, 63);
+            this.groupBox3.Size = new System.Drawing.Size(355, 51);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Application Options";
             // 
             // btnScopes
             // 
-            this.btnScopes.Location = new System.Drawing.Point(8, 23);
-            this.btnScopes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnScopes.Location = new System.Drawing.Point(6, 19);
             this.btnScopes.Name = "btnScopes";
-            this.btnScopes.Size = new System.Drawing.Size(127, 28);
+            this.btnScopes.Size = new System.Drawing.Size(95, 23);
             this.btnScopes.TabIndex = 16;
             this.btnScopes.Text = "App Scopes";
             this.btnScopes.UseVisualStyleBackColor = true;
@@ -272,10 +251,9 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(143, 23);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSettings.Location = new System.Drawing.Point(107, 19);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(100, 28);
+            this.btnSettings.Size = new System.Drawing.Size(75, 23);
             this.btnSettings.TabIndex = 17;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -283,10 +261,9 @@
             // 
             // btnUserInfo
             // 
-            this.btnUserInfo.Location = new System.Drawing.Point(251, 23);
-            this.btnUserInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUserInfo.Location = new System.Drawing.Point(188, 19);
             this.btnUserInfo.Name = "btnUserInfo";
-            this.btnUserInfo.Size = new System.Drawing.Size(105, 28);
+            this.btnUserInfo.Size = new System.Drawing.Size(79, 23);
             this.btnUserInfo.TabIndex = 16;
             this.btnUserInfo.Text = "User Info";
             this.btnUserInfo.UseVisualStyleBackColor = true;
@@ -297,10 +274,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 294);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 267);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(744, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(558, 22);
             this.statusStrip1.TabIndex = 12;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -320,20 +296,18 @@
             // 
             this.groupBox4.Controls.Add(this.btnGraphAPI);
             this.groupBox4.Controls.Add(this.btnReportingService);
-            this.groupBox4.Location = new System.Drawing.Point(16, 182);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Location = new System.Drawing.Point(12, 148);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox4.Size = new System.Drawing.Size(231, 100);
+            this.groupBox4.Size = new System.Drawing.Size(173, 107);
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Office365 REST APIs";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 316);
+            this.ClientSize = new System.Drawing.Size(558, 289);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox3);
@@ -341,7 +315,6 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
