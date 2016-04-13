@@ -29,8 +29,6 @@ This sample requires the following:
 9. Check the box for Edit Registration and populate the clientid and uri
 10. Click on **Save**.
 
-There is also another option.  I did include my registration details in the settings, but currently you can't use the tool as-is without registering the app in your tenant.  I think this is because I'm using ADAL.NET and there is no option to prompt for consent so logging in with an account outside where the app is registered is going to fail.
-
 ##Questions and comments
 
 If you have any feedback about this project, use the issues section for any questions or suggestions located here: [Issues](https://github.com/desjarlais/restfuloutlook/issues)
