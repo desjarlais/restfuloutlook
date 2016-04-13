@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RESTfulOutlook.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="AdalTraceLevel" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Off</Value>
-    </Setting>
     <Setting Name="AuthPromptBehavior" Type="System.String" Scope="User">
       <Value Profile="(Default)">Always</Value>
     </Setting>

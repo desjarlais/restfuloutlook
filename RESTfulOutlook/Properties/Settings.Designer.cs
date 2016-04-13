@@ -25,18 +25,6 @@ namespace RESTfulOutlook.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Off")]
-        public string AdalTraceLevel {
-            get {
-                return ((string)(this["AdalTraceLevel"]));
-            }
-            set {
-                this["AdalTraceLevel"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Always")]
         public string AuthPromptBehavior {
             get {

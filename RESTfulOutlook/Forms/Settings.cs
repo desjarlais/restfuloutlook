@@ -24,7 +24,6 @@ namespace RESTfulOutlook.Forms
 
             // get the app settings and populate radio buttons
             string prompt = Properties.Settings.Default.AuthPromptBehavior;
-            string tracelevel = Properties.Settings.Default.AdalTraceLevel;
 
             switch (prompt)
             {
@@ -46,6 +45,16 @@ namespace RESTfulOutlook.Forms
             if (Properties.Settings.Default.TokenCache != "Adal")
             {
                 rdoFileCache.Checked = true;
+            }
+
+            // set the diagnostics options
+            if (Properties.Settings.Default.OutlookDiagnostics == "On")
+            {
+                ckOutlookDiag.Checked = true;
+            }
+            else
+            {
+                ckOutlookDiag.Checked = false;
             }
 
             // set the initial config values

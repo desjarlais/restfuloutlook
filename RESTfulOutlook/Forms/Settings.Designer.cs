@@ -283,7 +283,7 @@
             this.txtClientId.Enabled = false;
             this.txtClientId.Location = new System.Drawing.Point(85, 63);
             this.txtClientId.Name = "txtClientId";
-            this.txtClientId.Size = new System.Drawing.Size(308, 20);
+            this.txtClientId.Size = new System.Drawing.Size(316, 20);
             this.txtClientId.TabIndex = 20;
             // 
             // txtRedirectUri
@@ -291,7 +291,7 @@
             this.txtRedirectUri.Enabled = false;
             this.txtRedirectUri.Location = new System.Drawing.Point(85, 36);
             this.txtRedirectUri.Name = "txtRedirectUri";
-            this.txtRedirectUri.Size = new System.Drawing.Size(308, 20);
+            this.txtRedirectUri.Size = new System.Drawing.Size(316, 20);
             this.txtRedirectUri.TabIndex = 19;
             // 
             // chkEditAppRegistration

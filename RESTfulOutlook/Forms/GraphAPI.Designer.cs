@@ -37,9 +37,6 @@
             this.rdoV2 = new System.Windows.Forms.RadioButton();
             this.rdoBeta = new System.Windows.Forms.RadioButton();
             this.rdoV1 = new System.Windows.Forms.RadioButton();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tbRequestUrl = new System.Windows.Forms.TextBox();
             this.cmbHttpMethod = new System.Windows.Forms.ComboBox();
             this.tvw = new System.Windows.Forms.TreeView();
@@ -64,7 +61,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tbRequestBody = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRequestHeaders)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -162,29 +158,6 @@
             this.rdoV1.TabStop = true;
             this.rdoV1.Text = "v1.0";
             this.rdoV1.UseVisualStyleBackColor = true;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 552);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1122, 22);
-            this.statusStrip1.TabIndex = 6;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(48, 17);
-            this.toolStripStatusLabel1.Text = "Status : ";
-            // 
-            // toolStripStatus
-            // 
-            this.toolStripStatus.Name = "toolStripStatus";
-            this.toolStripStatus.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatus.Text = "Ready";
             // 
             // tbRequestUrl
             // 
@@ -407,7 +380,7 @@
             this.groupBox5.Controls.Add(this.tbRequestBody);
             this.groupBox5.Location = new System.Drawing.Point(12, 310);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(587, 239);
+            this.groupBox5.Size = new System.Drawing.Size(587, 240);
             this.groupBox5.TabIndex = 21;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Request Body";
@@ -424,7 +397,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 574);
+            this.ClientSize = new System.Drawing.Size(1122, 557);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -432,7 +405,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cmbHttpMethod);
             this.Controls.Add(this.tbRequestUrl);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.cbRESTQuery);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -444,8 +416,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GraphAPI_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgRequestHeaders)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -466,9 +436,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdoBeta;
         private System.Windows.Forms.RadioButton rdoV1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatus;
         private System.Windows.Forms.TextBox tbRequestUrl;
         private System.Windows.Forms.ComboBox cmbHttpMethod;
         private System.Windows.Forms.TreeView tvw;

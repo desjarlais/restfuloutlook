@@ -16,7 +16,6 @@ namespace RESTfulOutlook.Utils
             if (TokenForUser == null)
             {
                 // need to implement manually handling auth outside adal.net for test purposes
-                    
             }
 
             return TokenForUser;

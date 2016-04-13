@@ -67,7 +67,6 @@ namespace RESTfulOutlook.Forms
         {
             try
             {
-                toolStripStatus.Text = "Running query...";
                 Cursor = Cursors.WaitCursor;
 
                 ClearResponseTree();
@@ -223,9 +222,8 @@ namespace RESTfulOutlook.Forms
             }
             finally
             {
-                // clear the headers and update status label
+                // clear the headers
                 dgRequestHeaders.Rows.Clear();
-                toolStripStatus.Text = "Ready";
                 Cursor = Cursors.Default;
             }
         }
