@@ -15,7 +15,6 @@ namespace RESTfulOutlook.Forms
             lstResults.Items.Add("Access Token Type = " + user.AccessTokenType);
             lstResults.Items.Add("Access Token Expires = " + user.ExpiresOn.ToString());
             lstResults.Items.Add("Id Token = " + user.IdToken);
-            lstResults.Items.Add("Refresh Token = " + user.RefreshToken);
         }
 
         private void copyToolStripMenuItem_Click(object sender, System.EventArgs e)

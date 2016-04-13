@@ -8,8 +8,6 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.Graph;
-using System.Diagnostics;
-using System.IO;
 
 namespace RESTfulOutlook
 {
@@ -244,8 +242,6 @@ namespace RESTfulOutlook
             {
                 applogger.Log(ex.Message);
             }
-
-            toolStripStatusLabel1.Text = "Ready";
         }
 
         public SecureString converToSecureString(string pass)
@@ -319,12 +315,11 @@ namespace RESTfulOutlook
                     }
                     catch (AdalException ae)
                     {
-                        toolStripStatusLabel1.Text = "User Auth Cancelled.";
+                        applogger.Log("User Auth Cancelled.");
                         applogger.Log(ae.Message);
                     }
                     catch (Exception ex)
                     {
-                        toolStripStatusLabel1.Text = "Error: Exception";
                         applogger.Log(ex.Message);
                     }
                 }

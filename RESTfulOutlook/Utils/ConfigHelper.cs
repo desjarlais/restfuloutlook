@@ -31,11 +31,6 @@ namespace RESTfulOutlook.Utils
             get { return "https://graph.windows.net"; }
         }
 
-        public string msGraphEndpoint
-        {
-            get { return "https://graph.microsoft.com"; }
-        }
-
         public string aadInstance
         {
             get { return "https://login.microsoftonline.com/{0}"; }
