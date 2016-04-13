@@ -16,7 +16,7 @@ There are a couple ways to register the application.  First, you can manually re
 
 [Manually register your app with Azure AD so it can access Office 365 APIs](https://msdn.microsoft.com/en-us/office/office365/howto/add-common-consent-manually)
 
-Another way to manually register is using the following steps, but these are for the v2 authentication model which are typically only if you need to usee outlook.com accounts.
+Another way to manually register is using the following steps, but these are for the v2 authentication model which are typically only if you need to use outlook.com accounts along with work and school accounts.
 
 1. Sign into the [App Registration Portal](https://apps.dev.microsoft.com/) using either your personal or work or school account.
 2. Select **Add an app**.
