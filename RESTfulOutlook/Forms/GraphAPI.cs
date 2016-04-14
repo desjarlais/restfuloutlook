@@ -50,7 +50,9 @@ namespace RESTfulOutlook.Forms
             dictionary.Add("OutlookMail-ListMailFolders", "me/mailFolders");
             dictionary.Add("OutlookMail-SearchInbox", "me/messages/?$search=%22tailspin%20toys%22");
             dictionary.Add("OutlookMail-GetImportanUnreadMessages", "me/messages/?$filter=importance%20eq%20%27high%27%20and%20isread%20eq%20false");
-            dictionary.Add("OutlookMail-SendTestMessage", "me/sendmail");
+            dictionary.Add("OutlookMail-GetSenderSubjectOnly", "me/MailFolders/sentitems/messages/?$select=Sender,Subject");
+            dictionary.Add("OutlookMail-SendNewMessage", "me/sendmail");
+            dictionary.Add("OutlookMail-CreateDraftMessage", "me/messages");
             dictionary.Add("OutlookCalendar-ListCalendars", "me/calendars");
             dictionary.Add("OutlookCalendar-CreateTestEvent", "me/events");
             dictionary.Add("OutlookCalendar-ListCalendarGroups", "me/calendarGroups");
@@ -162,11 +164,11 @@ namespace RESTfulOutlook.Forms
                 logger.Log(response.Headers.ToString());
                 logger.Log("RESPONSE:");
 
-                if (response.StatusCode == HttpStatusCode.Accepted)
+                if (response.StatusCode == HttpStatusCode.Accepted || response.StatusCode == HttpStatusCode.Created)
                 {
                     // POST responses that are successful return 202 Accepted,
                     // there is no return value so display success message
-                    tvw.Nodes.Add(new TreeNode("Message sent succesfully."));
+                    tvw.Nodes.Add(new TreeNode("Message created/sent succesfully."));
                     logger.Log("StatusCode = " + response.StatusCode.ToString());
                 }
                 else if (response.StatusCode == HttpStatusCode.OK)
@@ -257,9 +259,13 @@ namespace RESTfulOutlook.Forms
                         tbRequestUrl.Text = Properties.Settings.Default.GraphEndpoint + apiVersion + pair.Value;
 
                         // check for examples where we need to create json for the POST
-                        if (pair.Key == "OutlookMail-SendTestMessage")
+                        if (pair.Key == "OutlookMail-SendNewMessage")
                         {
                             CreateMessageJson();
+                        }
+                        else if (pair.Key == "OutlookMail-CreateDraftMessage")
+                        {
+                            CreateDraftMessageJson();
                         }
                         else if (pair.Key == "OutlookCalendar-CreateTestEvent")
                         {
@@ -291,24 +297,76 @@ namespace RESTfulOutlook.Forms
         }
 
         #region CreateJson functions
-        public void CreateMessageJson()
+        private void CreateMessageJson()
         {
             // create the root object
             JsonHelpers.RootObject ro = new JsonHelpers.RootObject();
-            ro.SaveToSentItems = "True";
+            ro.saveToSentItems = "True";
+            
+            // create message
+            JsonHelpers.Message msg = new JsonHelpers.Message();
+            
+            // set the subject and importance
+            msg.subject = "json test message";
+            msg.importance = "Normal";
 
+            // create and populate the body object
+            JsonHelpers.Body msgBody = new JsonHelpers.Body();
+            msgBody.contentType = "HTML";
+            msgBody.content = "The <b>new</b> cafeteria is open!";
+            msg.body = msgBody;
+            
+            // create and populate the recips object
+            // first create a List of ToRecipient objects
+            List<JsonHelpers.ToRecipient> recipList = new List<JsonHelpers.ToRecipient>();
+
+            // now create an individual recip (ToRecipient) object
+            // set the emailaddress info for the recip
+            JsonHelpers.ToRecipient recip = new JsonHelpers.ToRecipient();
+            JsonHelpers.EmailAddress msgEmail = new JsonHelpers.EmailAddress();
+            msgEmail.address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
+            msgEmail.name = "Pavel Bansky";
+
+            // add the email address object to the recipient
+            // then add the recip to the list
+            recip.emailAddress = msgEmail;
+            recipList.Add(recip);
+            msg.toRecipients = recipList;
+
+            // add the attachments
+            List<JsonHelpers.Attachment> msgAttachments = new List<JsonHelpers.Attachment>();
+            JsonHelpers.Attachment msgAttachment = new JsonHelpers.Attachment();
+            msgAttachment.oDataType = "#Microsoft.OutlookServices.FileAttachment";
+            msgAttachment.name = "menu.txt";
+            msgAttachment.contentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk=";
+            msgAttachments.Add(msgAttachment);
+            msg.attachments = msgAttachments;
+
+            // now the message object is complete and we can set it on the root object
+            ro.message = msg;           
+            
+            // serialize the .net object -> json and display in the textbox
+            string json = JsonConvert.SerializeObject(ro);
+            tbRequestBody.Text = json;
+
+            // set headers and POST
+            cmbHttpMethod.Text = "POST";
+        }
+
+        private void CreateDraftMessageJson()
+        {
             // create message
             JsonHelpers.Message msg = new JsonHelpers.Message();
 
             // set the subject and importance
-            msg.Subject = "json test message";
-            msg.Importance = "Normal";
+            msg.subject = "json test message";
+            msg.importance = "Normal";
 
             // create and populate the body object
-            JsonHelpers.Body body = new JsonHelpers.Body();
-            body.ContentType = "HTML";
-            body.Content = "The <b>new</b> cafeteria is open!";
-            msg.Body = body;
+            JsonHelpers.Body dftBody = new JsonHelpers.Body();
+            dftBody.contentType = "HTML";
+            dftBody.content = "The <b>new</b> cafeteria is open!";
+            msg.body = dftBody;
 
             // create and populate the recips object
             // first create a List of ToRecipient objects
@@ -318,50 +376,55 @@ namespace RESTfulOutlook.Forms
             // set the emailaddress info for the recip
             JsonHelpers.ToRecipient recip = new JsonHelpers.ToRecipient();
             JsonHelpers.EmailAddress email = new JsonHelpers.EmailAddress();
-            email.Address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
-            email.Name = "Pavel Bansky";
+            email.address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
+            email.name = "Pavel Bansky";
 
             // add the email address object to the recipient
             // then add the recip to the list
-            recip.EmailAddress = email;
+            recip.emailAddress = email;
             recipList.Add(recip);
+            msg.toRecipients = recipList;
 
-            // finally set the message recipients to the List of recips
-            // then set the root object Message
-            msg.ToRecipients = recipList;
-            ro.Message = msg;
+            // add the attachments
+            List<JsonHelpers.Attachment> msgAttachments = new List<JsonHelpers.Attachment>();
+            JsonHelpers.Attachment msgAttachment = new JsonHelpers.Attachment();
+            msgAttachment.oDataType = "#Microsoft.OutlookServices.FileAttachment";
+            msgAttachment.name = "menu.txt";
+            msgAttachment.contentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk=";
+            msgAttachments.Add(msgAttachment);
+            msg.attachments = msgAttachments;
 
             // serialize the .net object -> json and display in the textbox
-            string json = JsonConvert.SerializeObject(ro);
+            string json = JsonConvert.SerializeObject(msg);
             tbRequestBody.Text = json;
 
             // set headers and POST
             cmbHttpMethod.Text = "POST";
         }
 
-        public void CreateEventJson()
+        private void CreateEventJson()
         {
             // create the event object
             JsonHelpers.Event evt = new JsonHelpers.Event();
-            evt.Subject = "Discuss the Calendar REST API";
+            evt.subject = "Discuss the Calendar REST API";
 
             // create the body object
             JsonHelpers.Body body = new JsonHelpers.Body();
-            body.ContentType = "HTML";
-            body.Content = "I think it will meet our requirements!";
-            evt.Body = body;
+            body.contentType = "HTML";
+            body.content = "I think it will meet our requirements!";
+            evt.body = body;
 
             // create the start time
             JsonHelpers.Start start = new JsonHelpers.Start();
-            start.DateTime = "2016-02-02T18:00:00";
-            start.TimeZone = "Pacific Standard Time";
-            evt.Start = start;
+            start.dateTime = "2016-02-02T18:00:00";
+            start.timeZone = "Pacific Standard Time";
+            evt.start = start;
 
             // create the end time
             JsonHelpers.End end = new JsonHelpers.End();
-            end.DateTime = "2016-02-02T19:00:00";
-            end.TimeZone = "Pacific Standard Time";
-            evt.End = end;
+            end.dateTime = "2016-02-02T19:00:00";
+            end.timeZone = "Pacific Standard Time";
+            evt.end = end;
 
             // create the attendee list, attendee object and emailaddress object
             List<JsonHelpers.Attendee> attendeesList = new List<JsonHelpers.Attendee>();
@@ -369,14 +432,14 @@ namespace RESTfulOutlook.Forms
             JsonHelpers.EmailAddress email = new JsonHelpers.EmailAddress();
 
             // set values for email and attendee
-            email.Address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
-            email.Name = "Pavel Bansky";
-            attendee.EmailAddress = email;
-            attendee.Type = "Required";
+            email.address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
+            email.name = "Pavel Bansky";
+            attendee.emailAddress = email;
+            attendee.type = "Required";
 
             // add the attendee to the list and set the event object
             attendeesList.Add(attendee);
-            evt.Attendees = attendeesList;
+            evt.attendees = attendeesList;
 
             // serialize the .net object -> json and display in the textbox
             string json = JsonConvert.SerializeObject(evt);
@@ -391,25 +454,25 @@ namespace RESTfulOutlook.Forms
         {
             // create the contact object and set the root properties
             JsonHelpers.Contact contact = new JsonHelpers.Contact();
-            contact.GivenName = "Pavel";
-            contact.Surname = "Bansky";
+            contact.givenName = "Pavel";
+            contact.surname = "Bansky";
 
             // create the email address list and emailaddress objects
             List<JsonHelpers.EmailAddress> emailAddresses = new List<JsonHelpers.EmailAddress>();
             JsonHelpers.EmailAddress email = new JsonHelpers.EmailAddress();
 
             // set the email object props and add it to the list
-            email.Address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
-            email.Name = "Pavel Bansky";
+            email.address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
+            email.name = "Pavel Bansky";
             emailAddresses.Add(email);
 
             // set the contact emailaddresses
-            contact.EmailAddresses = emailAddresses;
+            contact.emailAddresses = emailAddresses;
 
             // create a phone number list, add it to the object and set it for the contact object
             List<string> businessPhoneNumbers = new List<string>();
             businessPhoneNumbers.Add("+1 732 555 0102");
-            contact.BusinessPhones = businessPhoneNumbers;
+            contact.businessPhones = businessPhoneNumbers;
 
             // serialize the .net object -> json and display in the textbox
             string json = JsonConvert.SerializeObject(contact);
