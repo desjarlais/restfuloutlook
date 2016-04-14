@@ -54,11 +54,11 @@ namespace RESTfulOutlook.Forms
             dictionary.Add("OutlookMail-SendNewMessage", "me/sendmail");
             dictionary.Add("OutlookMail-CreateDraftMessage", "me/messages");
             dictionary.Add("OutlookCalendar-ListCalendars", "me/calendars");
-            dictionary.Add("OutlookCalendar-CreateTestEvent", "me/events");
+            dictionary.Add("OutlookCalendar-CreateEvent", "me/events");
             dictionary.Add("OutlookCalendar-ListCalendarGroups", "me/calendarGroups");
             dictionary.Add("OutlookCalendar-ListCalendarView", "me/calendarView");
             dictionary.Add("OutlookContacts-ListContacts", "me/contacts");
-            dictionary.Add("OutlookContacts-CreateTestContact", "me/contacts");
+            dictionary.Add("OutlookContacts-CreateContact", "me/contacts");
             dictionary.Add("OutlookContacts-ListContactFolders", "me/contactFolders");
             dictionary.Add("OutlookGroups-ListGroups", "groups");
             dictionary.Add("OutlookGroups-ListMemberOf", "me/memberOf");
@@ -267,11 +267,11 @@ namespace RESTfulOutlook.Forms
                         {
                             CreateDraftMessageJson();
                         }
-                        else if (pair.Key == "OutlookCalendar-CreateTestEvent")
+                        else if (pair.Key == "OutlookCalendar-CreateEvent")
                         {
                             CreateEventJson();
                         }
-                        else if (pair.Key == "OutlookContacts-CreateTestContact")
+                        else if (pair.Key == "OutlookContacts-CreateContact")
                         {
                             CreateContactJson();
                         }
@@ -346,7 +346,10 @@ namespace RESTfulOutlook.Forms
             ro.message = msg;           
             
             // serialize the .net object -> json and display in the textbox
-            string json = JsonConvert.SerializeObject(ro);
+            string json = JsonConvert.SerializeObject(ro, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
             tbRequestBody.Text = json;
 
             // set headers and POST
@@ -395,7 +398,10 @@ namespace RESTfulOutlook.Forms
             msg.attachments = msgAttachments;
 
             // serialize the .net object -> json and display in the textbox
-            string json = JsonConvert.SerializeObject(msg);
+            string json = JsonConvert.SerializeObject(msg, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
             tbRequestBody.Text = json;
 
             // set headers and POST
@@ -442,7 +448,10 @@ namespace RESTfulOutlook.Forms
             evt.attendees = attendeesList;
 
             // serialize the .net object -> json and display in the textbox
-            string json = JsonConvert.SerializeObject(evt);
+            string json = JsonConvert.SerializeObject(evt, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
             tbRequestBody.Text = json;
 
             // set headers and POST
@@ -475,7 +484,10 @@ namespace RESTfulOutlook.Forms
             contact.businessPhones = businessPhoneNumbers;
 
             // serialize the .net object -> json and display in the textbox
-            string json = JsonConvert.SerializeObject(contact);
+            string json = JsonConvert.SerializeObject(contact, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
             tbRequestBody.Text = json;
 
             // set headers and POST

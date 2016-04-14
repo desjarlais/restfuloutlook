@@ -100,11 +100,11 @@
             "OutlookMail-SendNewMessage",
             "OutlookMail-CreateDraftMessage",
             "OutlookCalendar-ListCalendars",
-            "OutlookCalendar-CreateTestEvent",
+            "OutlookCalendar-CreateEvent",
             "OutlookCalendar-ListCalendarGroups",
             "OutlookCalendar-ListCalendarView",
             "OutlookContacts-ListContacts",
-            "OutlookContacts-CreateTestContact",
+            "OutlookContacts-CreateContact",
             "OutlookContacts-ListContactFolders",
             "OutlookGroups-ListGroups",
             "OutlookGroups-ListMemberOf",
@@ -392,6 +392,7 @@
             this.tbRequestBody.Location = new System.Drawing.Point(12, 19);
             this.tbRequestBody.Multiline = true;
             this.tbRequestBody.Name = "tbRequestBody";
+            this.tbRequestBody.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbRequestBody.Size = new System.Drawing.Size(562, 214);
             this.tbRequestBody.TabIndex = 0;
             // 
