@@ -1,4 +1,4 @@
-# restfuloutlook
+# RESTfulOutlook
 
 ![image] (http://i.imgur.com/I8MIiAV.jpg)
 
