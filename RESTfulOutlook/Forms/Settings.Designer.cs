@@ -281,7 +281,7 @@
             // txtClientId
             // 
             this.txtClientId.Enabled = false;
-            this.txtClientId.Location = new System.Drawing.Point(85, 63);
+            this.txtClientId.Location = new System.Drawing.Point(85, 36);
             this.txtClientId.Name = "txtClientId";
             this.txtClientId.Size = new System.Drawing.Size(316, 20);
             this.txtClientId.TabIndex = 20;
@@ -289,7 +289,7 @@
             // txtRedirectUri
             // 
             this.txtRedirectUri.Enabled = false;
-            this.txtRedirectUri.Location = new System.Drawing.Point(85, 36);
+            this.txtRedirectUri.Location = new System.Drawing.Point(85, 60);
             this.txtRedirectUri.Name = "txtRedirectUri";
             this.txtRedirectUri.Size = new System.Drawing.Size(316, 20);
             this.txtRedirectUri.TabIndex = 19;
@@ -308,7 +308,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 66);
+            this.label3.Location = new System.Drawing.Point(16, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 15;
@@ -317,7 +317,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 39);
+            this.label2.Location = new System.Drawing.Point(16, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 14;

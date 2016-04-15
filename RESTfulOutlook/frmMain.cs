@@ -73,38 +73,17 @@ namespace RESTfulOutlook
 
         public void ToggleButtons()
         {
-            // by the time we get here and login is the text for the button
-            // we are logging out and need to disable/reset the UI
-            if (btnLoginLogout.Text == "Login")
+            if (rdoBasic.Checked)
             {
-                if (rdoBasic.Checked)
-                {
-                    btnReportingService.Enabled = false;
-                }
-
-                if (rdoGraphAPI.Checked)
-                {
-                    btnMailAPI.Enabled = false;
-                    btnContactsAPI.Enabled = false;
-                    btnCalendarAPI.Enabled = false;
-                    btnGraphAPI.Enabled = false;
-                }
+                btnReportingService.Enabled = !btnReportingService.Enabled;
             }
-            else
-            {
-                // since we aren't logging out, light up the UI
-                if (rdoBasic.Checked)
-                {
-                    btnReportingService.Enabled = true;
-                }
 
-                if (rdoGraphAPI.Checked)
-                {
-                    btnMailAPI.Enabled = true;
-                    btnContactsAPI.Enabled = true;
-                    btnCalendarAPI.Enabled = true;
-                    btnGraphAPI.Enabled = true;
-                }
+            if (rdoGraphAPI.Checked)
+            {
+                btnMailAPI.Enabled = !btnMailAPI.Enabled;
+                btnContactsAPI.Enabled = !btnContactsAPI.Enabled;
+                btnCalendarAPI.Enabled = !btnCalendarAPI.Enabled;
+                btnGraphAPI.Enabled = !btnGraphAPI.Enabled;
             }
         }
 
@@ -144,6 +123,8 @@ namespace RESTfulOutlook
                     userNameEntered = null;
                     tbUsername.Enabled = true;
                     mskPassword.Enabled = true;
+                    ToggleButtons();
+                    ToggleRdoButtons();
                 }
             }
             catch (Exception ex)
@@ -153,13 +134,17 @@ namespace RESTfulOutlook
             finally
             {
                 // reset UI text
+                ToggleRdoButtons();
+                ToggleButtons();
                 lblUsername.Text = "No User Logged In";
                 btnLoginLogout.Text = "Login";
             }
         }
 
         private async Task GetGraphSDKClient()
-        {            
+        {
+            bool userCancel = false;
+                  
             try
             {
                 // setup the context based on app settings
@@ -203,16 +188,29 @@ namespace RESTfulOutlook
                 if (ae.ErrorCode != "user_interaction_required")
                 {
                     applogger.Log(ae.Message);
-                    ToggleButtons();
-                    ToggleRdoButtons();
-                    Logout();
+                    userCancel = true;
                 }
-                // if user interaction is required, proceed to main page without sign in
-                return;
             }
             catch (Exception ex)
             {
                 applogger.Log(ex.Message);
+            }
+            finally
+            {
+                if (userCancel == false)
+                {
+                    GetUserInfo();
+                    userName = authResult.UserInfo.DisplayableId;
+                    lblUsername.Text = userName;
+                    btnLoginLogout.Text = "Logout";
+                    ToggleRdoButtons();
+                    ToggleButtons();
+                }
+                else
+                {
+                    lblUsername.Text = "No User Logged In";
+                    btnLoginLogout.Text = "Login";
+                }
             }
         }
 
@@ -232,11 +230,24 @@ namespace RESTfulOutlook
         {
             try
             {
-                // get the graph client
-                await GetGraphSDKClient();
-                GetUserInfo();
-                userName = authResult.UserInfo.DisplayableId;
-                lblUsername.Text = userName;
+                if (rdoGraphAPI.Checked)
+                {
+                    // get the graph client
+                    await GetGraphSDKClient();
+                }
+                else
+                {
+                    passwordEntered = converToSecureString(mskPassword.Text);
+                    userNameEntered = tbUsername.Text;
+                    tbUsername.Text = string.Empty;
+                    mskPassword.Text = string.Empty;
+                    lblUsername.Text = userNameEntered;
+                    tbUsername.Enabled = false;
+                    mskPassword.Enabled = false;
+                    ToggleButtons();
+                    ToggleRdoButtons();
+                    btnLoginLogout.Text = "Logout";
+                }
             }
             catch (Exception ex)
             {
@@ -260,69 +271,31 @@ namespace RESTfulOutlook
         #region Form Button Clicks
         private void btnLoginLogout_Click(object sender, EventArgs e)
         {
-            if (rdoBasic.Checked && (tbUsername.Text == string.Empty || mskPassword.Text == string.Empty) && btnLoginLogout.Text == "Login")
+            try
             {
-                MessageBox.Show("Authenticate using basic credentials", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            else if (rdoBasic.Checked && btnLoginLogout.Text == "Logout")
-            {
-                btnReportingService.Enabled = false;
-                ToggleRdoButtons();
-                Logout();
-            }
-            else
-            {
-                if (btnLoginLogout.Text == "Logout")
+                if (rdoBasic.Checked && (tbUsername.Text == string.Empty || mskPassword.Text == string.Empty) && btnLoginLogout.Text == "Login")
                 {
-                    // light up the auth options
+                    MessageBox.Show("Authenticate using basic credentials", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (rdoBasic.Checked && btnLoginLogout.Text == "Logout")
+                {
+                    btnReportingService.Enabled = false;
                     ToggleRdoButtons();
-                    btnLoginLogout.Text = "Login";
-                    if (rdoBasic.Checked)
-                    {
-                        tbUsername.Enabled = true;
-                        mskPassword.Enabled = true;
-                    }
-
-                    // start the logout sequence
                     Logout();
-                    ToggleButtons();
+                }
+                else if (btnLoginLogout.Text == "Login")
+                {
+                    Login();
                 }
                 else
                 {
-                    // disable the auth options
-                    ToggleRdoButtons();
-                    btnLoginLogout.Text = "Logout";
-
-                    // start the login sequence
-                    try
-                    {
-                        if (rdoGraphAPI.Checked == true)
-                        {
-                            Login();
-                        }
-                        else
-                        {
-                            passwordEntered = converToSecureString(mskPassword.Text);
-                            userNameEntered = tbUsername.Text;
-                            tbUsername.Text = string.Empty;
-                            mskPassword.Text = string.Empty;
-                            lblUsername.Text = userNameEntered;
-                            tbUsername.Enabled = false;
-                            mskPassword.Enabled = false;
-                        }
-                        ToggleButtons();
-                    }
-                    catch (AdalException ae)
-                    {
-                        applogger.Log("User Auth Cancelled.");
-                        applogger.Log(ae.Message);
-                    }
-                    catch (Exception ex)
-                    {
-                        applogger.Log(ex.Message);
-                    }
+                    Logout();
                 }
+            }
+            catch(Exception ex)
+            {
+                applogger.Log(ex.Message);
             }
         }
 

@@ -70,6 +70,7 @@ namespace RESTfulOutlook.Forms
 
         private void btnCheckEndpoint_Click(object sender, System.EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             toolStripFormStatus.Text = "Checking Endpoints...";
             // determine whether the endpoint name is actually in the form of a fully-qualified domain name
             fqdnHost = txtO365ReportingServiceEndpoint.Text;
@@ -170,6 +171,7 @@ namespace RESTfulOutlook.Forms
 
                 toolStripFormStatus.Text = "Request successful";
                 cmbReportList.Enabled = true;
+                Cursor = Cursors.Default;
                 return;
             }
             else
@@ -177,11 +179,13 @@ namespace RESTfulOutlook.Forms
                 // this error is reported when the domain name just isn't normal-looking
                 // according to the regular expressions above.
                 toolStripFormStatus.Text = "Invalid service endpoint.  The name does not appear to be a valid domain name";
+                Cursor = Cursors.Default;
             }
         }
 
         private void btnGenerateRESTURL_Click(object sender, System.EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             toolStripFormStatus.Text = "Generating REST URL...";
             // Remove the line breaks between parameters, and replace them with the &
             // because this is an HTTP GET, not a POST.
@@ -198,6 +202,7 @@ namespace RESTfulOutlook.Forms
             // take the URL string and place it in the edit text box so it can be viewed.
             txtRESTUrl.Text = fullRestURL;
             toolStripFormStatus.Text = "Ready";
+            Cursor = Cursors.Default;
         }
 
         private void btnCopyRESTURL_Click(object sender, System.EventArgs e)
@@ -207,6 +212,7 @@ namespace RESTfulOutlook.Forms
 
         private void btnSendRequest_Click(object sender, System.EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             toolStripFormStatus.Text = "Sending Request...";
             int charsRead = 0;
             // clear the currently displayed text 
@@ -458,6 +464,8 @@ namespace RESTfulOutlook.Forms
                 // arrive here to ensure that the response stream is assured of being closed
                 if (response != null) response.Close();
             }
+
+            Cursor = Cursors.Default;
         }
 
         private void btnCopyResults_Click(object sender, System.EventArgs e)

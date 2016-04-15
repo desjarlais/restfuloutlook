@@ -70,8 +70,9 @@ namespace RESTfulOutlook.Forms
             try
             {
                 Cursor = Cursors.WaitCursor;
-
                 ClearResponseTree();
+
+                // get the request url and request method
                 string graphRequest = tbRequestUrl.Text;
                 HttpMethod HttpRequestMethod;
 
@@ -97,6 +98,7 @@ namespace RESTfulOutlook.Forms
                         break;
                 }
 
+                // create the http request
                 HttpRequestMessage request = new HttpRequestMessage(HttpRequestMethod, graphRequest);
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
 
@@ -123,9 +125,10 @@ namespace RESTfulOutlook.Forms
                 logger.Log("REQUEST:");
                 logger.Log(request.ToString());
 
+                // start processing the response
                 HttpResponseMessage response = httpClient.SendAsync(request).Result;              
 
-                // handle non-success response
+                // handle non-successful requests
                 if (!response.IsSuccessStatusCode)
                 {
                     string errorJsonContent = response.Content.ReadAsStringAsync().Result;
@@ -157,7 +160,7 @@ namespace RESTfulOutlook.Forms
                     throw new WebException(response.StatusCode.ToString() + ": " + response.ReasonPhrase);
                 }
                 
-                // process successful responses                      
+                // process successful request                      
                 string content = response.Content.ReadAsStringAsync().Result;
 
                 logger.Log("RESPONSE HEADER:");
@@ -166,8 +169,8 @@ namespace RESTfulOutlook.Forms
 
                 if (response.StatusCode == HttpStatusCode.Accepted || response.StatusCode == HttpStatusCode.Created)
                 {
-                    // POST responses that are successful return 202 Accepted,
-                    // there is no return value so display success message
+                    // POST responses that are successful return 202 Accepted or 201 Created,
+                    // there is no return value so let the user know it was successful
                     tvw.Nodes.Add(new TreeNode("Message created/sent succesfully."));
                     logger.Log("StatusCode = " + response.StatusCode.ToString());
                 }
@@ -258,7 +261,7 @@ namespace RESTfulOutlook.Forms
                     {
                         tbRequestUrl.Text = Properties.Settings.Default.GraphEndpoint + apiVersion + pair.Value;
 
-                        // check for examples where we need to create json for the POST
+                        // check for examples where we need to create json for the POST body
                         if (pair.Key == "OutlookMail-SendNewMessage")
                         {
                             CreateMessageJson();
@@ -296,7 +299,7 @@ namespace RESTfulOutlook.Forms
             }
         }
 
-        #region CreateJson functions
+        #region Create Json Body functions
         private void CreateMessageJson()
         {
             // create the root object
