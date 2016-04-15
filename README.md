@@ -30,10 +30,9 @@ This sample requires the following:
 10. Click on **Save**.
 
 ##Questions and comments
-
 If you have any feedback about this project, use the issues section for any questions or suggestions located here: [Issues](https://github.com/desjarlais/restfuloutlook/issues)
 
-##Using the tool/application
+##Using the restful tool / application
 Click on the Login button and once you have successfully authenticated, the buttons in the app will light up.  From there you can start looking at the different API's and the data they return.  The SDK buttons use the Microsoft Graph SDK to return information from Exchange and the Graph API Explorer button is somewhat a clone of [MS Graph Explorer](https://graph.microsoft.io/en-us/graph-explorer#/) 
 
 ##Additional Links and Resources
