@@ -39,13 +39,13 @@ Click on the Login button and once you have successfully authenticated, the butt
 ##Additional Links and Resources
 Here are some additional helpful links if you are working with, or looking to work with the Microsoft Graph API and SDK's:
 
-[Microsoft Graph overview](http://graph.microsoft.io)
-[Office 365 APIs platform overview](https://msdn.microsoft.com/office/office365/howto/platform-development-overview)
-[Office 365 API code samples and videos](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
-[Office developer code samples](http://dev.office.com/code-samples)
-[Office dev center](http://dev.office.com/)
+- [Microsoft Graph overview](http://graph.microsoft.io)
+- [Office 365 APIs platform overview](https://msdn.microsoft.com/office/office365/howto/platform-development-overview)
+- [Office 365 API code samples and videos](https://msdn.microsoft.com/office/office365/howto/starter-projects-and-code-samples)
+- [Office developer code samples](http://dev.office.com/code-samples)
+- [Office dev center](http://dev.office.com/)
 
 Here are some sandboxes that you can use to test out the Outlook and Graph API's:
-[Outlook Endpoint Sandbox](https://oauthplay.azurewebsites.net/)
-[Graph Explorer](https://graph.microsoft.io/en-us/graph-explorer#)
-[Getting Started with Office365 API's Sandbox](http://dev.office.com/getting-started/office365apis)
+- [Outlook Endpoint Sandbox](https://oauthplay.azurewebsites.net/)
+- [Graph Explorer](https://graph.microsoft.io/en-us/graph-explorer#)
+- [Getting Started with Office365 API's Sandbox](http://dev.office.com/getting-started/office365apis)
