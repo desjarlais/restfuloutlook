@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RESTfulOutlook.JsonHelpers
 {
-    public class Message
+    public class Item
     {
         public string subject { get; set; }
         public string importance { get; set; }
@@ -128,7 +128,7 @@ namespace RESTfulOutlook.JsonHelpers
 
     public class RootObject
     {
-        public Message message { get; set; }
+        public Item message { get; set; }
         public string saveToSentItems { get; set; }
     }
 }

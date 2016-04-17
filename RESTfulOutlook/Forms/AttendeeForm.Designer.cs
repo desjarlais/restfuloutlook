@@ -125,7 +125,7 @@
             this.MaximizeBox = false;
             this.Name = "AttendeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AttendeeForm";
+            this.Text = "Attendee";
             ((System.ComponentModel.ISupportInitialize)(this.dgAttendee)).EndInit();
             this.mnuContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);

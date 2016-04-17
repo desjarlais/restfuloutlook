@@ -410,7 +410,7 @@
             this.MaximizeBox = false;
             this.Name = "AttachmentsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AttachmentsForm";
+            this.Text = "Attachments";
             ((System.ComponentModel.ISupportInitialize)(this.dgFileAttachments)).EndInit();
             this.mnuContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgItemAttachments)).EndInit();

@@ -45,20 +45,23 @@ namespace RESTfulOutlook.Forms
                 msg.Body = body;
                 msg.ToRecipients = toRecipients;
 
-                graphClient.Me.SendMail(msg, true);
-                sdklogger.Log("NewMessageSend: Message Sent Successfully!");
+                // log the request info
+                sdklogger.Log(graphClient.Me.SendMail(msg, true).Request().GetHttpRequestMessage().Headers.ToString());
+                sdklogger.Log(graphClient.Me.SendMail(msg, true).Request().GetHttpRequestMessage().RequestUri.ToString());
+
+                // send the new message
+                graphClient.Me.SendMail(msg, true).Request()
+                    .PostAsync();
             }
             catch (Exception ex)
             {
-                sdklogger.Log("NewMessageSend: Failed to send: " + ex.Message);
+                sdklogger.Log("NewMessageSend Failed: " + ex.Message);
                 sdklogger.Log(ex.Message);
             }
             finally
             {
-                // cleanup form
-                tbBody.Text = "";
-                tbSubject.Text = "";
-                tbToRecipients.Text = "";
+                // close the form
+                Close();
             }
         }
     }

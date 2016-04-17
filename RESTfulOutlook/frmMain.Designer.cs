@@ -32,13 +32,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdoGraphAPI = new System.Windows.Forms.RadioButton();
             this.mskPassword = new System.Windows.Forms.MaskedTextBox();
-            this.lblUsername = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rdoBasic = new System.Windows.Forms.RadioButton();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.btnLoginLogout = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnNotifications = new System.Windows.Forms.Button();
+            this.btnUserPhotoAPI = new System.Windows.Forms.Button();
             this.btnMailAPI = new System.Windows.Forms.Button();
             this.btnCalendarAPI = new System.Windows.Forms.Button();
             this.btnContactsAPI = new System.Windows.Forms.Button();
@@ -49,8 +51,6 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnUserInfo = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnNotifications = new System.Windows.Forms.Button();
-            this.btnUserPhotoAPI = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -96,15 +96,6 @@
             this.mskPassword.TabIndex = 7;
             this.mskPassword.UseSystemPasswordChar = true;
             // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(16, 24);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(97, 13);
-            this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "No User Logged In";
-            // 
             // tbUsername
             // 
             this.tbUsername.Enabled = false;
@@ -142,6 +133,15 @@
             this.rdoBasic.UseVisualStyleBackColor = true;
             this.rdoBasic.CheckedChanged += new System.EventHandler(this.rdoBasic_CheckedChanged);
             // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(16, 24);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(97, 13);
+            this.lblUsername.TabIndex = 1;
+            this.lblUsername.Text = "No User Logged In";
+            // 
             // btnLoginLogout
             // 
             this.btnLoginLogout.Location = new System.Drawing.Point(273, 19);
@@ -165,6 +165,24 @@
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Microsoft Graph SDK";
+            // 
+            // btnNotifications
+            // 
+            this.btnNotifications.Location = new System.Drawing.Point(12, 135);
+            this.btnNotifications.Name = "btnNotifications";
+            this.btnNotifications.Size = new System.Drawing.Size(145, 23);
+            this.btnNotifications.TabIndex = 16;
+            this.btnNotifications.Text = "Notification API";
+            this.btnNotifications.UseVisualStyleBackColor = true;
+            // 
+            // btnUserPhotoAPI
+            // 
+            this.btnUserPhotoAPI.Location = new System.Drawing.Point(12, 106);
+            this.btnUserPhotoAPI.Name = "btnUserPhotoAPI";
+            this.btnUserPhotoAPI.Size = new System.Drawing.Size(145, 23);
+            this.btnUserPhotoAPI.TabIndex = 17;
+            this.btnUserPhotoAPI.Text = "User Photo API";
+            this.btnUserPhotoAPI.UseVisualStyleBackColor = true;
             // 
             // btnMailAPI
             // 
@@ -269,24 +287,6 @@
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Office365 REST APIs";
-            // 
-            // btnNotifications
-            // 
-            this.btnNotifications.Location = new System.Drawing.Point(12, 135);
-            this.btnNotifications.Name = "btnNotifications";
-            this.btnNotifications.Size = new System.Drawing.Size(145, 23);
-            this.btnNotifications.TabIndex = 16;
-            this.btnNotifications.Text = "Notification API";
-            this.btnNotifications.UseVisualStyleBackColor = true;
-            // 
-            // btnUserPhotoAPI
-            // 
-            this.btnUserPhotoAPI.Location = new System.Drawing.Point(12, 106);
-            this.btnUserPhotoAPI.Name = "btnUserPhotoAPI";
-            this.btnUserPhotoAPI.Size = new System.Drawing.Size(145, 23);
-            this.btnUserPhotoAPI.TabIndex = 17;
-            this.btnUserPhotoAPI.Text = "User Photo API";
-            this.btnUserPhotoAPI.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 

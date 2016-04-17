@@ -482,5 +482,12 @@ namespace RESTfulOutlook.Forms
             Type = 29,
             WebLink = 30
         };
+
+        private void btnNewMeeting_Click(object sender, EventArgs e)
+        {
+            NewEventForm newEvt = new NewEventForm(ref graphClient, ref applogger, ref sdklogger);
+            newEvt.Owner = this;
+            newEvt.ShowDialog(this);
+        }
     }
 }

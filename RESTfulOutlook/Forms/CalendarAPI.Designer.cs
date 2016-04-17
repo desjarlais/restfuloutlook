@@ -69,6 +69,7 @@
             this.nudEvents = new System.Windows.Forms.NumericUpDown();
             this.cmbCalendars = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnNewMeeting = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).BeginInit();
             this.mnuContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEvents)).BeginInit();
@@ -78,7 +79,7 @@
             // 
             this.btnGetEvents.Location = new System.Drawing.Point(12, 12);
             this.btnGetEvents.Name = "btnGetEvents";
-            this.btnGetEvents.Size = new System.Drawing.Size(124, 23);
+            this.btnGetEvents.Size = new System.Drawing.Size(105, 23);
             this.btnGetEvents.TabIndex = 0;
             this.btnGetEvents.Text = "Get Events";
             this.btnGetEvents.UseVisualStyleBackColor = true;
@@ -378,7 +379,7 @@
             // 
             // nudEvents
             // 
-            this.nudEvents.Location = new System.Drawing.Point(142, 15);
+            this.nudEvents.Location = new System.Drawing.Point(123, 15);
             this.nudEvents.Maximum = new decimal(new int[] {
             999,
             0,
@@ -410,11 +411,22 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Calendars";
             // 
+            // btnNewMeeting
+            // 
+            this.btnNewMeeting.Location = new System.Drawing.Point(12, 474);
+            this.btnNewMeeting.Name = "btnNewMeeting";
+            this.btnNewMeeting.Size = new System.Drawing.Size(105, 23);
+            this.btnNewMeeting.TabIndex = 8;
+            this.btnNewMeeting.Text = "New Meeting";
+            this.btnNewMeeting.UseVisualStyleBackColor = true;
+            this.btnNewMeeting.Click += new System.EventHandler(this.btnNewMeeting_Click);
+            // 
             // CalendarAPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 495);
+            this.ClientSize = new System.Drawing.Size(1057, 508);
+            this.Controls.Add(this.btnNewMeeting);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbCalendars);
             this.Controls.Add(this.nudEvents);
@@ -476,5 +488,6 @@
         private System.Windows.Forms.NumericUpDown nudEvents;
         private System.Windows.Forms.ComboBox cmbCalendars;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnNewMeeting;
     }
 }

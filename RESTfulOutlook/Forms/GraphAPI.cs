@@ -312,7 +312,7 @@ namespace RESTfulOutlook.Forms
             ro.saveToSentItems = "True";
             
             // create message
-            JsonHelpers.Message msg = new JsonHelpers.Message();
+            JsonHelpers.Item msg = new JsonHelpers.Item();
             
             // set the subject and importance
             msg.subject = "json test message";
@@ -367,7 +367,7 @@ namespace RESTfulOutlook.Forms
         private void CreateDraftMessageJson()
         {
             // create message
-            JsonHelpers.Message msg = new JsonHelpers.Message();
+            JsonHelpers.Item msg = new JsonHelpers.Item();
 
             // set the subject and importance
             msg.subject = "json test message";
