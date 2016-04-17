@@ -67,6 +67,8 @@
             this.weblink = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.nudEvents = new System.Windows.Forms.NumericUpDown();
+            this.cmbCalendars = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).BeginInit();
             this.mnuContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEvents)).BeginInit();
@@ -391,11 +393,30 @@
             0,
             0});
             // 
+            // cmbCalendars
+            // 
+            this.cmbCalendars.FormattingEnabled = true;
+            this.cmbCalendars.Location = new System.Drawing.Point(881, 12);
+            this.cmbCalendars.Name = "cmbCalendars";
+            this.cmbCalendars.Size = new System.Drawing.Size(164, 21);
+            this.cmbCalendars.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(821, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Calendars";
+            // 
             // CalendarAPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 495);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbCalendars);
             this.Controls.Add(this.nudEvents);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgEvents);
@@ -406,7 +427,6 @@
             this.Name = "CalendarAPI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Calendar";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalendarAPI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).EndInit();
             this.mnuContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudEvents)).EndInit();
@@ -454,5 +474,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.NumericUpDown nudEvents;
+        private System.Windows.Forms.ComboBox cmbCalendars;
+        private System.Windows.Forms.Label label2;
     }
 }

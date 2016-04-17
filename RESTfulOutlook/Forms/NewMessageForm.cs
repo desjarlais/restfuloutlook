@@ -46,12 +46,12 @@ namespace RESTfulOutlook.Forms
                 msg.ToRecipients = toRecipients;
 
                 graphClient.Me.SendMail(msg, true);
-                MessageBox.Show("Message Sent Successfully!");
+                sdklogger.Log("NewMessageSend: Message Sent Successfully!");
             }
             catch (Exception ex)
             {
+                sdklogger.Log("NewMessageSend: Failed to send: " + ex.Message);
                 sdklogger.Log(ex.Message);
-                MessageBox.Show("Failed to send: " + ex.Message);
             }
             finally
             {
@@ -60,7 +60,6 @@ namespace RESTfulOutlook.Forms
                 tbSubject.Text = "";
                 tbToRecipients.Text = "";
             }
-            
         }
     }
 }

@@ -20,6 +20,7 @@ namespace RESTfulOutlook.Forms
         public Dictionary<string, List<FileAttachment>> dFileAttachments;
         public Dictionary<string, List<ItemAttachment>> dItemAttachments;
         public Dictionary<string, List<ReferenceAttachment>> dReferenceAttachments;
+        public Dictionary<string, string> dCalendarIds;
 
         ClassLogger applogger = null;
         ClassLogger sdklogger = null;
@@ -39,6 +40,53 @@ namespace RESTfulOutlook.Forms
             dFileAttachments = new Dictionary<string, List<FileAttachment>>();
             dItemAttachments = new Dictionary<string, List<ItemAttachment>>();
             dReferenceAttachments = new Dictionary<string, List<ReferenceAttachment>>();
+            dCalendarIds = new Dictionary<string, string>();
+
+            GetFoldersAsync();
+        }
+
+        private async Task GetFoldersAsync()
+        {
+            // TODO: return subfolders
+            try
+            {
+                // adjust UI so user knows work is happening
+                Cursor = Cursors.WaitCursor;
+
+                // log the request
+                sdklogger.Log("REQUEST");
+                sdklogger.Log(graphClient.Me.MailFolders.Request().GetHttpRequestMessage().ToString());
+
+                // get the folders
+                var calFolders = await graphClient.Me.Calendars.Request()
+                    .GetAsync();
+
+                // loop parent folders
+                foreach (var cal in calFolders.CurrentPage)
+                {
+                    // populate folder ids in the local dictionary
+                    // any requests for a specific folder need to use Id, not display name
+                    dCalendarIds.Add(cal.Name, cal.Id);
+                    cmbCalendars.Items.Add(cal.Name);
+                    cmbCalendars.SelectedIndex = 0;
+                }
+            }
+            catch (ServiceException se)
+            {
+                sdklogger.Log("Calendar:GetFoldersAsync ServiceException:");
+                sdklogger.Log(se.Message);
+                sdklogger.Log(se.StackTrace);
+            }
+            catch (Exception ex)
+            {
+                sdklogger.Log("Calendar:GetFoldersAsync Exception:");
+                sdklogger.Log(ex.Message);
+                sdklogger.Log(ex.StackTrace);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
         }
 
         private async void btnGetEvents_Click(object sender, EventArgs e)
@@ -55,13 +103,26 @@ namespace RESTfulOutlook.Forms
 
                 int mLimit = (Int32)nudEvents.Value;                
                 
+                // get folder name from selected dropdown item and convert to folder id
+                string folderName = cmbCalendars.SelectedItem.ToString();
+                string folderId = null;
+
+                foreach (KeyValuePair<string, string> pair in dCalendarIds)
+                {
+                    if (pair.Key == folderName)
+                    {
+                        folderId = pair.Value;
+                    }
+                }
+
                 sdklogger.Log("REQUEST");
-                sdklogger.Log(graphClient.Me.Events.Request().GetHttpRequestMessage().ToString());
-                var calEvents = await graphClient.Me.Events.Request()
+                sdklogger.Log(graphClient.Me.Calendars[folderId].Events.Request().GetHttpRequestMessage().ToString());
+
+                var calEvents = await graphClient.Me.Calendars[folderId].Events.Request()
                     .Expand("attachments")
                     .Top(mLimit)
                     .GetAsync();
-
+                
                 foreach (var calEvent in calEvents.CurrentPage)
                 {
                     // populate the grid view
@@ -182,27 +243,27 @@ namespace RESTfulOutlook.Forms
             }
             catch (ServiceException se)
             {
-                sdklogger.Log("GetEventsAsync GraphServiceException:");
+                sdklogger.Log("Calendar:GetEventsAsync GraphServiceException:");
                 sdklogger.Log(se.Message);
             }
             catch (NullReferenceException nre)
             {
-                sdklogger.Log("GetEventsAsync NullReferenceException:");
+                sdklogger.Log("Calendar:GetEventsAsync NullReferenceException:");
                 sdklogger.Log(nre.Message);
             }
             catch (ArgumentOutOfRangeException aor)
             {
-                sdklogger.Log("GetEventsAsync ArgumentOutOfRangeException:");
+                sdklogger.Log("Calendar:GetEventsAsync ArgumentOutOfRangeException:");
                 sdklogger.Log(aor.Message);
             }
             catch (AdalException ae)
             {
-                sdklogger.Log("GetEventsAsync AdalException:");
+                sdklogger.Log("Calendar:GetEventsAsync AdalException:");
                 sdklogger.Log(ae.Message);
             }
             catch (Exception ex)
             {
-                sdklogger.Log("GetEventsAsync Exception:");
+                sdklogger.Log("Calendar:GetEventsAsync Exception:");
                 sdklogger.Log(ex.Message);
             }
             finally
@@ -339,7 +400,7 @@ namespace RESTfulOutlook.Forms
                             }
                         }
 
-                        AttachmentsForm mAttachment = new AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments, applogger);
+                        AttachmentsForm mAttachment = new AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments, ref applogger);
                         mAttachment.Owner = this;
                         mAttachment.ShowDialog(this);
                     }
@@ -421,12 +482,5 @@ namespace RESTfulOutlook.Forms
             Type = 29,
             WebLink = 30
         };
-
-        private void CalendarAPI_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // cleanup
-            //applogger.Dispose();
-            //sdklogger.Dispose();
-        }
     }
 }

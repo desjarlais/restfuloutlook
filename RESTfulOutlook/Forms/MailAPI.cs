@@ -58,7 +58,7 @@ namespace RESTfulOutlook.Forms
                 // log the request
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.MailFolders.Request().GetHttpRequestMessage().ToString());
-
+                
                 // get the folders
                 var mailFolders = await graphClient.Me.MailFolders.Request()
                     .Expand("childfolders")
@@ -81,13 +81,13 @@ namespace RESTfulOutlook.Forms
             }
             catch (ServiceException se)
             {
-                sdklogger.Log("GetFoldersAsync ServiceException:");
+                sdklogger.Log("Mail:GetFoldersAsync ServiceException:");
                 sdklogger.Log(se.Message);
                 sdklogger.Log(se.StackTrace);
             }
             catch (Exception ex)
             {
-                sdklogger.Log("GetFoldersAsync Exception:");
+                sdklogger.Log("Mail:GetFoldersAsync Exception:");
                 sdklogger.Log(ex.Message);
                 sdklogger.Log(ex.StackTrace);
             }
@@ -307,17 +307,17 @@ namespace RESTfulOutlook.Forms
             }
             catch (ServiceException se)
             {
-                sdklogger.Log("GetMessagesAsync GraphServiceException:");
+                sdklogger.Log("Mail:GetMessagesAsync GraphServiceException:");
                 sdklogger.Log(se.Message);
             }
             catch (ArgumentOutOfRangeException aor)
             {
-                sdklogger.Log("GetMessagesAsync ArgumentOutOfRangeException:");
+                sdklogger.Log("Mail:GetMessagesAsync ArgumentOutOfRangeException:");
                 sdklogger.Log(aor.Message);
             }
             catch (Exception ex)
             {
-                sdklogger.Log("GetMessagesAsync Exception:");
+                sdklogger.Log("Mail:GetMessagesAsync Exception:");
                 sdklogger.Log(ex.Message);
             }
             finally
@@ -404,7 +404,7 @@ namespace RESTfulOutlook.Forms
                             }
                         }
 
-                        AttachmentsForm mAttachment = new AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments, applogger);
+                        AttachmentsForm mAttachment = new AttachmentsForm(mId, tFileAttachments, tItemAttachments, tRefAttachments, ref applogger);
                         mAttachment.Owner = this;
                         mAttachment.ShowDialog(this);
                     }
@@ -557,13 +557,6 @@ namespace RESTfulOutlook.Forms
             UniqueBody = 25,
             WebLink = 26,
         };
-
-        private void MailAPI_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // cleanup
-            //applogger.Dispose();
-            //sdklogger.Dispose();
-        }
 
         private void btnCreateNewMessage_Click(object sender, EventArgs e)
         {

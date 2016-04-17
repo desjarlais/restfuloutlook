@@ -29,7 +29,7 @@ namespace RESTfulOutlook
 
         // Basic authentication objects
         private SecureString passwordEntered = new SecureString();
-        private String userNameEntered = String.Empty;
+        private string userNameEntered = string.Empty;
         public string userName = null;
 
         // token cache, logging and config objects
@@ -69,6 +69,8 @@ namespace RESTfulOutlook
             btnContactsAPI.Enabled = false;
             btnCalendarAPI.Enabled = false;
             btnReportingService.Enabled = false;
+            btnUserPhotoAPI.Enabled = false;
+            btnNotifications.Enabled = false;
         }
 
         public void ToggleButtons()

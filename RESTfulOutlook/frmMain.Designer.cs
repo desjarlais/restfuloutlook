@@ -34,7 +34,6 @@
             this.mskPassword = new System.Windows.Forms.MaskedTextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rdoBasic = new System.Windows.Forms.RadioButton();
@@ -50,25 +49,27 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnUserInfo = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnNotifications = new System.Windows.Forms.Button();
+            this.btnUserPhotoAPI = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rdoGraphAPI);
             this.groupBox1.Controls.Add(this.mskPassword);
-            this.groupBox1.Controls.Add(this.lblUsername);
             this.groupBox1.Controls.Add(this.tbUsername);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.rdoBasic);
-            this.groupBox1.Location = new System.Drawing.Point(191, 12);
+            this.groupBox1.Location = new System.Drawing.Point(191, 73);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(355, 186);
+            this.groupBox1.Size = new System.Drawing.Size(355, 136);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "App Authentication / Authorization";
@@ -98,7 +99,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(81, 155);
+            this.lblUsername.Location = new System.Drawing.Point(16, 24);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(97, 13);
             this.lblUsername.TabIndex = 1;
@@ -111,15 +112,6 @@
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(265, 20);
             this.tbUsername.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 155);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "UserName:";
             // 
             // label2
             // 
@@ -162,12 +154,14 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnNotifications);
+            this.groupBox2.Controls.Add(this.btnUserPhotoAPI);
             this.groupBox2.Controls.Add(this.btnMailAPI);
             this.groupBox2.Controls.Add(this.btnCalendarAPI);
             this.groupBox2.Controls.Add(this.btnContactsAPI);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(173, 129);
+            this.groupBox2.Size = new System.Drawing.Size(173, 163);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Microsoft Graph SDK";
@@ -228,7 +222,7 @@
             this.groupBox3.Controls.Add(this.btnSettings);
             this.groupBox3.Controls.Add(this.btnUserInfo);
             this.groupBox3.Controls.Add(this.btnLoginLogout);
-            this.groupBox3.Location = new System.Drawing.Point(191, 204);
+            this.groupBox3.Location = new System.Drawing.Point(191, 215);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(355, 51);
             this.groupBox3.TabIndex = 8;
@@ -269,18 +263,47 @@
             // 
             this.groupBox4.Controls.Add(this.btnGraphAPI);
             this.groupBox4.Controls.Add(this.btnReportingService);
-            this.groupBox4.Location = new System.Drawing.Point(12, 148);
+            this.groupBox4.Location = new System.Drawing.Point(12, 181);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(173, 107);
+            this.groupBox4.Size = new System.Drawing.Size(173, 85);
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Office365 REST APIs";
+            // 
+            // btnNotifications
+            // 
+            this.btnNotifications.Location = new System.Drawing.Point(12, 135);
+            this.btnNotifications.Name = "btnNotifications";
+            this.btnNotifications.Size = new System.Drawing.Size(145, 23);
+            this.btnNotifications.TabIndex = 16;
+            this.btnNotifications.Text = "Notification API";
+            this.btnNotifications.UseVisualStyleBackColor = true;
+            // 
+            // btnUserPhotoAPI
+            // 
+            this.btnUserPhotoAPI.Location = new System.Drawing.Point(12, 106);
+            this.btnUserPhotoAPI.Name = "btnUserPhotoAPI";
+            this.btnUserPhotoAPI.Size = new System.Drawing.Size(145, 23);
+            this.btnUserPhotoAPI.TabIndex = 17;
+            this.btnUserPhotoAPI.Text = "User Photo API";
+            this.btnUserPhotoAPI.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.lblUsername);
+            this.groupBox5.Location = new System.Drawing.Point(191, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(355, 52);
+            this.groupBox5.TabIndex = 16;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "User Information";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 265);
+            this.ClientSize = new System.Drawing.Size(558, 274);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -297,6 +320,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -316,13 +341,15 @@
         private System.Windows.Forms.Button btnGraphAPI;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnLoginLogout;
         private System.Windows.Forms.RadioButton rdoGraphAPI;
         private System.Windows.Forms.Button btnUserInfo;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnScopes;
+        private System.Windows.Forms.Button btnUserPhotoAPI;
+        private System.Windows.Forms.Button btnNotifications;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 

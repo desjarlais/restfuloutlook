@@ -15,7 +15,7 @@ namespace RESTfulOutlook.Forms
 
         ClassLogger applogger = null;
 
-        public AttachmentsForm(string id, List<FileAttachment> fAttachments, List<ItemAttachment> iAttachments, List<ReferenceAttachment> rAttachments, ClassLogger appLogger)
+        public AttachmentsForm(string id, List<FileAttachment> fAttachments, List<ItemAttachment> iAttachments, List<ReferenceAttachment> rAttachments, ref ClassLogger appLogger)
         {
             InitializeComponent();
             applogger = appLogger;

@@ -428,7 +428,6 @@
             this.Name = "MailAPI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mail";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MailAPI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgMessages)).EndInit();
             this.mnuContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudMessages)).EndInit();

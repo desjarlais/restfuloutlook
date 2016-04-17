@@ -40,12 +40,17 @@ namespace RESTfulOutlook.Forms
             // init local auth result
             result = authResult;
 
-            // populate the sample queries
+            // populate the sample queries into the local dictionary
             PopulateComboBox();
         }
 
         public void PopulateComboBox()
         {
+            // create a generic StartDateTime and EndDateTime for calls like CalendarView
+            DateTimeOffset dtoStart = DateTimeOffset.Now;
+            DateTimeOffset dtoEnd = dtoStart.AddHours(1);          
+
+            // add each sample into the dictionary, using the same name from the UI combobox
             dictionary.Add("OutlookMail-ListMessages", "me/messages");
             dictionary.Add("OutlookMail-ListMailFolders", "me/mailFolders");
             dictionary.Add("OutlookMail-SearchInbox", "me/messages/?$search=%22tailspin%20toys%22");
@@ -56,7 +61,7 @@ namespace RESTfulOutlook.Forms
             dictionary.Add("OutlookCalendar-ListCalendars", "me/calendars");
             dictionary.Add("OutlookCalendar-CreateEvent", "me/events");
             dictionary.Add("OutlookCalendar-ListCalendarGroups", "me/calendarGroups");
-            dictionary.Add("OutlookCalendar-ListCalendarView", "me/calendarView");
+            dictionary.Add("OutlookCalendar-ListCalendarView", "me/calendarView?startDateTime=" + dtoStart + "&endDateTime=" + dtoEnd);
             dictionary.Add("OutlookContacts-ListContacts", "me/contacts");
             dictionary.Add("OutlookContacts-CreateContact", "me/contacts");
             dictionary.Add("OutlookContacts-ListContactFolders", "me/contactFolders");

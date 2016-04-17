@@ -53,6 +53,7 @@ namespace RESTfulOutlook.Forms
 
                 var contactFolders = await graphClient.Me.ContactFolders.Request()
                     .GetAsync();
+                
                 foreach (var contactFolder in contactFolders.CurrentPage)
                 {
                     cmbFolders.Items.Add(contactFolder.DisplayName);
@@ -61,7 +62,7 @@ namespace RESTfulOutlook.Forms
             }
             catch (Exception ex)
             {
-                sdklogger.Log("GetFolderAsync Exception:");
+                sdklogger.Log("Contacts:GetFolderAsync Exception:");
                 sdklogger.Log(ex.ToString());
                 sdklogger.Log(ex.Message);
                 sdklogger.Log(ex.StackTrace);
@@ -203,25 +204,25 @@ namespace RESTfulOutlook.Forms
             }
             catch (ServiceException se)
             {
-                sdklogger.Log("GetContactAsync GraphServiceException:");
+                sdklogger.Log("Contacts:GetContactAsync GraphServiceException:");
                 sdklogger.Log(se.Message);
                 return;
             }
             catch (ArgumentOutOfRangeException aor)
             {
-                sdklogger.Log("GetContactAsync ArgumentOutOfRangeException:");
+                sdklogger.Log("Contacts:GetContactAsync ArgumentOutOfRangeException:");
                 sdklogger.Log(aor.Message);
                 return;
             }
             catch (AdalException ae)
             {
-                sdklogger.Log("GetContactAsync AdalException:");
+                sdklogger.Log("Contacts:GetContactAsync AdalException:");
                 sdklogger.Log(ae.Message);
                 return;
             }
             catch (Exception ex)
             {
-                sdklogger.Log("GetContactAsync Exception:");
+                sdklogger.Log("Contacts:GetContactAsync Exception:");
                 sdklogger.Log(ex.Message);
                 return;
             }
@@ -462,12 +463,5 @@ namespace RESTfulOutlook.Forms
             YomiGivenName = 36,
             YomiSurname = 37
         };
-
-        private void ContactsAPI_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // cleanup
-            //applogger.Dispose();
-            //sdklogger.Dispose();
-        }
     }
 }
