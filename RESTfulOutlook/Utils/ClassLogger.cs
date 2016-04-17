@@ -63,12 +63,7 @@ namespace RESTfulOutlook.Utils
 
         protected virtual void OnLogAdded(LoggerEventArgs e)
         {
-            LoggerEventHandler handler = LogAdded;
-
-            if (handler != null)
-            {
-                handler(this, e);
-            }
+            LogAdded?.Invoke(this, e);
         }
 
         public void Log(string Details, string Description = "", bool SuppressEvent = false)
@@ -77,16 +72,16 @@ namespace RESTfulOutlook.Utils
             {
                 DateTime oLogTime = DateTime.Now;
 
-                if (String.IsNullOrEmpty(Description))
+                if (string.IsNullOrEmpty(Description))
                 {
                     if (_logDateAndTime)
-                        _logStream.WriteLine(String.Format("{0:MM/dd/yy h:mm:ss tt}", oLogTime) + " ==> " + Details);
+                        _logStream.WriteLine(string.Format("{0:MM/dd/yy h:mm:ss tt}", oLogTime) + " ==> " + Details);
                 }
                 else
                 {
                     _logStream.WriteLine("");
                     if (_logDateAndTime)
-                        _logStream.WriteLine(String.Format("{0:MM/dd/yy h:mm:ss tt}", oLogTime) + " ==> " + Description);
+                        _logStream.WriteLine(string.Format("{0:MM/dd/yy h:mm:ss tt}", oLogTime) + " ==> " + Description);
                     _logStream.WriteLine(Details);
                 }
                 _logStream.Flush();

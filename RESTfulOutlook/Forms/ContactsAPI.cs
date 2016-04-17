@@ -25,7 +25,7 @@ namespace RESTfulOutlook.Forms
         ClassLogger applogger = null;
         ClassLogger sdklogger = null;
 
-        public ContactsAPI(GraphServiceClient client, ClassLogger appLogger, ClassLogger sdkLogger)
+        public ContactsAPI(ref GraphServiceClient client, ref ClassLogger appLogger, ref ClassLogger sdkLogger)
         {
             InitializeComponent();
             graphClient = client;
@@ -466,8 +466,8 @@ namespace RESTfulOutlook.Forms
         private void ContactsAPI_FormClosing(object sender, FormClosingEventArgs e)
         {
             // cleanup
-            applogger.Dispose();
-            sdklogger.Dispose();
+            //applogger.Dispose();
+            //sdklogger.Dispose();
         }
     }
 }

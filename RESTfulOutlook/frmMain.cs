@@ -301,7 +301,7 @@ namespace RESTfulOutlook
 
         private void btnContactsAPI_Click(object sender, EventArgs e)
         {
-            Forms.ContactsAPI mContactsAPI = new Forms.ContactsAPI(graphClient, applogger, sdklogger);
+            Forms.ContactsAPI mContactsAPI = new Forms.ContactsAPI(ref graphClient, ref applogger, ref sdklogger);
             mContactsAPI.Owner = this;
             mContactsAPI.ShowDialog(this);
         }
@@ -315,14 +315,14 @@ namespace RESTfulOutlook
 
         private void btnCalendarAPI_Click(object sender, EventArgs e)
         {
-            Forms.CalendarAPI mCalendarAPI = new Forms.CalendarAPI(graphClient, applogger, sdklogger);
+            Forms.CalendarAPI mCalendarAPI = new Forms.CalendarAPI(ref graphClient, ref applogger, ref sdklogger);
             mCalendarAPI.Owner = this;
             mCalendarAPI.ShowDialog(this);
         }
 
         private void btnMailAPI_Click(object sender, EventArgs e)
         {
-            Forms.MailAPI mMailAPI = new Forms.MailAPI(graphClient, applogger, sdklogger);
+            Forms.MailAPI mMailAPI = new Forms.MailAPI(ref graphClient, ref applogger, ref sdklogger);
             mMailAPI.Owner = this;
             mMailAPI.ShowDialog(this);
         }

@@ -405,7 +405,7 @@
             this.MaximizeBox = false;
             this.Name = "CalendarAPI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CalendarAPI";
+            this.Text = "Calendar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CalendarAPI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).EndInit();
             this.mnuContextMenu.ResumeLayout(false);

@@ -279,3 +279,4 @@ D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.C
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml
 F:\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
 F:\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.NewMessageForm.resources

@@ -24,7 +24,7 @@ namespace RESTfulOutlook.Forms
         ClassLogger applogger = null;
         ClassLogger sdklogger = null;
 
-        public CalendarAPI(GraphServiceClient client, ClassLogger appLogger, ClassLogger sdkLogger)
+        public CalendarAPI(ref GraphServiceClient client, ref ClassLogger appLogger, ref ClassLogger sdkLogger)
         {
             InitializeComponent();
             graphClient = client;
@@ -54,7 +54,7 @@ namespace RESTfulOutlook.Forms
                 dgCleanup();
 
                 int mLimit = (Int32)nudEvents.Value;                
-
+                
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.Events.Request().GetHttpRequestMessage().ToString());
                 var calEvents = await graphClient.Me.Events.Request()
@@ -425,8 +425,8 @@ namespace RESTfulOutlook.Forms
         private void CalendarAPI_FormClosing(object sender, FormClosingEventArgs e)
         {
             // cleanup
-            applogger.Dispose();
-            sdklogger.Dispose();
+            //applogger.Dispose();
+            //sdklogger.Dispose();
         }
     }
 }

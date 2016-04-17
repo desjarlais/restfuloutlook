@@ -495,7 +495,7 @@
             this.MaximizeBox = false;
             this.Name = "ContactsAPI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ContactsAPI";
+            this.Text = "Contacts";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContactsAPI_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgContactsList)).EndInit();
             this.mnuContextMenu.ResumeLayout(false);

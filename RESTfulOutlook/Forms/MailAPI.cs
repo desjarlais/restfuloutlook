@@ -25,7 +25,7 @@ namespace RESTfulOutlook.Forms
         ClassLogger applogger = null;
         ClassLogger sdklogger = null;
 
-        public MailAPI(GraphServiceClient olClient, ClassLogger appLogger, ClassLogger sdkLogger)
+        public MailAPI(ref GraphServiceClient olClient, ref ClassLogger appLogger, ref ClassLogger sdkLogger)
         {
             InitializeComponent();
             graphClient = olClient;
@@ -58,19 +58,25 @@ namespace RESTfulOutlook.Forms
                 // log the request
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.MailFolders.Request().GetHttpRequestMessage().ToString());
-                
+
                 // get the folders
                 var mailFolders = await graphClient.Me.MailFolders.Request()
+                    .Expand("childfolders")
+                    .Top(100)
                     .GetAsync();
+
+                // clear any previous tree view
+                tvwFolders.Nodes.Clear();
+
+                // loop parent folders
                 foreach (var mailFolder in mailFolders.CurrentPage)
-                {
+                {    
                     // populate folder ids in the local dictionary
                     // any requests for a specific folder need to use Id, not display name
                     dFolderIds.Add(mailFolder.DisplayName, mailFolder.Id);
 
-                    // now populate the dropdown with displayname
-                    cmbFolders.Items.Add(mailFolder.DisplayName);
-                    cmbFolders.SelectedIndex = 0;
+                    // need to check each folder for child folders
+                    AddFoldersToTree(mailFolder);
                 }
             }
             catch (ServiceException se)
@@ -91,6 +97,47 @@ namespace RESTfulOutlook.Forms
             }
         }
 
+        /// <summary>
+        /// This function will display the folder name,
+        /// then loop through the child folders, adding nodes as needed
+        /// </summary>
+        /// <param name="folder">MailFolder object</param>
+        public void AddFoldersToTree(MailFolder folder)
+        {
+            try
+            {
+                // create the parent node for the folder and set the text
+                TreeNode parent = new TreeNode();
+                parent.Text = folder.DisplayName;
+                tvwFolders.Nodes.Add(parent);
+
+                // check for child folders
+                if (folder.ChildFolderCount > 0)
+                {
+                    // get the child folders collection
+                    var childFolders = folder.ChildFolders;
+                    TreeNode[] children = new TreeNode[childFolders.Count];
+
+                    // loop the child folders and display 
+                    foreach (MailFolder childFolder in childFolders)
+                    {
+                        // create the child tree node and set the text
+                        TreeNode child = new TreeNode();
+                        child.Text = childFolder.DisplayName;
+                        // since we have a child folder, need to add this id to the dictionary
+                        dFolderIds.Add(childFolder.DisplayName, childFolder.Id);
+                        
+                        // now display the child folder in the tree view
+                        parent.Nodes.Add(child);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private async void btnGetMessages_Click(object sender, EventArgs e)
         {
             await GetMessagesAsync();
@@ -102,9 +149,10 @@ namespace RESTfulOutlook.Forms
             {
                 Cursor = Cursors.WaitCursor;
                 dgCleanup();
-                
+
                 // get folder name from selected dropdown item and convert to folder id
-                string folderName = cmbFolders.SelectedItem.ToString();
+                //string folderName = cmbFolders.SelectedItem.ToString();
+                string folderName = tvwFolders.SelectedNode.Text;
                 string folderId = null;
 
                 foreach (KeyValuePair<string, string> pair in dFolderIds)
@@ -305,16 +353,21 @@ namespace RESTfulOutlook.Forms
                 // open the associated form based on the selected column
                 if (e.ColumnIndex == (int)columns.To)
                 {
+                    // create a temp recip collection
                     List<Recipient> tRecips = null;
 
+                    // loop through the cached dictionary values
                     foreach (KeyValuePair<string, List<Recipient>> pair in dRecips)
                     {
+                        // if the value matches the selected item id
+                        // add it to the temp dictionary
                         if (pair.Key == mId)
                         {
                             tRecips = pair.Value;
                         }
                     }
 
+                    // pass the temp dictionary to the form
                     RecipientCollection mRecipients = new RecipientCollection(mId, tRecips);
                     mRecipients.Owner = this;
                     mRecipients.ShowDialog(this);
@@ -508,8 +561,20 @@ namespace RESTfulOutlook.Forms
         private void MailAPI_FormClosing(object sender, FormClosingEventArgs e)
         {
             // cleanup
-            applogger.Dispose();
-            sdklogger.Dispose();
+            //applogger.Dispose();
+            //sdklogger.Dispose();
+        }
+
+        private void btnCreateNewMessage_Click(object sender, EventArgs e)
+        {
+            NewMessageForm newMsg = new NewMessageForm(ref graphClient, ref applogger, ref sdklogger);
+            newMsg.Owner = this;
+            newMsg.ShowDialog(this);
+        }
+
+        private async void tvwFolders_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            await GetMessagesAsync();
         }
     }
 }
