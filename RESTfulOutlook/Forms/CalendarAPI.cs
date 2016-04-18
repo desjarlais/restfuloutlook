@@ -47,7 +47,6 @@ namespace RESTfulOutlook.Forms
 
         private async Task GetFoldersAsync()
         {
-            // TODO: return subfolders
             try
             {
                 // adjust UI so user knows work is happening
@@ -58,8 +57,7 @@ namespace RESTfulOutlook.Forms
                 sdklogger.Log(graphClient.Me.MailFolders.Request().GetHttpRequestMessage().ToString());
 
                 // get the folders
-                var calFolders = await graphClient.Me.Calendars.Request()
-                    .GetAsync();
+                var calFolders = await graphClient.Me.Calendars.Request().GetAsync();
 
                 // loop parent folders
                 foreach (var cal in calFolders.CurrentPage)

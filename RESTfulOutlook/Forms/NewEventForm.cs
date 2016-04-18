@@ -25,6 +25,8 @@ namespace RESTfulOutlook.Forms
         {
             try
             {
+                Microsoft.Graph.Event evt = new Microsoft.Graph.Event();
+
                 Location location = new Location();
                 location.DisplayName = tbLocation.Text;
 
@@ -39,11 +41,11 @@ namespace RESTfulOutlook.Forms
                 attendee.EmailAddress = email;
                 attendee.Type = AttendeeType.Required;
                 attendees.Add(attendee);
-
-                Microsoft.Graph.Event evt = new Microsoft.Graph.Event();
+                                
                 evt.Subject = tbSubject.Text;
                 evt.Body = body;
                 evt.Location = location;
+                evt.Attendees = attendees;
 
                 DateTimeTimeZone dtStart = new DateTimeTimeZone();
                 dtStart.TimeZone = TimeZoneInfo.Local.Id;

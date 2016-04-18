@@ -283,3 +283,5 @@ D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.NewM
 F:\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.NewMessageForm.resources
 F:\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.NewContactForm.resources
 F:\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.NewEventForm.resources
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.NewContactForm.resources
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.NewEventForm.resources

@@ -120,10 +120,10 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnSendEmail.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABjSURBVDhPYxh48O3bt/+UYLABTk5OZGEMA9avW///w/uP
-        eDFIDVYDYBL4DEFWg2EAugJ8mkF8rAZgU4hLDKcB6BqwaQZhvAaAMEwjNs0gTNAAQpj6BpCD4QZQgqE5
-        YsAAAwMAnOldh5IzM6IAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAGNJREFUOE9jGHjw7du3/5RgsAFOTk5kYQwD1q9b///D+494MUgNVgNgEvgMQVaD
+        YQC6AnyaQXysBmBTiEsMpwHoGrBpBmG8BoAwTCM2zSBM0ABCmPoGkIPhBlCCoTliwAADAwCc6V2HkjMz
+        ogAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

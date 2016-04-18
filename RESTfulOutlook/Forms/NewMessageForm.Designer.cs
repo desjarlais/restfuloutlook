@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMessageForm));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSendEmail = new System.Windows.Forms.Button();
             this.tbBody = new System.Windows.Forms.TextBox();
             this.tbSubject = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbToRecipients = new System.Windows.Forms.TextBox();
-            this.btnSendEmail = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,19 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Message Details";
+            // 
+            // btnSendEmail
+            // 
+            this.btnSendEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnSendEmail.Image")));
+            this.btnSendEmail.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSendEmail.Location = new System.Drawing.Point(9, 19);
+            this.btnSendEmail.Name = "btnSendEmail";
+            this.btnSendEmail.Size = new System.Drawing.Size(68, 46);
+            this.btnSendEmail.TabIndex = 4;
+            this.btnSendEmail.Text = "Send";
+            this.btnSendEmail.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSendEmail.UseVisualStyleBackColor = true;
+            this.btnSendEmail.Click += new System.EventHandler(this.btnSendEmail_Click);
             // 
             // tbBody
             // 
@@ -94,19 +107,6 @@
             this.tbToRecipients.Size = new System.Drawing.Size(385, 20);
             this.tbToRecipients.TabIndex = 1;
             // 
-            // btnSendEmail
-            // 
-            this.btnSendEmail.Image = ((System.Drawing.Image)(resources.GetObject("btnSendEmail.Image")));
-            this.btnSendEmail.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSendEmail.Location = new System.Drawing.Point(9, 19);
-            this.btnSendEmail.Name = "btnSendEmail";
-            this.btnSendEmail.Size = new System.Drawing.Size(68, 46);
-            this.btnSendEmail.TabIndex = 4;
-            this.btnSendEmail.Text = "Send";
-            this.btnSendEmail.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSendEmail.UseVisualStyleBackColor = true;
-            this.btnSendEmail.Click += new System.EventHandler(this.btnSendEmail_Click);
-            // 
             // NewMessageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,7 +115,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "NewMessageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Message";

@@ -50,8 +50,7 @@ namespace RESTfulOutlook.Forms
                 sdklogger.Log(graphClient.Me.SendMail(msg, true).Request().GetHttpRequestMessage().RequestUri.ToString());
 
                 // send the new message
-                graphClient.Me.SendMail(msg, true).Request()
-                    .PostAsync();
+                graphClient.Me.SendMail(msg, true).Request().PostAsync();
             }
             catch (Exception ex)
             {

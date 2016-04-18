@@ -463,5 +463,12 @@ namespace RESTfulOutlook.Forms
             YomiGivenName = 36,
             YomiSurname = 37
         };
+
+        private void btnNewContact_Click(object sender, EventArgs e)
+        {
+            NewContactForm newContact = new NewContactForm(ref graphClient, ref applogger, ref sdklogger);
+            newContact.Owner = this;
+            newContact.ShowDialog(this);
+        }
     }
 }

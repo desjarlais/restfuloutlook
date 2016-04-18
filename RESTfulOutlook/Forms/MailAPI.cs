@@ -49,7 +49,6 @@ namespace RESTfulOutlook.Forms
 
         private async Task GetFoldersAsync()
         {
-            // TODO: return subfolders
             try
             {
                 // adjust UI so user knows work is happening

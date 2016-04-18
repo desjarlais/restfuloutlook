@@ -32,9 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalendarAPI));
             this.btnGetEvents = new System.Windows.Forms.Button();
             this.dgEvents = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mnuContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudEvents = new System.Windows.Forms.NumericUpDown();
+            this.cmbCalendars = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnNewMeeting = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attendees = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -43,7 +48,7 @@
             this.body = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bodypreview = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.calendar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categories = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categories = new System.Windows.Forms.DataGridViewButtonColumn();
             this.changekey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createddatetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastmodified = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,11 +70,6 @@
             this.showas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weblink = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nudEvents = new System.Windows.Forms.NumericUpDown();
-            this.cmbCalendars = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnNewMeeting = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).BeginInit();
             this.mnuContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEvents)).BeginInit();
@@ -132,13 +132,6 @@
             this.dgEvents.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEvents_CellContentDoubleClick);
             this.dgEvents.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgEvents_CellMouseDown);
             // 
-            // id
-            // 
-            this.id.ContextMenuStrip = this.mnuContextMenu;
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
             // mnuContextMenu
             // 
             this.mnuContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -153,220 +146,6 @@
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
-            // 
-            // subject
-            // 
-            this.subject.ContextMenuStrip = this.mnuContextMenu;
-            this.subject.HeaderText = "Subject";
-            this.subject.Name = "subject";
-            this.subject.ReadOnly = true;
-            // 
-            // location
-            // 
-            this.location.ContextMenuStrip = this.mnuContextMenu;
-            this.location.HeaderText = "Location";
-            this.location.Name = "location";
-            this.location.ReadOnly = true;
-            // 
-            // attendees
-            // 
-            this.attendees.HeaderText = "Attendees";
-            this.attendees.Name = "attendees";
-            this.attendees.ReadOnly = true;
-            this.attendees.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.attendees.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // organizer
-            // 
-            this.organizer.ContextMenuStrip = this.mnuContextMenu;
-            this.organizer.HeaderText = "Organizer";
-            this.organizer.Name = "organizer";
-            this.organizer.ReadOnly = true;
-            // 
-            // attachments
-            // 
-            this.attachments.ContextMenuStrip = this.mnuContextMenu;
-            this.attachments.HeaderText = "Attachments";
-            this.attachments.Name = "attachments";
-            this.attachments.ReadOnly = true;
-            this.attachments.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.attachments.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // body
-            // 
-            this.body.HeaderText = "Body";
-            this.body.Name = "body";
-            this.body.ReadOnly = true;
-            // 
-            // bodypreview
-            // 
-            this.bodypreview.ContextMenuStrip = this.mnuContextMenu;
-            this.bodypreview.HeaderText = "BodyPreview";
-            this.bodypreview.Name = "bodypreview";
-            this.bodypreview.ReadOnly = true;
-            // 
-            // calendar
-            // 
-            this.calendar.ContextMenuStrip = this.mnuContextMenu;
-            this.calendar.HeaderText = "Calendar";
-            this.calendar.Name = "calendar";
-            this.calendar.ReadOnly = true;
-            // 
-            // categories
-            // 
-            this.categories.ContextMenuStrip = this.mnuContextMenu;
-            this.categories.HeaderText = "Categories";
-            this.categories.Name = "categories";
-            this.categories.ReadOnly = true;
-            // 
-            // changekey
-            // 
-            this.changekey.ContextMenuStrip = this.mnuContextMenu;
-            this.changekey.HeaderText = "ChangeKey";
-            this.changekey.Name = "changekey";
-            this.changekey.ReadOnly = true;
-            // 
-            // createddatetime
-            // 
-            this.createddatetime.ContextMenuStrip = this.mnuContextMenu;
-            this.createddatetime.HeaderText = "CreatedDateTime";
-            this.createddatetime.Name = "createddatetime";
-            this.createddatetime.ReadOnly = true;
-            // 
-            // lastmodified
-            // 
-            this.lastmodified.ContextMenuStrip = this.mnuContextMenu;
-            this.lastmodified.HeaderText = "LastModifiedDateTime";
-            this.lastmodified.Name = "lastmodified";
-            this.lastmodified.ReadOnly = true;
-            // 
-            // start
-            // 
-            this.start.ContextMenuStrip = this.mnuContextMenu;
-            this.start.HeaderText = "Start";
-            this.start.Name = "start";
-            this.start.ReadOnly = true;
-            // 
-            // end
-            // 
-            this.end.ContextMenuStrip = this.mnuContextMenu;
-            this.end.HeaderText = "End";
-            this.end.Name = "end";
-            this.end.ReadOnly = true;
-            // 
-            // hasattachments
-            // 
-            this.hasattachments.ContextMenuStrip = this.mnuContextMenu;
-            this.hasattachments.HeaderText = "HasAttachments";
-            this.hasattachments.Name = "hasattachments";
-            this.hasattachments.ReadOnly = true;
-            // 
-            // importance
-            // 
-            this.importance.ContextMenuStrip = this.mnuContextMenu;
-            this.importance.HeaderText = "Importance";
-            this.importance.Name = "importance";
-            this.importance.ReadOnly = true;
-            // 
-            // instances
-            // 
-            this.instances.HeaderText = "Instances";
-            this.instances.Name = "instances";
-            this.instances.ReadOnly = true;
-            this.instances.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.instances.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // icaluid
-            // 
-            this.icaluid.ContextMenuStrip = this.mnuContextMenu;
-            this.icaluid.HeaderText = "iCalUID";
-            this.icaluid.Name = "icaluid";
-            this.icaluid.ReadOnly = true;
-            // 
-            // isallday
-            // 
-            this.isallday.ContextMenuStrip = this.mnuContextMenu;
-            this.isallday.HeaderText = "IsAllDay";
-            this.isallday.Name = "isallday";
-            this.isallday.ReadOnly = true;
-            // 
-            // iscancelled
-            // 
-            this.iscancelled.ContextMenuStrip = this.mnuContextMenu;
-            this.iscancelled.HeaderText = "IsCancelled";
-            this.iscancelled.Name = "iscancelled";
-            this.iscancelled.ReadOnly = true;
-            // 
-            // isorganizer
-            // 
-            this.isorganizer.ContextMenuStrip = this.mnuContextMenu;
-            this.isorganizer.HeaderText = "IsOrganizer";
-            this.isorganizer.Name = "isorganizer";
-            this.isorganizer.ReadOnly = true;
-            // 
-            // originalendtimezone
-            // 
-            this.originalendtimezone.ContextMenuStrip = this.mnuContextMenu;
-            this.originalendtimezone.HeaderText = "OriginalEndTimeZone";
-            this.originalendtimezone.Name = "originalendtimezone";
-            this.originalendtimezone.ReadOnly = true;
-            // 
-            // originalstarttimezone
-            // 
-            this.originalstarttimezone.ContextMenuStrip = this.mnuContextMenu;
-            this.originalstarttimezone.HeaderText = "OriginalStartTimeZone";
-            this.originalstarttimezone.Name = "originalstarttimezone";
-            this.originalstarttimezone.ReadOnly = true;
-            // 
-            // recurrence
-            // 
-            this.recurrence.HeaderText = "Recurrence";
-            this.recurrence.Name = "recurrence";
-            this.recurrence.ReadOnly = true;
-            this.recurrence.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.recurrence.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // responserequested
-            // 
-            this.responserequested.ContextMenuStrip = this.mnuContextMenu;
-            this.responserequested.HeaderText = "ResponseRequested";
-            this.responserequested.Name = "responserequested";
-            this.responserequested.ReadOnly = true;
-            // 
-            // responsestatus
-            // 
-            this.responsestatus.ContextMenuStrip = this.mnuContextMenu;
-            this.responsestatus.HeaderText = "ResponseStatus";
-            this.responsestatus.Name = "responsestatus";
-            this.responsestatus.ReadOnly = true;
-            // 
-            // seriesmasterid
-            // 
-            this.seriesmasterid.ContextMenuStrip = this.mnuContextMenu;
-            this.seriesmasterid.HeaderText = "SeriesMasterId";
-            this.seriesmasterid.Name = "seriesmasterid";
-            this.seriesmasterid.ReadOnly = true;
-            // 
-            // showas
-            // 
-            this.showas.ContextMenuStrip = this.mnuContextMenu;
-            this.showas.HeaderText = "ShowAs";
-            this.showas.Name = "showas";
-            this.showas.ReadOnly = true;
-            // 
-            // type
-            // 
-            this.type.ContextMenuStrip = this.mnuContextMenu;
-            this.type.HeaderText = "Type";
-            this.type.Name = "type";
-            this.type.ReadOnly = true;
-            // 
-            // weblink
-            // 
-            this.weblink.ContextMenuStrip = this.mnuContextMenu;
-            this.weblink.HeaderText = "WebLink";
-            this.weblink.Name = "weblink";
-            this.weblink.ReadOnly = true;
             // 
             // label1
             // 
@@ -421,6 +200,272 @@
             this.btnNewMeeting.UseVisualStyleBackColor = true;
             this.btnNewMeeting.Click += new System.EventHandler(this.btnNewMeeting_Click);
             // 
+            // id
+            // 
+            this.id.ContextMenuStrip = this.mnuContextMenu;
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 50;
+            // 
+            // subject
+            // 
+            this.subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.subject.ContextMenuStrip = this.mnuContextMenu;
+            this.subject.HeaderText = "Subject";
+            this.subject.Name = "subject";
+            this.subject.ReadOnly = true;
+            this.subject.Width = 68;
+            // 
+            // location
+            // 
+            this.location.ContextMenuStrip = this.mnuContextMenu;
+            this.location.HeaderText = "Location";
+            this.location.Name = "location";
+            this.location.ReadOnly = true;
+            // 
+            // attendees
+            // 
+            this.attendees.HeaderText = "Attendees";
+            this.attendees.Name = "attendees";
+            this.attendees.ReadOnly = true;
+            this.attendees.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.attendees.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // organizer
+            // 
+            this.organizer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.organizer.ContextMenuStrip = this.mnuContextMenu;
+            this.organizer.HeaderText = "Organizer";
+            this.organizer.Name = "organizer";
+            this.organizer.ReadOnly = true;
+            this.organizer.Width = 77;
+            // 
+            // attachments
+            // 
+            this.attachments.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.attachments.ContextMenuStrip = this.mnuContextMenu;
+            this.attachments.HeaderText = "Attachments";
+            this.attachments.Name = "attachments";
+            this.attachments.ReadOnly = true;
+            this.attachments.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.attachments.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.attachments.Width = 91;
+            // 
+            // body
+            // 
+            this.body.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.body.HeaderText = "Body";
+            this.body.Name = "body";
+            this.body.ReadOnly = true;
+            this.body.Width = 37;
+            // 
+            // bodypreview
+            // 
+            this.bodypreview.ContextMenuStrip = this.mnuContextMenu;
+            this.bodypreview.HeaderText = "BodyPreview";
+            this.bodypreview.Name = "bodypreview";
+            this.bodypreview.ReadOnly = true;
+            // 
+            // calendar
+            // 
+            this.calendar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.calendar.ContextMenuStrip = this.mnuContextMenu;
+            this.calendar.HeaderText = "Calendar";
+            this.calendar.Name = "calendar";
+            this.calendar.ReadOnly = true;
+            this.calendar.Width = 74;
+            // 
+            // categories
+            // 
+            this.categories.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.categories.ContextMenuStrip = this.mnuContextMenu;
+            this.categories.HeaderText = "Categories";
+            this.categories.Name = "categories";
+            this.categories.ReadOnly = true;
+            this.categories.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.categories.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.categories.Width = 82;
+            // 
+            // changekey
+            // 
+            this.changekey.ContextMenuStrip = this.mnuContextMenu;
+            this.changekey.HeaderText = "ChangeKey";
+            this.changekey.Name = "changekey";
+            this.changekey.ReadOnly = true;
+            // 
+            // createddatetime
+            // 
+            this.createddatetime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.createddatetime.ContextMenuStrip = this.mnuContextMenu;
+            this.createddatetime.HeaderText = "CreatedDateTime";
+            this.createddatetime.Name = "createddatetime";
+            this.createddatetime.ReadOnly = true;
+            this.createddatetime.Width = 115;
+            // 
+            // lastmodified
+            // 
+            this.lastmodified.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.lastmodified.ContextMenuStrip = this.mnuContextMenu;
+            this.lastmodified.HeaderText = "LastModifiedDateTime";
+            this.lastmodified.Name = "lastmodified";
+            this.lastmodified.ReadOnly = true;
+            this.lastmodified.Width = 138;
+            // 
+            // start
+            // 
+            this.start.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.start.ContextMenuStrip = this.mnuContextMenu;
+            this.start.HeaderText = "Start";
+            this.start.Name = "start";
+            this.start.ReadOnly = true;
+            this.start.Width = 54;
+            // 
+            // end
+            // 
+            this.end.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.end.ContextMenuStrip = this.mnuContextMenu;
+            this.end.HeaderText = "End";
+            this.end.Name = "end";
+            this.end.ReadOnly = true;
+            this.end.Width = 51;
+            // 
+            // hasattachments
+            // 
+            this.hasattachments.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.hasattachments.ContextMenuStrip = this.mnuContextMenu;
+            this.hasattachments.HeaderText = "HasAttachments";
+            this.hasattachments.Name = "hasattachments";
+            this.hasattachments.ReadOnly = true;
+            this.hasattachments.Width = 110;
+            // 
+            // importance
+            // 
+            this.importance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.importance.ContextMenuStrip = this.mnuContextMenu;
+            this.importance.HeaderText = "Importance";
+            this.importance.Name = "importance";
+            this.importance.ReadOnly = true;
+            this.importance.Width = 85;
+            // 
+            // instances
+            // 
+            this.instances.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.instances.HeaderText = "Instances";
+            this.instances.Name = "instances";
+            this.instances.ReadOnly = true;
+            this.instances.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.instances.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.instances.Width = 78;
+            // 
+            // icaluid
+            // 
+            this.icaluid.ContextMenuStrip = this.mnuContextMenu;
+            this.icaluid.HeaderText = "iCalUID";
+            this.icaluid.Name = "icaluid";
+            this.icaluid.ReadOnly = true;
+            // 
+            // isallday
+            // 
+            this.isallday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.isallday.ContextMenuStrip = this.mnuContextMenu;
+            this.isallday.HeaderText = "IsAllDay";
+            this.isallday.Name = "isallday";
+            this.isallday.ReadOnly = true;
+            this.isallday.Width = 70;
+            // 
+            // iscancelled
+            // 
+            this.iscancelled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.iscancelled.ContextMenuStrip = this.mnuContextMenu;
+            this.iscancelled.HeaderText = "IsCancelled";
+            this.iscancelled.Name = "iscancelled";
+            this.iscancelled.ReadOnly = true;
+            this.iscancelled.Width = 87;
+            // 
+            // isorganizer
+            // 
+            this.isorganizer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.isorganizer.ContextMenuStrip = this.mnuContextMenu;
+            this.isorganizer.HeaderText = "IsOrganizer";
+            this.isorganizer.Name = "isorganizer";
+            this.isorganizer.ReadOnly = true;
+            this.isorganizer.Width = 85;
+            // 
+            // originalendtimezone
+            // 
+            this.originalendtimezone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.originalendtimezone.ContextMenuStrip = this.mnuContextMenu;
+            this.originalendtimezone.HeaderText = "OriginalEndTimeZone";
+            this.originalendtimezone.Name = "originalendtimezone";
+            this.originalendtimezone.ReadOnly = true;
+            this.originalendtimezone.Width = 134;
+            // 
+            // originalstarttimezone
+            // 
+            this.originalstarttimezone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.originalstarttimezone.ContextMenuStrip = this.mnuContextMenu;
+            this.originalstarttimezone.HeaderText = "OriginalStartTimeZone";
+            this.originalstarttimezone.Name = "originalstarttimezone";
+            this.originalstarttimezone.ReadOnly = true;
+            this.originalstarttimezone.Width = 137;
+            // 
+            // recurrence
+            // 
+            this.recurrence.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.recurrence.HeaderText = "Recurrence";
+            this.recurrence.Name = "recurrence";
+            this.recurrence.ReadOnly = true;
+            this.recurrence.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.recurrence.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.recurrence.Width = 88;
+            // 
+            // responserequested
+            // 
+            this.responserequested.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.responserequested.ContextMenuStrip = this.mnuContextMenu;
+            this.responserequested.HeaderText = "ResponseRequested";
+            this.responserequested.Name = "responserequested";
+            this.responserequested.ReadOnly = true;
+            this.responserequested.Width = 132;
+            // 
+            // responsestatus
+            // 
+            this.responsestatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.responsestatus.ContextMenuStrip = this.mnuContextMenu;
+            this.responsestatus.HeaderText = "ResponseStatus";
+            this.responsestatus.Name = "responsestatus";
+            this.responsestatus.ReadOnly = true;
+            this.responsestatus.Width = 110;
+            // 
+            // seriesmasterid
+            // 
+            this.seriesmasterid.ContextMenuStrip = this.mnuContextMenu;
+            this.seriesmasterid.HeaderText = "SeriesMasterId";
+            this.seriesmasterid.Name = "seriesmasterid";
+            this.seriesmasterid.ReadOnly = true;
+            // 
+            // showas
+            // 
+            this.showas.ContextMenuStrip = this.mnuContextMenu;
+            this.showas.HeaderText = "ShowAs";
+            this.showas.Name = "showas";
+            this.showas.ReadOnly = true;
+            // 
+            // type
+            // 
+            this.type.ContextMenuStrip = this.mnuContextMenu;
+            this.type.HeaderText = "Type";
+            this.type.Name = "type";
+            this.type.ReadOnly = true;
+            // 
+            // weblink
+            // 
+            this.weblink.ContextMenuStrip = this.mnuContextMenu;
+            this.weblink.HeaderText = "WebLink";
+            this.weblink.Name = "weblink";
+            this.weblink.ReadOnly = true;
+            // 
             // CalendarAPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,40 +499,40 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip mnuContextMenu;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn weblink;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn showas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn seriesmasterid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn responsestatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn responserequested;
-        private System.Windows.Forms.DataGridViewButtonColumn recurrence;
-        private System.Windows.Forms.DataGridViewTextBoxColumn originalstarttimezone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn originalendtimezone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isorganizer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iscancelled;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isallday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn icaluid;
-        private System.Windows.Forms.DataGridViewButtonColumn instances;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hasattachments;
-        private System.Windows.Forms.DataGridViewTextBoxColumn end;
-        private System.Windows.Forms.DataGridViewTextBoxColumn start;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastmodified;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createddatetime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn changekey;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categories;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calendar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bodypreview;
-        private System.Windows.Forms.DataGridViewButtonColumn body;
-        private System.Windows.Forms.DataGridViewButtonColumn attachments;
-        private System.Windows.Forms.DataGridViewTextBoxColumn organizer;
-        private System.Windows.Forms.DataGridViewButtonColumn attendees;
-        private System.Windows.Forms.DataGridViewTextBoxColumn location;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subject;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.NumericUpDown nudEvents;
         private System.Windows.Forms.ComboBox cmbCalendars;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNewMeeting;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn location;
+        private System.Windows.Forms.DataGridViewButtonColumn attendees;
+        private System.Windows.Forms.DataGridViewTextBoxColumn organizer;
+        private System.Windows.Forms.DataGridViewButtonColumn attachments;
+        private System.Windows.Forms.DataGridViewButtonColumn body;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bodypreview;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calendar;
+        private System.Windows.Forms.DataGridViewButtonColumn categories;
+        private System.Windows.Forms.DataGridViewTextBoxColumn changekey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createddatetime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastmodified;
+        private System.Windows.Forms.DataGridViewTextBoxColumn start;
+        private System.Windows.Forms.DataGridViewTextBoxColumn end;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hasattachments;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importance;
+        private System.Windows.Forms.DataGridViewButtonColumn instances;
+        private System.Windows.Forms.DataGridViewTextBoxColumn icaluid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isallday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iscancelled;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isorganizer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn originalendtimezone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn originalstarttimezone;
+        private System.Windows.Forms.DataGridViewButtonColumn recurrence;
+        private System.Windows.Forms.DataGridViewTextBoxColumn responserequested;
+        private System.Windows.Forms.DataGridViewTextBoxColumn responsestatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seriesmasterid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn showas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weblink;
     }
 }
