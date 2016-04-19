@@ -32,14 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalendarAPI));
             this.btnGetEvents = new System.Windows.Forms.Button();
             this.dgEvents = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mnuContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nudEvents = new System.Windows.Forms.NumericUpDown();
-            this.cmbCalendars = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnNewMeeting = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attendees = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -70,6 +65,11 @@
             this.showas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weblink = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudEvents = new System.Windows.Forms.NumericUpDown();
+            this.cmbCalendars = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnNewMeeting = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgEvents)).BeginInit();
             this.mnuContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEvents)).BeginInit();
@@ -132,6 +132,14 @@
             this.dgEvents.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEvents_CellContentDoubleClick);
             this.dgEvents.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgEvents_CellMouseDown);
             // 
+            // id
+            // 
+            this.id.ContextMenuStrip = this.mnuContextMenu;
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 50;
+            // 
             // mnuContextMenu
             // 
             this.mnuContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -146,67 +154,6 @@
             this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(767, 471);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Double-Click Cell to open collection objects like recipients";
-            // 
-            // nudEvents
-            // 
-            this.nudEvents.Location = new System.Drawing.Point(123, 15);
-            this.nudEvents.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-            this.nudEvents.Name = "nudEvents";
-            this.nudEvents.Size = new System.Drawing.Size(55, 20);
-            this.nudEvents.TabIndex = 5;
-            this.nudEvents.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // cmbCalendars
-            // 
-            this.cmbCalendars.FormattingEnabled = true;
-            this.cmbCalendars.Location = new System.Drawing.Point(881, 12);
-            this.cmbCalendars.Name = "cmbCalendars";
-            this.cmbCalendars.Size = new System.Drawing.Size(164, 21);
-            this.cmbCalendars.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(821, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Calendars";
-            // 
-            // btnNewMeeting
-            // 
-            this.btnNewMeeting.Location = new System.Drawing.Point(12, 474);
-            this.btnNewMeeting.Name = "btnNewMeeting";
-            this.btnNewMeeting.Size = new System.Drawing.Size(105, 23);
-            this.btnNewMeeting.TabIndex = 8;
-            this.btnNewMeeting.Text = "New Meeting";
-            this.btnNewMeeting.UseVisualStyleBackColor = true;
-            this.btnNewMeeting.Click += new System.EventHandler(this.btnNewMeeting_Click);
-            // 
-            // id
-            // 
-            this.id.ContextMenuStrip = this.mnuContextMenu;
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 50;
             // 
             // subject
             // 
@@ -465,6 +412,59 @@
             this.weblink.HeaderText = "WebLink";
             this.weblink.Name = "weblink";
             this.weblink.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(767, 471);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(278, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Double-Click Cell to open collection objects like recipients";
+            // 
+            // nudEvents
+            // 
+            this.nudEvents.Location = new System.Drawing.Point(123, 15);
+            this.nudEvents.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.nudEvents.Name = "nudEvents";
+            this.nudEvents.Size = new System.Drawing.Size(55, 20);
+            this.nudEvents.TabIndex = 5;
+            this.nudEvents.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // cmbCalendars
+            // 
+            this.cmbCalendars.FormattingEnabled = true;
+            this.cmbCalendars.Location = new System.Drawing.Point(881, 12);
+            this.cmbCalendars.Name = "cmbCalendars";
+            this.cmbCalendars.Size = new System.Drawing.Size(164, 21);
+            this.cmbCalendars.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(821, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Calendars";
+            // 
+            // btnNewMeeting
+            // 
+            this.btnNewMeeting.Location = new System.Drawing.Point(12, 474);
+            this.btnNewMeeting.Name = "btnNewMeeting";
+            this.btnNewMeeting.Size = new System.Drawing.Size(105, 23);
+            this.btnNewMeeting.TabIndex = 8;
+            this.btnNewMeeting.Text = "New Meeting";
+            this.btnNewMeeting.UseVisualStyleBackColor = true;
+            this.btnNewMeeting.Click += new System.EventHandler(this.btnNewMeeting_Click);
             // 
             // CalendarAPI
             // 

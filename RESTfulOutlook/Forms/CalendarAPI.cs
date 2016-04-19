@@ -54,8 +54,8 @@ namespace RESTfulOutlook.Forms
 
                 // log the request
                 sdklogger.Log("REQUEST");
-                sdklogger.Log(graphClient.Me.MailFolders.Request().GetHttpRequestMessage().ToString());
-
+                sdklogger.Log(graphClient.Me.Calendars.Request().GetHttpRequestMessage().ToString());
+                
                 // get the folders
                 var calFolders = await graphClient.Me.Calendars.Request().GetAsync();
 
@@ -135,7 +135,7 @@ namespace RESTfulOutlook.Forms
                     dgEvents.Rows[n].Cells[(int)columns.LastModifiedDateTime].Value = calEvent.LastModifiedDateTime;
                     dgEvents.Rows[n].Cells[(int)columns.Start].Value = calEvent.Start.DateTime + " : " + calEvent.Start.TimeZone;
                     dgEvents.Rows[n].Cells[(int)columns.End].Value = calEvent.End.DateTime + " : "  + calEvent.End.TimeZone;
-                    dgEvents.Rows[n].Cells[(int)columns.Attachments].Value = calEvent.HasAttachments;
+                    dgEvents.Rows[n].Cells[(int)columns.HasAttachments].Value = calEvent.HasAttachments;
                     dgEvents.Rows[n].Cells[(int)columns.Importance].Value = calEvent.Importance;
                     dgEvents.Rows[n].Cells[(int)columns.iCalUID].Value = calEvent.ICalUId;
                     dgEvents.Rows[n].Cells[(int)columns.IsAllDay].Value = calEvent.IsAllDay;

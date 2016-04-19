@@ -11,6 +11,7 @@ namespace RESTfulOutlook.Forms
         GraphServiceClient graphClient;
         ClassLogger applogger = null;
         ClassLogger sdklogger = null;
+        List<Recipient> toRecipients;
 
         public NewMessageForm(ref GraphServiceClient olClient, ref ClassLogger appLogger, ref ClassLogger sdkLogger)
         {
@@ -18,6 +19,7 @@ namespace RESTfulOutlook.Forms
             graphClient = olClient;
             applogger = appLogger;
             sdklogger = sdkLogger;
+            toRecipients = new List<Recipient>();
         }
 
         private void btnSendEmail_Click(object sender, EventArgs e)
@@ -33,12 +35,13 @@ namespace RESTfulOutlook.Forms
                 body.Content = tbBody.Text;
                 body.ContentType = BodyType.Html;
 
-                List<Recipient> toRecipients = new List<Recipient>();
-                Recipient recip = new Recipient();
-                EmailAddress email = new EmailAddress();
-                email.Address = tbToRecipients.Text;
-                recip.EmailAddress = email;
-                toRecipients.Add(recip);
+                // split out the different email addresses and add to collection
+                char[] delim = { ';' };
+                string[] smtpArray = tbToRecipients.Text.Split(delim);
+                foreach (var smtp in smtpArray)
+                {
+                    AddRecipToCollection(smtp);
+                }
 
                 Microsoft.Graph.Message msg = new Microsoft.Graph.Message();
                 msg.Subject = tbSubject.Text;
@@ -62,6 +65,20 @@ namespace RESTfulOutlook.Forms
                 // close the form
                 Close();
             }
+        }
+
+        /// <summary>
+        /// This function creates a new recip and emailaddress object,
+        /// then adds the recip to the collection
+        /// </summary>
+        /// <param name="email">smtp address for the recipient</param>
+        public void AddRecipToCollection(string email)
+        {
+            Recipient recip = new Recipient();
+            EmailAddress recipAddress = new EmailAddress();
+            recipAddress.Address = email;
+            recip.EmailAddress = recipAddress;
+            toRecipients.Add(recip);
         }
     }
 }

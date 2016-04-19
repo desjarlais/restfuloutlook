@@ -19,6 +19,9 @@ namespace RESTfulOutlook.Forms
             graphClient = olClient;
             applogger = appLogger;
             sdklogger = sdkLogger;
+
+            // add 1/2 hour to the dtpend time
+            dtpEndTime.Value = dtpEndTime.Value.AddMinutes(30);
         }
 
         public async Task CreateNewMeeting()
@@ -65,10 +68,10 @@ namespace RESTfulOutlook.Forms
                 sdklogger.Log(graphClient.Me.Events.Request().GetHttpRequestMessage().RequestUri.ToString());
 
                 // send the new message
-                await graphClient.Me.Events.Request().AddAsync(evt);
+                var createdEvent = await graphClient.Me.Events.Request().AddAsync(evt);
 
                 // log the send and associated id
-                sdklogger.Log("Meeting Sent : Id = " + evt.Id);
+                sdklogger.Log("Meeting Sent : Id = " + createdEvent.Id);
             }
             catch (Exception ex)
             {
