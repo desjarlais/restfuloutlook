@@ -179,6 +179,8 @@
     <Compile Include="Forms\NewMessageForm.Designer.cs">
       <DependentUpon>NewMessageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="JsonHelpers\JsonBody.cs" />
+    <Compile Include="JsonHelpers\Notifications.cs" />
     <Compile Include="Forms\PhysicalAddressForm.cs">
       <SubType>Form</SubType>
     </Compile>

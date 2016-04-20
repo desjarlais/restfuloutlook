@@ -108,6 +108,7 @@
             "OutlookContacts-ListContactFolders",
             "OutlookGroups-ListGroups",
             "OutlookGroups-ListMemberOf",
+            "OutlookNotifications-CreatePushSubscription",
             "Graph-Metadata"});
             this.cbRESTQuery.Location = new System.Drawing.Point(180, 11);
             this.cbRESTQuery.Name = "cbRESTQuery";
