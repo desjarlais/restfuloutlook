@@ -10,7 +10,6 @@ using RESTfulOutlook.JsonHelpers;
 using System.Collections.Generic;
 using System.Xml;
 using System.Diagnostics;
-using Newtonsoft.Json;
 
 namespace RESTfulOutlook.Forms
 {

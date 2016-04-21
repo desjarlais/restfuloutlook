@@ -55,7 +55,8 @@ namespace RESTfulOutlook.Forms
                 // log the request
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.Calendars.Request().GetHttpRequestMessage().ToString());
-                
+                sdklogger.Log(graphClient.Me.Calendars.Request().GetHttpRequestMessage().RequestUri.ToString());
+
                 // get the folders
                 var calFolders = await graphClient.Me.Calendars.Request().GetAsync();
 
@@ -115,6 +116,7 @@ namespace RESTfulOutlook.Forms
 
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.Calendars[folderId].Events.Request().GetHttpRequestMessage().ToString());
+                sdklogger.Log(graphClient.Me.Calendars[folderId].Events.Request().GetHttpRequestMessage().RequestUri.ToString());
 
                 var calEvents = await graphClient.Me.Calendars[folderId].Events.Request()
                     .Expand("attachments")

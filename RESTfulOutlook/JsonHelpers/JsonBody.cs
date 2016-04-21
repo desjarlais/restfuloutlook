@@ -1,22 +1,36 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace RESTfulOutlook.JsonHelpers
 {
     public class JsonBody
     {
+        /// <summary>
+        /// create a json message of pre-defined values
+        /// </summary>
+        /// <returns>json formatted message body</returns>
         public static string CreateMessageJson()
         {
             // create the root object
             RootObject ro = new RootObject();
             ro.saveToSentItems = "True";
-
+            
             // create message
             Item msg = new Item();
 
             // set the subject and importance
             msg.subject = "json test message";
             msg.importance = "Normal";
+
+            // create an offset with the current time
+            DateTimeOffset dto = new DateTimeOffset();
+            dto = DateTime.Now;
+
+            // set the time values for the message
+            msg.createdDateTime = dto;
+            msg.lastModifiedDateTime = dto;
+            msg.receivedDateTime = dto;
 
             // create and populate the body object
             Body msgBody = new Body();
@@ -26,11 +40,11 @@ namespace RESTfulOutlook.JsonHelpers
 
             // create and populate the recips object
             // first create a List of ToRecipient objects
-            List<ToRecipient> recipList = new List<ToRecipient>();
+            List<Recipient> recipList = new List<Recipient>();
 
             // now create an individual recip (ToRecipient) object
             // set the emailaddress info for the recip
-            ToRecipient recip = new ToRecipient();
+            Recipient recip = new Recipient();
             EmailAddress msgEmail = new EmailAddress();
             msgEmail.address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
             msgEmail.name = "Pavel Bansky";
@@ -53,20 +67,32 @@ namespace RESTfulOutlook.JsonHelpers
             // now the message object is complete and we can set it on the root object
             ro.message = msg;
 
-            // serialize the .net object -> json and display in the textbox
-            string json = JsonConvert.SerializeObject(ro, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
+            return SerializeJson(ro);
+        }
+
+        /// <summary>
+        /// serialize the .net object -> json
+        /// </summary>
+        /// <param name="value">.net object to be serialized</param>
+        /// <returns>serialized string of formatted json</returns>
+        private static string SerializeJson(object value)
+        {
+            string json = JsonConvert.SerializeObject(value, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore
             });
-
             return json;
         }
 
+        /// <summary>
+        /// create a draft message using pre-defined values
+        /// </summary>
+        /// <returns>json formatted draft message body</returns>
         public static string CreateDraftMessageJson()
         {
             // create message
             Item msg = new Item();
-
+            
             // set the subject and importance
             msg.subject = "json test message";
             msg.importance = "Normal";
@@ -77,13 +103,22 @@ namespace RESTfulOutlook.JsonHelpers
             dftBody.content = "The <b>new</b> cafeteria is open!";
             msg.body = dftBody;
 
+            // create an offset with the current time
+            DateTimeOffset dto = new DateTimeOffset();
+            dto = DateTime.Now;
+
+            // set the time values for the message
+            msg.createdDateTime = dto;
+            msg.lastModifiedDateTime = dto;
+            msg.receivedDateTime = dto;
+
             // create and populate the recips object
             // first create a List of ToRecipient objects
-            List<ToRecipient> recipList = new List<ToRecipient>();
+            List<Recipient> recipList = new List<Recipient>();
 
             // now create an individual recip (ToRecipient) object
             // set the emailaddress info for the recip
-            ToRecipient recip = new ToRecipient();
+            Recipient recip = new Recipient();
             EmailAddress email = new EmailAddress();
             email.address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
             email.name = "Pavel Bansky";
@@ -102,16 +137,14 @@ namespace RESTfulOutlook.JsonHelpers
             msgAttachment.contentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk=";
             msgAttachments.Add(msgAttachment);
             msg.attachments = msgAttachments;
-
-            // serialize the .net object -> json and display in the textbox
-            string json = JsonConvert.SerializeObject(msg, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            });
-
-            return json;
+            
+            return SerializeJson(msg);
         }
 
+        /// <summary>
+        /// create a meeting with pre-defined values
+        /// </summary>
+        /// <returns>json formatted string body</returns>
         public static string CreateEventJson()
         {
             // create the event object
@@ -124,17 +157,27 @@ namespace RESTfulOutlook.JsonHelpers
             body.content = "I think it will meet our requirements!";
             evt.body = body;
 
+            // create an offset with the current time
+            DateTimeOffset dto = new DateTimeOffset();
+            dto = DateTime.Now;
+
             // create the start time
-            Start start = new Start();
-            start.dateTime = "2016-02-02T18:00:00";
+            DateTimeTimeZone start = new DateTimeTimeZone();
+            start.dateTime = dto;
             start.timeZone = "Pacific Standard Time";
             evt.start = start;
 
             // create the end time
-            End end = new End();
-            end.dateTime = "2016-02-02T19:00:00";
+            DateTimeTimeZone end = new DateTimeTimeZone();
+            end.dateTime = dto.AddMinutes(30);
             end.timeZone = "Pacific Standard Time";
             evt.end = end;
+
+            // set the other time values
+            evt.createdDateTime = dto;
+            evt.lastModifiedDateTime = dto;
+            evt.originalStart = dto;
+            evt.reminderMinutesBeforeStart = 15;
 
             // create the attendee list, attendee object and emailaddress object
             List<Attendee> attendeesList = new List<Attendee>();
@@ -150,22 +193,29 @@ namespace RESTfulOutlook.JsonHelpers
             // add the attendee to the list and set the event object
             attendeesList.Add(attendee);
             evt.attendees = attendeesList;
-
-            // serialize the .net object -> json and display in the textbox
-            string json = JsonConvert.SerializeObject(evt, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            });
-
-            return json;
+            
+            return SerializeJson(evt);
         }
 
+        /// <summary>
+        /// create a contact
+        /// </summary>
+        /// <returns>json body formatted as a string</returns>
         public static string CreateContactJson()
         {
             // create the contact object and set the root properties
             Contact contact = new Contact();
             contact.givenName = "Pavel";
             contact.surname = "Bansky";
+
+            // create an offset with the current time
+            DateTimeOffset dto = new DateTimeOffset();
+            dto = DateTime.Now;
+
+            // set the time values for the contact
+            contact.birthday = dto;
+            contact.createdDateTime = dto;
+            contact.lastModifiedDateTime = dto;
 
             // create the email address list and emailaddress objects
             List<EmailAddress> emailAddresses = new List<EmailAddress>();
@@ -183,31 +233,25 @@ namespace RESTfulOutlook.JsonHelpers
             List<string> businessPhoneNumbers = new List<string>();
             businessPhoneNumbers.Add("+1 732 555 0102");
             contact.businessPhones = businessPhoneNumbers;
-
-            // serialize the .net object -> json and display in the textbox
-            string json = JsonConvert.SerializeObject(contact, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            });
-
-            return json;
+            
+            return SerializeJson(contact);
         }
 
+        /// <summary>
+        /// create a notification
+        /// </summary>
+        /// <param name="guid">unique id for the subscription</param>
+        /// <returns>json body formatted as a string</returns>
         public static string CreateSubscriptionJson(string guid)
         {
             Notifications notif = new Notifications();
             notif.oDataType = "#Microsoft.OutlookServices.PushSubscription";
-            notif.Resource = "https://outlook.office.com/api/v2.0/me/events";
-            notif.NotificationURL = "https://mywebhook.azurewebsites.net/api/send/myNotifyClient";
-            notif.ChangeType = "Created";
-            notif.ClientState = guid;
-
-            string json = JsonConvert.SerializeObject(notif, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            });
-
-            return json;
+            notif.resource = "https://outlook.office.com/api/v2.0/me/events";
+            notif.notificationURL = "https://mywebhook.azurewebsites.net/api/send/myNotifyClient";
+            notif.changeType = "Created";
+            notif.clientState = guid;
+            
+            return SerializeJson(notif);
         }
     }
 }

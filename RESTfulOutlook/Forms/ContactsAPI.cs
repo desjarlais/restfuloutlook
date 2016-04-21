@@ -51,6 +51,10 @@ namespace RESTfulOutlook.Forms
             {
                 Cursor = Cursors.WaitCursor;
 
+                sdklogger.Log("REQUEST");
+                sdklogger.Log(graphClient.Me.ContactFolders.Request().GetHttpRequestMessage().ToString());
+                sdklogger.Log(graphClient.Me.ContactFolders.Request().GetHttpRequestMessage().RequestUri.ToString());
+
                 var contactFolders = await graphClient.Me.ContactFolders.Request()
                     .GetAsync();
                 
@@ -89,6 +93,8 @@ namespace RESTfulOutlook.Forms
 
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.Contacts.Request().GetHttpRequestMessage().ToString());
+                sdklogger.Log(graphClient.Me.Contacts.Request().GetHttpRequestMessage().RequestUri.ToString());
+
                 var contacts = await graphClient.Me.Contacts.Request()
                     .Top(mLimit)
                     .GetAsync();

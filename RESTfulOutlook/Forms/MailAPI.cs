@@ -57,7 +57,8 @@ namespace RESTfulOutlook.Forms
                 // log the request
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.MailFolders.Request().GetHttpRequestMessage().ToString());
-                
+                sdklogger.Log(graphClient.Me.MailFolders.Request().GetHttpRequestMessage().RequestUri.ToString());
+
                 // get the folders
                 var mailFolders = await graphClient.Me.MailFolders.Request()
                     .Expand("childfolders")
@@ -167,6 +168,7 @@ namespace RESTfulOutlook.Forms
                 // log the request
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.MailFolders[folderId].Messages.Request().GetHttpRequestMessage().ToString());
+                sdklogger.Log(graphClient.Me.MailFolders[folderId].Messages.Request().GetHttpRequestMessage().RequestUri.ToString());
 
                 // get the messages
                 var messages = await graphClient.Me.MailFolders[folderId].Messages.Request()

@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewContactForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbFName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbLName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbMName = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tbFileAs = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -53,19 +60,12 @@
             this.tbEmailAddress1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tbMName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbLName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbFName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -82,6 +82,69 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Details";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label1);
+            this.groupBox5.Controls.Add(this.tbFName);
+            this.groupBox5.Controls.Add(this.label2);
+            this.groupBox5.Controls.Add(this.tbLName);
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.tbMName);
+            this.groupBox5.Location = new System.Drawing.Point(6, 77);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(287, 100);
+            this.groupBox5.TabIndex = 17;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Contact Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "First Name:";
+            // 
+            // tbFName
+            // 
+            this.tbFName.Location = new System.Drawing.Point(106, 12);
+            this.tbFName.Name = "tbFName";
+            this.tbFName.Size = new System.Drawing.Size(177, 20);
+            this.tbFName.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Last Name:";
+            // 
+            // tbLName
+            // 
+            this.tbLName.Location = new System.Drawing.Point(106, 71);
+            this.tbLName.Name = "tbLName";
+            this.tbLName.Size = new System.Drawing.Size(177, 20);
+            this.tbLName.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Middle Name:";
+            // 
+            // tbMName
+            // 
+            this.tbMName.Location = new System.Drawing.Point(106, 42);
+            this.tbMName.Name = "tbMName";
+            this.tbMName.Size = new System.Drawing.Size(177, 20);
+            this.tbMName.TabIndex = 7;
             // 
             // groupBox4
             // 
@@ -282,76 +345,13 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(6, 19);
+            this.btnSave.Location = new System.Drawing.Point(15, 19);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 52);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // tbMName
-            // 
-            this.tbMName.Location = new System.Drawing.Point(106, 42);
-            this.tbMName.Name = "tbMName";
-            this.tbMName.Size = new System.Drawing.Size(177, 20);
-            this.tbMName.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Middle Name:";
-            // 
-            // tbLName
-            // 
-            this.tbLName.Location = new System.Drawing.Point(106, 71);
-            this.tbLName.Name = "tbLName";
-            this.tbLName.Size = new System.Drawing.Size(177, 20);
-            this.tbLName.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Last Name:";
-            // 
-            // tbFName
-            // 
-            this.tbFName.Location = new System.Drawing.Point(106, 12);
-            this.tbFName.Name = "tbFName";
-            this.tbFName.Size = new System.Drawing.Size(177, 20);
-            this.tbFName.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "First Name:";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Controls.Add(this.tbFName);
-            this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.tbLName);
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.tbMName);
-            this.groupBox5.Location = new System.Drawing.Point(6, 77);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(287, 100);
-            this.groupBox5.TabIndex = 17;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Contact Name";
             // 
             // NewContactForm
             // 
@@ -366,6 +366,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Contact";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -373,8 +375,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
