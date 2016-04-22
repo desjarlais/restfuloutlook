@@ -42,17 +42,14 @@ namespace RESTfulOutlook.JsonHelpers
             // first create a List of ToRecipient objects
             List<Recipient> recipList = new List<Recipient>();
 
-            // now create an individual recip (ToRecipient) object
-            // set the emailaddress info for the recip
-            Recipient recip = new Recipient();
-            EmailAddress msgEmail = new EmailAddress();
-            msgEmail.address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
-            msgEmail.name = "Pavel Bansky";
+            // use the NewRecipient function to create an individual recip 
+            // and set the emailaddress info
+            Recipient recip1 = NewRecipient("pavelb@a830edad9050849NDA1.onmicrosoft.com", "Pavel Bansky");
+            Recipient recip2 = NewRecipient("mavelb@a830edad9050849NDA1.onmicrosoft.com", "Mavel Bansky");
 
-            // add the email address object to the recipient
-            // then add the recip to the list
-            recip.emailAddress = msgEmail;
-            recipList.Add(recip);
+            // add the recips to the list
+            recipList.Add(recip1);
+            recipList.Add(recip2);
             msg.toRecipients = recipList;
 
             // add the attachments
@@ -116,17 +113,14 @@ namespace RESTfulOutlook.JsonHelpers
             // first create a List of ToRecipient objects
             List<Recipient> recipList = new List<Recipient>();
 
-            // now create an individual recip (ToRecipient) object
-            // set the emailaddress info for the recip
-            Recipient recip = new Recipient();
-            EmailAddress email = new EmailAddress();
-            email.address = "pavelb@a830edad9050849NDA1.onmicrosoft.com";
-            email.name = "Pavel Bansky";
-
-            // add the email address object to the recipient
-            // then add the recip to the list
-            recip.emailAddress = email;
-            recipList.Add(recip);
+            // use the NewRecipient function to create an individual recip 
+            // and set the emailaddress info
+            Recipient recip1 = NewRecipient("pavelb@a830edad9050849NDA1.onmicrosoft.com", "Pavel Bansky");
+            Recipient recip2 = NewRecipient("mavelb@a830edad9050849NDA1.onmicrosoft.com", "Mavel Bansky");
+            
+            // add the recips to the list
+            recipList.Add(recip1);
+            recipList.Add(recip2);
             msg.toRecipients = recipList;
 
             // add the attachments
@@ -139,6 +133,23 @@ namespace RESTfulOutlook.JsonHelpers
             msg.attachments = msgAttachments;
             
             return SerializeJson(msg);
+        }
+        
+        /// <summary>
+        /// this function does the work of creating the email address object
+        /// and setting the necessary recipient email address values
+        /// </summary>
+        /// <param name="emailAddress">address property for Recipient</param>
+        /// <param name="emailName">name property for the Recipient</param>
+        /// <returns>Recipient object</returns>
+        public static Recipient NewRecipient(string emailAddress, string emailName)
+        {
+            Recipient recip = new Recipient();
+            EmailAddress email = new EmailAddress();
+            email.address = emailAddress;
+            email.name = emailName;
+            recip.emailAddress = email;
+            return recip;
         }
 
         /// <summary>
@@ -247,10 +258,11 @@ namespace RESTfulOutlook.JsonHelpers
             Notifications notif = new Notifications();
             notif.oDataType = "#Microsoft.OutlookServices.PushSubscription";
             notif.resource = "https://outlook.office.com/api/v2.0/me/events";
-            notif.notificationURL = "https://mywebhook.azurewebsites.net/api/send/myNotifyClient";
+            notif.notificationURL = "https://appurlhere/api/send/myNotifyClient";
             notif.changeType = "Created";
             notif.clientState = guid;
-            
+            notif.expirationDateTime = DateTime.Now.AddMinutes(30);
+
             return SerializeJson(notif);
         }
     }

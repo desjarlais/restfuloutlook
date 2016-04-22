@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using Microsoft.Data;
 
 namespace RESTfulOutlook.JsonHelpers
 {
@@ -74,6 +73,11 @@ namespace RESTfulOutlook.JsonHelpers
 
     }
 
+    public class EventMessage : Event
+    {
+
+    }
+
     /// <summary>
     /// Contact "extension" class off the item
     /// </summary>
@@ -84,14 +88,14 @@ namespace RESTfulOutlook.JsonHelpers
         public List<EmailAddress> emailAddresses { get; set; }
         public List<string> businessPhones { get; set; }
         public string assistantName { get; set; }
-        public DateTimeOffset birthday { get; set; }
+        public DateTimeOffset? birthday { get; set; }
         public List<PhysicalAddress> businessAddress { get; set; }
         public string businessHomePage { get; set; }
         public List<string> categories { get; set; }
         public string changeKey { get; set; }
         public List<string> children { get; set; }
         public string companyName { get; set; }
-        public DateTimeOffset createdDateTime { get; set; }
+        public DateTimeOffset? createdDateTime { get; set; }
         public string department { get; set; }
         public string displayName { get; set; }
         public string fileAs { get; set; }
@@ -101,7 +105,7 @@ namespace RESTfulOutlook.JsonHelpers
         public List<string> imAddresses { get; set; }
         public string initials { get; set; }
         public string jobTitle { get; set; }
-        public DateTimeOffset lastModifiedDateTime { get; set; }
+        public DateTimeOffset? lastModifiedDateTime { get; set; }
         public string manager { get; set; }
         public string middleName { get; set; }
         public string mobilePhone { get; set; }
@@ -192,11 +196,15 @@ namespace RESTfulOutlook.JsonHelpers
     {
         [JsonProperty("@odata.type")]
         public string oDataType { get; set; }
-        public string name { get; set; }
         public string contentBytes { get; set; }
         public string contentId { get; set; }
         public string contentLocation { get; set; }
+        public string name { get; set; }
         public string contentType { get; set; }
+        public bool? isInline { get; set; }
+        public int? size { get; set; }
+        public DateTimeOffset? lastModifiedDateTime { get; set; }
+        public string id { get; }
     }
 
     public class Attendee

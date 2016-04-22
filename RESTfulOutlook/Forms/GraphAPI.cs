@@ -298,6 +298,7 @@ namespace RESTfulOutlook.Forms
                             tbRequestBody.Text = JsonBody.CreateSubscriptionJson(id.ToString());
                             cmbHttpMethod.Text = "POST";
                             AddRequestHeader("Accept", "application/json");
+                            AddRequestHeader("ContentType", "text/plain");
                         }
                         else
                         {
