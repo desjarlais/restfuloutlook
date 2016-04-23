@@ -17,7 +17,7 @@ namespace RESTfulOutlook.JsonHelpers
             ro.saveToSentItems = "True";
             
             // create message
-            Item msg = new Item();
+            Message msg = new Message();
 
             // set the subject and importance
             msg.subject = "json test message";
@@ -88,7 +88,7 @@ namespace RESTfulOutlook.JsonHelpers
         public static string CreateDraftMessageJson()
         {
             // create message
-            Item msg = new Item();
+            Message msg = new Message();
             
             // set the subject and importance
             msg.subject = "json test message";
@@ -161,13 +161,13 @@ namespace RESTfulOutlook.JsonHelpers
             // create the event object
             Event evt = new Event();
             evt.subject = "Discuss the Calendar REST API";
-
+            
             // create the body object
             Body body = new Body();
             body.contentType = "HTML";
             body.content = "I think it will meet our requirements!";
             evt.body = body;
-
+            
             // create an offset with the current time
             DateTimeOffset dto = new DateTimeOffset();
             dto = DateTime.Now;
@@ -189,7 +189,7 @@ namespace RESTfulOutlook.JsonHelpers
             evt.lastModifiedDateTime = dto;
             evt.originalStart = dto;
             evt.reminderMinutesBeforeStart = 15;
-
+            
             // create the attendee list, attendee object and emailaddress object
             List<Attendee> attendeesList = new List<Attendee>();
             Attendee attendee = new Attendee();
