@@ -180,7 +180,11 @@
       <DependentUpon>NewMessageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="JsonHelpers\Attachment.cs" />
+    <Compile Include="JsonHelpers\Calendar.cs" />
+    <Compile Include="JsonHelpers\CalendarGroup.cs" />
     <Compile Include="JsonHelpers\Contact.cs" />
+    <Compile Include="JsonHelpers\Conversation.cs" />
+    <Compile Include="JsonHelpers\ConversationThread.cs" />
     <Compile Include="JsonHelpers\Event.cs" />
     <Compile Include="JsonHelpers\EventMessage.cs" />
     <Compile Include="JsonHelpers\FileAttachment.cs" />
@@ -232,6 +236,7 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="JsonHelpers\OutlookItem.cs" />
+    <Compile Include="JsonHelpers\Post.cs" />
     <Compile Include="JsonHelpers\ReferenceAttachment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
