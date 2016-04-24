@@ -42,7 +42,9 @@ namespace RESTfulOutlook.Forms
             dOtherAddress = new Dictionary<string, PhysicalAddress>();
             dBusinessAddress = new Dictionary<string, PhysicalAddress>();
 
+            #pragma warning disable 4014
             GetFoldersAsync();
+            #pragma warning restore 4014
         }
 
         private async Task GetFoldersAsync()

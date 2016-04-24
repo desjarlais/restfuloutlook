@@ -70,7 +70,6 @@ namespace RESTfulOutlook.JsonHelpers
         public Location eventLocation { get; set; }
         public string eventSubject { get; set; }
         public string eventWebLink { get; set; }
-
     }
 
     public class Attendee

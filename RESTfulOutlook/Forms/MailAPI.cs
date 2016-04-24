@@ -44,7 +44,9 @@ namespace RESTfulOutlook.Forms
             dReferenceAttachments = new Dictionary<string, List<ReferenceAttachment>>();
             dFolderIds = new Dictionary<string, string>();
 
+            #pragma warning disable 4014 
             GetFoldersAsync();
+            #pragma warning restore 4014
         }
 
         private async Task GetFoldersAsync()
