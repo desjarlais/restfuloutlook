@@ -6,7 +6,7 @@ namespace RESTfulOutlook.JsonHelpers
     class EventMessage : Event
     {
         public List<Recipient> toRecipients { get; set; }
-        public DateTimeOffset receivedDateTime { get; set; }
+        public DateTimeOffset? receivedDateTime { get; set; }
         public string sentDateTime { get; set; }
         public string parentFolderId { get; set; }
         public Recipient sender { get; set; }

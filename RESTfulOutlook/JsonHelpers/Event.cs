@@ -21,7 +21,7 @@ namespace RESTfulOutlook.JsonHelpers
         public Location location { get; set; }
         public Recipient organizer { get; set; }
         public string originalEndTimeZone { get; set; }
-        public DateTimeOffset originalStart { get; set; }
+        public DateTimeOffset? originalStart { get; set; }
         public string originalStartTimeZone { get; set; }
         public PatternedRecurrence recurrence { get; set; }
         public int reminderMinutesBeforeStart { get; set; }

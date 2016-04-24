@@ -12,6 +12,6 @@ namespace RESTfulOutlook.JsonHelpers
         public string changeType { get; set; }
         public string clientState { get; set; }
         public string id { get; }
-        public DateTime expirationDateTime { get; set; }
+        public DateTime? expirationDateTime { get; set; }
     }
 }

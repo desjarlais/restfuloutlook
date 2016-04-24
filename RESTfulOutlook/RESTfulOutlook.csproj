@@ -183,11 +183,13 @@
     <Compile Include="JsonHelpers\Calendar.cs" />
     <Compile Include="JsonHelpers\CalendarGroup.cs" />
     <Compile Include="JsonHelpers\Contact.cs" />
+    <Compile Include="JsonHelpers\ContactFolder.cs" />
     <Compile Include="JsonHelpers\Conversation.cs" />
     <Compile Include="JsonHelpers\ConversationThread.cs" />
     <Compile Include="JsonHelpers\Event.cs" />
     <Compile Include="JsonHelpers\EventMessage.cs" />
     <Compile Include="JsonHelpers\FileAttachment.cs" />
+    <Compile Include="JsonHelpers\Group.cs" />
     <Compile Include="JsonHelpers\ItemAttachment.cs" />
     <Compile Include="JsonHelpers\JsonBody.cs" />
     <Compile Include="JsonHelpers\MailFolder.cs" />
@@ -237,6 +239,7 @@
     </Compile>
     <Compile Include="JsonHelpers\OutlookItem.cs" />
     <Compile Include="JsonHelpers\Post.cs" />
+    <Compile Include="JsonHelpers\ProfilePhoto.cs" />
     <Compile Include="JsonHelpers\ReferenceAttachment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
