@@ -54,7 +54,7 @@ namespace RESTfulOutlook.JsonHelpers
 
             // add the attachments
             List<Attachment> msgAttachments = new List<Attachment>();
-            Attachment msgAttachment = new Attachment();
+            FileAttachment msgAttachment = new FileAttachment();
             msgAttachment.oDataType = "#Microsoft.OutlookServices.FileAttachment";
             msgAttachment.name = "menu.txt";
             msgAttachment.contentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk=";
@@ -125,7 +125,7 @@ namespace RESTfulOutlook.JsonHelpers
 
             // add the attachments
             List<Attachment> msgAttachments = new List<Attachment>();
-            Attachment msgAttachment = new Attachment();
+            FileAttachment msgAttachment = new FileAttachment();
             msgAttachment.oDataType = "#Microsoft.OutlookServices.FileAttachment";
             msgAttachment.name = "menu.txt";
             msgAttachment.contentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk=";

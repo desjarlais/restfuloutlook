@@ -179,10 +179,14 @@
     <Compile Include="Forms\NewMessageForm.Designer.cs">
       <DependentUpon>NewMessageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="JsonHelpers\Attachment.cs" />
     <Compile Include="JsonHelpers\Contact.cs" />
     <Compile Include="JsonHelpers\Event.cs" />
     <Compile Include="JsonHelpers\EventMessage.cs" />
+    <Compile Include="JsonHelpers\FileAttachment.cs" />
+    <Compile Include="JsonHelpers\ItemAttachment.cs" />
     <Compile Include="JsonHelpers\JsonBody.cs" />
+    <Compile Include="JsonHelpers\MailFolder.cs" />
     <Compile Include="JsonHelpers\Message.cs" />
     <Compile Include="JsonHelpers\Notifications.cs" />
     <Compile Include="Forms\PhysicalAddressForm.cs">
@@ -228,6 +232,7 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="JsonHelpers\OutlookItem.cs" />
+    <Compile Include="JsonHelpers\ReferenceAttachment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\AttachmentHelper.cs" />

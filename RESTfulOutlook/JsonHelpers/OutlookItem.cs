@@ -13,43 +13,6 @@ namespace RESTfulOutlook.JsonHelpers
         public DateTimeOffset? lastModifiedDateTime { get; set; }
     }
 
-    public class Location
-    {
-        public List<PhysicalAddress> address { get; set; }
-        public string displayName { get; set; }
-    }
-
-    public class PatternedRecurrence
-    {
-        public RecurrencePattern pattern { get; set; }
-        public RecurrenceRange range { get; set; }
-    }
-
-    public class RecurrencePattern
-    {
-        public int dayOfMonth { get; set; }
-        public List<string> daysOfWeek { get; set; }
-        public string firstDayOfWeek { get; set; }
-        public string index { get; set; }
-        public int interval { get; set; }
-        public int month { get; set; }
-        public string type { get; set; }
-    }
-
-    public class RecurrenceRange
-    {
-        public DateTime endDate { get; set; }
-        public int numberOfOccurrences { get; set; }
-        public DateTime startDate { get; set; }
-        public string type { get; set; }
-    }
-
-    public class ResponseStatus
-    {
-        public string response { get; set; }
-        public DateTimeOffset time { get; set; }
-    }
-
     public class PhysicalAddress
     {
         public string city { get; set; }
@@ -80,27 +43,6 @@ namespace RESTfulOutlook.JsonHelpers
     public class Recipient
     {
         public EmailAddress emailAddress { get; set; }
-    }
-
-    public class Attachment
-    {
-        [JsonProperty("@odata.type")]
-        public string oDataType { get; set; }
-        public string contentBytes { get; set; }
-        public string contentId { get; set; }
-        public string contentLocation { get; set; }
-        public string name { get; set; }
-        public string contentType { get; set; }
-        public bool? isInline { get; set; }
-        public int? size { get; set; }
-        public DateTimeOffset? lastModifiedDateTime { get; set; }
-        public string id { get; }
-    }
-
-    public class Attendee
-    {
-        public EmailAddress emailAddress { get; set; }
-        public string type { get; set; }
     }
 
     public class UniqueBody
