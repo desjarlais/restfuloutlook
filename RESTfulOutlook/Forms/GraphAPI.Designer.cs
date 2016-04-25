@@ -95,6 +95,7 @@
             "OutlookMail-ListMessages",
             "OutlookMail-ListMailFolders",
             "OutlookMail-SearchInbox",
+            "OutlookMail-SearchToAndTop25",
             "OutlookMail-GetImportanUnreadMessages",
             "OutlookMail-GetSenderSubjectOnly",
             "OutlookMail-SendNewMessage",
@@ -200,12 +201,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(103, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
@@ -341,7 +342,7 @@
             // 
             // btnClearResponse
             // 
-            this.btnClearResponse.Location = new System.Drawing.Point(260, 507);
+            this.btnClearResponse.Location = new System.Drawing.Point(261, 507);
             this.btnClearResponse.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearResponse.Name = "btnClearResponse";
             this.btnClearResponse.Size = new System.Drawing.Size(118, 31);
@@ -352,7 +353,7 @@
             // 
             // btnGraphLog
             // 
-            this.btnGraphLog.Location = new System.Drawing.Point(382, 507);
+            this.btnGraphLog.Location = new System.Drawing.Point(383, 507);
             this.btnGraphLog.Margin = new System.Windows.Forms.Padding(2);
             this.btnGraphLog.Name = "btnGraphLog";
             this.btnGraphLog.Size = new System.Drawing.Size(114, 31);

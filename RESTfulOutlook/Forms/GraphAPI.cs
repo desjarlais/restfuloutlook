@@ -55,6 +55,7 @@ namespace RESTfulOutlook.Forms
             dictionary.Add("OutlookMail-ListMessages", "me/messages");
             dictionary.Add("OutlookMail-ListMailFolders", "me/mailFolders");
             dictionary.Add("OutlookMail-SearchInbox", "me/messages/?$search=%22tailspin%20toys%22");
+            dictionary.Add("OutlookMail-SearchToAndTop25", "me/messages?$search=%22to:" + xAnchorMbx + "%22&$top25");
             dictionary.Add("OutlookMail-GetImportanUnreadMessages", "me/messages/?$filter=importance%20eq%20%27high%27%20and%20isread%20eq%20false");
             dictionary.Add("OutlookMail-GetSenderSubjectOnly", "me/MailFolders/sentitems/messages/?$select=Sender,Subject");
             dictionary.Add("OutlookMail-SendNewMessage", "me/sendmail");
@@ -443,7 +444,7 @@ namespace RESTfulOutlook.Forms
         {
             ClearResponseTree();
         }
-
+        
         public void ClearResponseTree()
         {
             tvw.Nodes.Clear();

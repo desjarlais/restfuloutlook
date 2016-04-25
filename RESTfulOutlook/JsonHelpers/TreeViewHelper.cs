@@ -129,9 +129,14 @@ namespace RESTfulOutlook.JsonHelpers
                     // child.Text = token.Key.ToString();
                     // change the value into N/A if value == null or an empty string 
                     if (token.Value.ToString() == "")
+                    {
                         child.Nodes.Add("N/A");
+                    }
                     else
+                    {
                         child.Nodes.Add(token.Value.ToString());
+                    }
+                        
                     parent.Nodes.Add(child);
                 }
             }
