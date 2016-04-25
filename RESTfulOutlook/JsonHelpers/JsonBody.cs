@@ -265,5 +265,13 @@ namespace RESTfulOutlook.JsonHelpers
 
             return SerializeJson(notif);
         }
+
+        public static string CreateMailFolder(string name)
+        {
+            JsonHelpers.ContactFolder cFolder = new ContactFolder();
+            cFolder.displayName = name;
+
+            return SerializeJson(cFolder);
+        }
     }
 }

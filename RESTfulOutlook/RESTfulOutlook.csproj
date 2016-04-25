@@ -241,8 +241,10 @@
     <Compile Include="JsonHelpers\Post.cs" />
     <Compile Include="JsonHelpers\ProfilePhoto.cs" />
     <Compile Include="JsonHelpers\ReferenceAttachment.cs" />
+    <Compile Include="JsonHelpers\TreeViewHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RESTHelpers\BaseClient.cs" />
     <Compile Include="Utils\AttachmentHelper.cs" />
     <Compile Include="Utils\AuthenticationHelper.cs" />
     <Compile Include="Utils\ClassLogger.cs" />

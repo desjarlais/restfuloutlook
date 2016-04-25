@@ -99,6 +99,7 @@
             "OutlookMail-GetSenderSubjectOnly",
             "OutlookMail-SendNewMessage",
             "OutlookMail-CreateDraftMessage",
+            "OutlookMail-CreateFolder",
             "OutlookCalendar-ListCalendars",
             "OutlookCalendar-CreateEvent",
             "OutlookCalendar-ListCalendarGroups",
