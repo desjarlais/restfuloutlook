@@ -30,7 +30,6 @@ namespace RESTfulOutlook.JsonHelpers
             // set the time values for the message
             msg.createdDateTime = dto;
             msg.lastModifiedDateTime = dto;
-            msg.receivedDateTime = dto;
 
             // create and populate the body object
             Body msgBody = new Body();
@@ -52,13 +51,15 @@ namespace RESTfulOutlook.JsonHelpers
             recipList.Add(recip2);
             msg.toRecipients = recipList;
 
-            // add the attachments
+            // create attachment
             List<Attachment> msgAttachments = new List<Attachment>();
             FileAttachment msgAttachment = new FileAttachment();
             msgAttachment.oDataType = "#Microsoft.OutlookServices.FileAttachment";
             msgAttachment.name = "menu.txt";
             msgAttachment.contentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk=";
             msgAttachments.Add(msgAttachment);
+
+            // add attachment to message
             msg.attachments = msgAttachments;
 
             // now the message object is complete and we can set it on the root object
@@ -107,7 +108,6 @@ namespace RESTfulOutlook.JsonHelpers
             // set the time values for the message
             msg.createdDateTime = dto;
             msg.lastModifiedDateTime = dto;
-            msg.receivedDateTime = dto;
 
             // create and populate the recips object
             // first create a List of ToRecipient objects
@@ -123,18 +123,20 @@ namespace RESTfulOutlook.JsonHelpers
             recipList.Add(recip2);
             msg.toRecipients = recipList;
 
-            // add the attachments
+            // create attachments
             List<Attachment> msgAttachments = new List<Attachment>();
             FileAttachment msgAttachment = new FileAttachment();
             msgAttachment.oDataType = "#Microsoft.OutlookServices.FileAttachment";
             msgAttachment.name = "menu.txt";
             msgAttachment.contentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk=";
             msgAttachments.Add(msgAttachment);
+
+            // add attachment to message
             msg.attachments = msgAttachments;
             
             return SerializeJson(msg);
         }
-        
+
         /// <summary>
         /// this function does the work of creating the email address object
         /// and setting the necessary recipient email address values

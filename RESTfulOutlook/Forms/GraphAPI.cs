@@ -351,6 +351,7 @@ namespace RESTfulOutlook.Forms
         {
             // cleanup
             logger.Dispose();
+            httpClient.Dispose();
         }
 
         private void btnAddRequestHeader_Click(object sender, EventArgs e)

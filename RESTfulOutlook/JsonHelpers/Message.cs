@@ -10,7 +10,7 @@ namespace RESTfulOutlook.JsonHelpers
         public Body body { get; set; }
         public List<Recipient> toRecipients { get; set; }
         public List<Attachment> attachments { get; set; }
-        public DateTimeOffset receivedDateTime { get; set; }
+        public DateTimeOffset? receivedDateTime { get; set; }
         public string sentDateTime { get; set; }
         public bool hasAttachments { get; set; }
         public string bodyPreview { get; set; }
