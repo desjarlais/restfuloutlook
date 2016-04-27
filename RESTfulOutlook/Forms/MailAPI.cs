@@ -171,7 +171,7 @@ namespace RESTfulOutlook.Forms
                 sdklogger.Log("REQUEST");
                 sdklogger.Log(graphClient.Me.MailFolders[folderId].Messages.Request().GetHttpRequestMessage().ToString());
                 sdklogger.Log(graphClient.Me.MailFolders[folderId].Messages.Request().GetHttpRequestMessage().RequestUri.ToString());
-
+                
                 // get the messages
                 var messages = await graphClient.Me.MailFolders[folderId].Messages.Request()
                     .Expand("attachments")

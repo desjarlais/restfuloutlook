@@ -27,7 +27,7 @@ namespace RESTfulOutlook.Forms
             CreateNewMessage();
         }
 
-        public void CreateNewMessage()
+        public async void CreateNewMessage()
         {
             try
             {
@@ -53,7 +53,7 @@ namespace RESTfulOutlook.Forms
                 sdklogger.Log(graphClient.Me.SendMail(msg, true).Request().GetHttpRequestMessage().RequestUri.ToString());
 
                 // send the new message
-                graphClient.Me.SendMail(msg, true).Request().PostAsync();
+                await graphClient.Me.SendMail(msg, true).Request().PostAsync();
             }
             catch (Exception ex)
             {
