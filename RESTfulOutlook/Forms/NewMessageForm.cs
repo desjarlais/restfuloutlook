@@ -74,6 +74,10 @@ namespace RESTfulOutlook.Forms
         /// <param name="email">smtp address for the recipient</param>
         public void AddRecipToCollection(string email)
         {
+            // trim the address for any spaces before adding
+            email = email.Trim();
+
+            // create the recip and add the email address
             Recipient recip = new Recipient();
             EmailAddress recipAddress = new EmailAddress();
             recipAddress.Address = email;

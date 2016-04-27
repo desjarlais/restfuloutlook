@@ -44,7 +44,7 @@ namespace RESTfulOutlook.Forms
                 attendee.EmailAddress = email;
                 attendee.Type = AttendeeType.Required;
                 attendees.Add(attendee);
-                                
+
                 evt.Subject = tbSubject.Text;
                 evt.Body = body;
                 evt.Location = location;
