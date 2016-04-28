@@ -39,6 +39,14 @@ namespace RESTfulOutlook.Forms
         public void PopulateComboBoxList()
         {
             // set the reports dictionary
+            dictionary.Add("ConnectionbyClientTypeDetailDaily", "$select=ClientType,Count,Date,TenantGuid,TenantName,UserName,WindowsLiveID&amp;$filter=Date gt datetime'2016-01-01T00:00:00'");
+            dictionary.Add("ConnectionbyClientTypeDetailWeekly", "$select=ClientType,Count,Date,TenantGuid,TenantName,UserName,WindowsLiveID&amp;$filter=Date gt datetime'2016-01-01T00:00:00'");
+            dictionary.Add("ConnectionbyClientTypeDetailMonthly", "$select=ClientType,Count,Date,TenantGuid,TenantName,UserName,WindowsLiveID&amp;$filter=Date gt datetime'2016-01-01T00:00:00'");
+            dictionary.Add("ConnectionbyClientTypeDetailYearly", "$select=ClientType,Count,Date,TenantGuid,TenantName,UserName,WindowsLiveID&amp;$filter=Date gt datetime'2012-01-01T00:00:00'");
+            dictionary.Add("ConnectionbyClientTypeDaily", "$select=ClientType,Count,Date,TenantGuid,TenantName&amp;$filter=Date gt datetime'2016-01-01T00:00:00'");
+            dictionary.Add("ConnectionbyClientTypeWeekly", "$select=ClientType,Count,Date,TenantGuid,TenantName&amp;$filter=Date gt datetime'2016-01-01T00:00:00'");
+            dictionary.Add("ConnectionbyClientTypeMonthly", "$select=ClientType,Count,Date,TenantGuid,TenantName&amp;$filter=Date gt datetime'2016-01-01T00:00:00'");
+            dictionary.Add("ConnectionbyClientTypeYearly", "$select=ClientType,Count,Date,TenantGuid,TenantName&amp;$filter=Date gt datetime'2012-01-01T00:00:00'");
             dictionary.Add("GroupActivityDaily", "$select=Date,GroupCreated,GroupDeleted,TenantGuid,TenantName&amp;$filter=Date gt datetime'2016-01-01T00:00:00'");
             dictionary.Add("GroupActivityWeekly", "$select=Date,GroupCreated,GroupDeleted,TenantGuid,TenantName&amp;$filter=Date gt datetime'2016-01-01T00:00:00'");
             dictionary.Add("GroupActivityMonthly", "$select=Date,GroupCreated,GroupDeleted,TenantGuid,TenantName&amp;$filter=Date gt datetime'2016-01-01T00:00:00'");
@@ -47,12 +55,13 @@ namespace RESTfulOutlook.Forms
             dictionary.Add("MailboxActivityWeekly", "$select=Date,TenantName,TenantGuid,AccountCreated,AccountDeleted,TotalNumberOfActiveMailboxes");
             dictionary.Add("MailboxActivityMonthly", "$select=Date,TenantName,TenantGuid,AccountCreated,AccountDeleted,TotalNumberOfActiveMailboxes");
             dictionary.Add("MailboxActivityYearly", "$select=Date,TenantName,TenantGuid,AccountCreated,AccountDeleted,TotalNumberOfActiveMailboxes");
-            dictionary.Add("MailDetail", "$select=AggregateBy,Date,Direction,Domain,EndDate,EventType,Index,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,SenderIP,StartDate,Subject");
-            dictionary.Add("MailDetailDlpPolicy", "$select=Action,Date,Direction,DlpPolicy,Domain,EndDate,EventType,Index,Justification,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,SensitiveInformationConfidence,SensitiveInformationCount,SensitiveInformationType,StartDate,Subject,TransportRule,UserAction");
-            dictionary.Add("MailDetailMalware", "$select=Action,Date,Direction,Domain,EndDate,EventType,FileName,Index,MalwareName,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,StartDate,Subject");
-            dictionary.Add("MailDetailSpam", "$select=Action,Date,Direction,Domain,EndDate,EventType,Index,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,StartDate,Subject");
-            dictionary.Add("MailDetailTransportRule (inbound)", "$select=Action,Date,Direction,Domain,EndDate,EventType,Index,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,StartDate,Subject,TransportRule&amp;$filter=Direction eq 'Inbound'");
-            dictionary.Add("MailDetailTransportRule (outbound)", "$select=Action,Date,Direction,Domain,EndDate,EventType,Index,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,StartDate,Subject,TransportRule&amp;$filter=Direction eq 'Outbound'");
+            dictionary.Add("MailboxUsage", "$select=Date,MailboxesOverWarningSize,TenantName,TenantGuid,TotalInactiveMailboxCount,TotalMailboxCount");
+            dictionary.Add("MailboxUsageDetail", "$select=CurrentMailboxSize,Date,IsInactive,MailboxPlan,MailboxSize,PercentUsed,TenantName,TenantGuid,UserName,WindowsLiveID");
+            dictionary.Add("MailDetailDlpPolicy", "$select=Action,Date,Direction,DlpPolicy,Domain,EventType,Index,Justification,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,SensitiveInformationConfidence,SensitiveInformationCount,SensitiveInformationType,Subject,TransportRule,UserAction;$filter=StartDate%20eq%20datetime'2016-02-08T00:00:00Z'%20and%20EndDate%20eq%20datetime'2016-02-09T00:00:00Z'");
+            dictionary.Add("MailDetailMalware", "$select=Action,Date,Direction,Domain,EventType,FileName,Index,MalwareName,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,Subject;$filter=StartDate%20eq%20datetime'2016-02-08T00:00:00Z'%20and%20EndDate%20eq%20datetime'2016-02-09T00:00:00Z'");
+            dictionary.Add("MailDetailSpam", "$select=Action,Date,Direction,Domain,EventType,Index,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,Subject;$filter=StartDate%20eq%20datetime'2016-02-08T00:00:00Z'%20and%20EndDate%20eq%20datetime'2016-02-09T00:00:00Z'");
+            dictionary.Add("MailDetailTransportRule (inbound)", "$select=Action,Date,Direction,Domain,EventType,Index,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,Subject,TransportRule&amp;$filter=Direction eq 'Inbound'StartDate%20eq%20datetime'2016-02-08T00:00:00Z'%20and%20EndDate%20eq%20datetime'2016-02-09T00:00:00Z'");
+            dictionary.Add("MailDetailTransportRule (outbound)", "$select=Action,Date,Direction,Domain,EventType,Index,MessageId,MessageSize,MessageTraceId,Organization,RecipientAddress,SenderAddress,Subject,TransportRule&amp;$filter=Direction eq 'Outbound'StartDate%20eq%20datetime'2016-02-08T00:00:00Z'%20and%20EndDate%20eq%20datetime'2016-02-09T00:00:00Z'");
             dictionary.Add("MailFilterList", "$select=Display,Domain,Organization,ParentTarget,ParentValue,SelectionTarget");
             dictionary.Add("MailTraffic (inbound)", "$select=Action,AggregateBy,Date,Direction,Domain,EndDate,EventType,Index,MessageCount,Organization,StartDate,SummarizeBy&amp;$filter=Direction eq 'Inbound'");
             dictionary.Add("MailTraffic (outbound)", "$select=Action,AggregateBy,Date,Direction,Domain,EndDate,EventType,Index,MessageCount,Organization,StartDate,SummarizeBy&amp;$filter=Direction eq 'Outbound'");
@@ -62,8 +71,11 @@ namespace RESTfulOutlook.Forms
             dictionary.Add("MailTrafficSummary (TopMalware)", "$select=C1,C2,C3,C4,C5,C6,C7,C8,C9,C10,C11,C12,C13,C14,C15,C16,C17,C18,C19,C20,Category,DlpPolicy,Domain,EndDate,Index,StartDate,TransportRule&amp;$filter=Category eq 'TopMalware'");
             dictionary.Add("MailTrafficTop (inbound)", "$select=AggregateBy,Date,Direction,Domain,EndDate,EventType,Index,MessageCount,Name,Organization,StartDate,SummarizeBy&amp;$filter=Direction eq 'Inbound'");
             dictionary.Add("MailTrafficTop (outbound)", "$select=AggregateBy,Date,Direction,Domain,EndDate,EventType,Index,MessageCount,Name,Organization,StartDate,SummarizeBy&amp;$filter=Direction eq 'Outbound'");
-            dictionary.Add("MessageTrace", "$select=EndDate,FromIP,Index,MessageId,MessageTraceId,Organization,Received,RecipientAddress,SenderAddress,Size,StartDate,Status,Subject,ToIP");
-            dictionary.Add("MessageTraceDetail", "$select=Action,Data,Date,Detail,EndDate,Event,Index,MessageId,MessageTraceId,Organization,RecipientAddress,SenderAddress,StartDate");
+            dictionary.Add("MessageTrace", "$select=FromIP,Index,MessageId,MessageTraceId,Organization,Received,RecipientAddress,SenderAddress,Size,Status,Subject,ToIP;$filter=StartDate%20eq%20datetime'2016-02-08T00:00:00Z'%20and%20EndDate%20eq%20datetime'2016-02-09T00:00:00Z'");
+            dictionary.Add("MessageTraceDetail", "$select=Action,Data,Date,Detail,Event,MessageId,Organization;$filter=MessageTraceId%20eq%20guid'4682e74e-a81a-4760-c35b-08cfd41eebc2'%20and%20RecipientAddress%20eq%20'usertwo@example.onmicrosoft.com'%20and%20SenderAddress%20eq%userone@example.com'%20and%20StartDate%20eq%20datetime'2016-02-08T00:00:00Z'%20and%20EndDate%20eq%20datetime'2016-02-09T00:00:00Z'");
+            dictionary.Add("MxRecordReport", "$select=Domain,HighestPriorityMailhost,HighestPriorityMailhostIpAddress,Organization,PointsToService,RecordExists");
+            dictionary.Add("OutboundConnectorReport", "$select=Domain,Name,Organization");
+            dictionary.Add("ServiceDeliveryReport", "$select=ConnectorName,IsListeningOnPort25,IsOnPremMailbox,IsSuccessfullyReceivingMail,Organization,Recipient,Smarthost");
             dictionary.Add("StaleMailbox", "$select=ActiveMailboxes,Date,InactiveMailboxes31To60Days,InactiveMailboxes61To90Days,InactiveMailboxes91To1460Days,TenantGuid,TenantName");
             dictionary.Add("StaleMailboxDetail", "$select=Date,DaysInactive,LastLogin,TenantGuid,TenantName,UserName,WindowsLiveID");
         }
@@ -212,7 +224,9 @@ namespace RESTfulOutlook.Forms
 
         private void btnSendRequest_Click(object sender, System.EventArgs e)
         {
-            Cursor = Cursors.WaitCursor;
+            HttpWebRequest request = null;
+            HttpWebResponse response = null;
+
             toolStripFormStatus.Text = "Sending Request...";
             int charsRead = 0;
             // clear the currently displayed text 
@@ -220,252 +234,264 @@ namespace RESTfulOutlook.Forms
             // create the two date-time variables for calculating the request duration
             DateTime responseReceived = new DateTime();
             DateTime requestStarted = new DateTime();
-            // create the Web request container; REST uses HTTP(S) GET calls
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(fullRestURL);
-            request.Method = "GET";
-            // this header specifies the ODATA provider's minimum version. The intent is to use $select in later queries,
-            // so it has to be least ODATA2. Use that same version as the maximum for when 3.0 is implemented.
-            request.Headers.Add("DataServiceVersion", "2.0");
-            request.Headers.Add("MaxDataServiceVersion", "2.0");
-            // Add RWS language header
-            request.Headers.Add("Accept-Language", "EN-US");
-            // Add RWS service version section header
-            request.Headers.Add("X-RWS-Version", "2013-V1");
-
-            if (serverCookie != string.Empty)
-            {
-                request.Headers.Add("Cookie", serverCookie.ToString());
-            }
-
-            // becuase of authentication reasons, avoid redirecting the HTTPS request, just out of caution.
-            request.AllowAutoRedirect = false;
-            // this is the "simple" way to get the credentials. Eventually if/when the Forefront reporting system comes 
-            // online, the application can be updated to authenticate using a token obtained from LiveID.
-            request.Credentials = new NetworkCredential(userNameEntered, passwordEntered);
-            // empty the response so that if it all falls through, it doesn't have the variable holding on to an old reference
-            HttpWebResponse response = null;
-            // outer try block is for any random other exceptions, but also to ensure that no matter what happens, the
-            // response object gets properly closed.
+            
             try
             {
-                // create the variables that will hold the components of information to be displayed for the user
-                int responseCode = 0; // the numeric response code
-                String responseDesc = String.Empty; // descriptive HTTP response
-                String requestHeadersBlock = String.Empty; // will hold formatted text of the headers sent
-                String responseHeadersBlock = String.Empty; // the headers that came back
-                String badDataReturned = String.Empty; // if the request fails, keep that bad data separate
-                String requestDataReturned = String.Empty; // and where to put the returns when they succeed
-                // inner try block is for the actual HTTPS call to the host
+                Cursor = Cursors.WaitCursor;
+
+                // create the Web request container; REST uses HTTP(S) GET calls
+                request = (HttpWebRequest)HttpWebRequest.Create(txtRESTUrl.Text);
+                request.Method = "GET";
+                // this header specifies the ODATA provider's minimum version. The intent is to use $select in later queries,
+                // so it has to be least ODATA2. Use that same version as the maximum for when 3.0 is implemented.
+                request.Headers.Add("DataServiceVersion", "2.0");
+                request.Headers.Add("MaxDataServiceVersion", "2.0");
+                // Add RWS language header
+                request.Headers.Add("Accept-Language", "EN-US");
+                // Add RWS service version section header
+                request.Headers.Add("X-RWS-Version", "2013-V1");
+
+                if (serverCookie != string.Empty)
+                {
+                    request.Headers.Add("Cookie", serverCookie.ToString());
+                }
+
+                // becuase of authentication reasons, avoid redirecting the HTTPS request, just out of caution.
+                request.AllowAutoRedirect = false;
+                // this is the "simple" way to get the credentials. Eventually if/when the Forefront reporting system comes 
+                // online, the application can be updated to authenticate using a token obtained from LiveID.
+                request.Credentials = new NetworkCredential(userNameEntered, passwordEntered);
+
+                // outer try block is for any random other exceptions, but also to ensure that no matter what happens, the
+                // response object gets properly closed.
                 try
                 {
-                    // get the current time, to calculate the time for processing
-                    requestStarted = DateTime.Now;
-                    // make the HTTP request to the server
-                    response = (HttpWebResponse)request.GetResponse();
-                    // if the call succeeds, some time later it will arrive here
-                    responseReceived = DateTime.Now;
-                    // record the response code and description
-                    responseCode = (int)response.StatusCode;
-                    responseDesc = response.StatusDescription;
-                    // retrieve the headers SENT to the service and create the formatted block of text 
-                    if (request.Headers.Count > 0)
+                    // create the variables that will hold the components of information to be displayed for the user
+                    int responseCode = 0; // the numeric response code
+                    String responseDesc = String.Empty; // descriptive HTTP response
+                    String requestHeadersBlock = String.Empty; // will hold formatted text of the headers sent
+                    String responseHeadersBlock = String.Empty; // the headers that came back
+                    String badDataReturned = String.Empty; // if the request fails, keep that bad data separate
+                    String requestDataReturned = String.Empty; // and where to put the returns when they succeed
+                                                               // inner try block is for the actual HTTPS call to the host
+                    try
                     {
-                        for (int i = 0; i < request.Headers.Count; i++)
+                        // get the current time, to calculate the time for processing
+                        requestStarted = DateTime.Now;
+                        // make the HTTP request to the server
+                        response = (HttpWebResponse)request.GetResponse();
+                        // if the call succeeds, some time later it will arrive here
+                        responseReceived = DateTime.Now;
+                        // record the response code and description
+                        responseCode = (int)response.StatusCode;
+                        responseDesc = response.StatusDescription;
+                        // retrieve the headers SENT to the service and create the formatted block of text 
+                        if (request.Headers.Count > 0)
                         {
-                            requestHeadersBlock += CRLF + request.Headers.GetKey(i) + ":" + request.Headers.GetValues(i)[0].ToString();
-                        }
-                    }
-                    // retrieve the headers RECEIVED from the service and create the formatted block of text
-                    if (response.Headers.Count > 0)
-                    {
-                        for (int i = 0; i < response.Headers.Count; i++)
-                        {
-                            responseHeadersBlock += CRLF + response.Headers.GetKey(i) + ":" + response.Headers.GetValues(i)[0].ToString();
-                            // check to see if the header is the server's cookie; store it to return on the next call.
-                            if ((response.Headers.GetKey(i) != null) && (response.Headers.GetKey(i) == "Set-Cookie"))
+                            for (int i = 0; i < request.Headers.Count; i++)
                             {
-                                // set the cookie value to the header value
-                                // note that normally you would verify the path of the cookie to make sure the code returns the right one. 
-                                // however, for the Reporting web service, it always returns the same path, "/ecp/reportingwebservice",
-                                // so it is reasonably safe to just return it, for this sample.
-                                serverCookie = response.Headers.GetValues(i)[0].ToString();
+                                requestHeadersBlock += CRLF + request.Headers.GetKey(i) + ":" + request.Headers.GetValues(i)[0].ToString();
+                            }
+                        }
+                        // retrieve the headers RECEIVED from the service and create the formatted block of text
+                        if (response.Headers.Count > 0)
+                        {
+                            for (int i = 0; i < response.Headers.Count; i++)
+                            {
+                                responseHeadersBlock += CRLF + response.Headers.GetKey(i) + ":" + response.Headers.GetValues(i)[0].ToString();
+                                // check to see if the header is the server's cookie; store it to return on the next call.
+                                if ((response.Headers.GetKey(i) != null) && (response.Headers.GetKey(i) == "Set-Cookie"))
+                                {
+                                    // set the cookie value to the header value
+                                    // note that normally you would verify the path of the cookie to make sure the code returns the right one. 
+                                    // however, for the Reporting web service, it always returns the same path, "/ecp/reportingwebservice",
+                                    // so it is reasonably safe to just return it, for this sample.
+                                    serverCookie = response.Headers.GetValues(i)[0].ToString();
+                                }
                             }
                         }
                     }
-                }
-                // arrive here when something goes wrong with the request 
-                catch (WebException excptn)
-                {
-                    // record when the response failed
-                    responseReceived = DateTime.Now;
-                    // get the response object passed in the exception
-                    HttpWebResponse caughtResponse = (HttpWebResponse)excptn.Response;
-                    // record the response HTTP code and description
-                    responseCode = (int)caughtResponse.StatusCode;
-                    responseDesc = caughtResponse.StatusDescription;
-                    // retrieve the headers SENT to the service and create the formatted block of text
-                    if (request.Headers.Count > 0)
+                    // arrive here when something goes wrong with the request 
+                    catch (WebException excptn)
                     {
-                        for (int i = 0; i < request.Headers.Count; i++)
+                        // record when the response failed
+                        responseReceived = DateTime.Now;
+                        // get the response object passed in the exception
+                        HttpWebResponse caughtResponse = (HttpWebResponse)excptn.Response;
+                        // record the response HTTP code and description
+                        responseCode = (int)caughtResponse.StatusCode;
+                        responseDesc = caughtResponse.StatusDescription;
+                        // retrieve the headers SENT to the service and create the formatted block of text
+                        if (request.Headers.Count > 0)
                         {
-                            requestHeadersBlock += CRLF + request.Headers.GetKey(i) + ":" + request.Headers.GetValues(i)[0].ToString();
-                        }
-                    }
-                    // retrieve the headers RECEIVED from the service and create the formatted block of text
-                    // note that it only captures the FIRST value of that header, in case there are multiple values
-                    if (caughtResponse.Headers.Count > 0)
-                    {
-                        for (int i = 0; i < caughtResponse.Headers.Count; i++)
-                        {
-                            responseHeadersBlock += CRLF + caughtResponse.Headers.GetKey(i) + ":" + caughtResponse.Headers.GetValues(i)[0].ToString();
-                            // check to see if the header is the server's cookie, needed to return on the next call.
-                            if ((caughtResponse.Headers.GetKey(i) != null) && (caughtResponse.Headers.GetKey(i) == "Set-Cookie"))
+                            for (int i = 0; i < request.Headers.Count; i++)
                             {
-                                // set the cookie value to the header value
-                                // note that normally you would verify the path of the cookie to make sure the code returns the right one. 
-                                // however, for the Reporting web service, it always returns the same path, "/ecp/reportingwebservice",
-                                // so it is reasonably safe to just return it, for this sample.
-                                serverCookie = caughtResponse.Headers.GetValues(i)[0].ToString();
+                                requestHeadersBlock += CRLF + request.Headers.GetKey(i) + ":" + request.Headers.GetValues(i)[0].ToString();
                             }
                         }
+                        // retrieve the headers RECEIVED from the service and create the formatted block of text
+                        // note that it only captures the FIRST value of that header, in case there are multiple values
+                        if (caughtResponse.Headers.Count > 0)
+                        {
+                            for (int i = 0; i < caughtResponse.Headers.Count; i++)
+                            {
+                                responseHeadersBlock += CRLF + caughtResponse.Headers.GetKey(i) + ":" + caughtResponse.Headers.GetValues(i)[0].ToString();
+                                // check to see if the header is the server's cookie, needed to return on the next call.
+                                if ((caughtResponse.Headers.GetKey(i) != null) && (caughtResponse.Headers.GetKey(i) == "Set-Cookie"))
+                                {
+                                    // set the cookie value to the header value
+                                    // note that normally you would verify the path of the cookie to make sure the code returns the right one. 
+                                    // however, for the Reporting web service, it always returns the same path, "/ecp/reportingwebservice",
+                                    // so it is reasonably safe to just return it, for this sample.
+                                    serverCookie = caughtResponse.Headers.GetValues(i)[0].ToString();
+                                }
+                            }
+                        }
+                        // now start the process of formatting the response body into something more human-readable
+                        // force the character encoding so there are no mismatches
+                        Encoding encode = Encoding.GetEncoding("utf-8");
+                        // Pipes the stream to a higher level stream reader with the required encoding format. 
+                        StreamReader readStream = new StreamReader(caughtResponse.GetResponseStream(), encode);
+                        // create a "temporary" string building to add the text.
+                        StringBuilder sb = new StringBuilder();
+                        if (rdoAtom.Checked == true)
+                        {
+                            // Atom data is returned as an XML document, so create a new parser object
+                            XmlDocument doc = new XmlDocument();
+                            // and load the received stream into the document object
+                            doc.LoadXml(readStream.ReadToEnd());
+                            // create a base writer to receive the formatted XML contents
+                            TextWriter tr = new StringWriter(sb);
+                            // and then create an XML writer based on that textwriter
+                            XmlTextWriter wr = new XmlTextWriter(tr);
+                            // enable indenting of the output text
+                            wr.Formatting = Formatting.Indented;
+                            // then save the XML document into the XML writer
+                            doc.Save(wr);
+                            // extract out the formatted text that came with the HTTP error
+                            badDataReturned = sb.ToString();
+                            // and close the XML writer
+                            wr.Close();
+                        }
+                        else
+                        {
+                            // although this looks simpler, the JavaScript Json data has to be formatted
+                            // by brute-force effort, which has been encapsulated into the PrettyPrintJson routine.
+                            // remember that the formatted Json data should NOT be considered syntactically
+                            // perfect. the ONLY intent is to allow a human to make sense of it.
+                            charsRead = prettyPrintJson(readStream, ref sb);
+                            // retrieve the data for use in the output
+                            badDataReturned = sb.ToString();
+                        }
+                        // and close the stream holding the response body
+                        readStream.Close();
                     }
-                    // now start the process of formatting the response body into something more human-readable
-                    // force the character encoding so there are no mismatches
-                    Encoding encode = Encoding.GetEncoding("utf-8");
-                    // Pipes the stream to a higher level stream reader with the required encoding format. 
-                    StreamReader readStream = new StreamReader(caughtResponse.GetResponseStream(), encode);
-                    // create a "temporary" string building to add the text.
-                    StringBuilder sb = new StringBuilder();
-                    if (rdoAtom.Checked == true)
+                    // calculate the number of milliseconds that the request took to complete
+                    TimeSpan milliseconds = responseReceived.Subtract(requestStarted);
+                    // process the normal response block
+                    if (response != null)
                     {
-                        // Atom data is returned as an XML document, so create a new parser object
-                        XmlDocument doc = new XmlDocument();
-                        // and load the received stream into the document object
-                        doc.LoadXml(readStream.ReadToEnd());
-                        // create a base writer to receive the formatted XML contents
-                        TextWriter tr = new StringWriter(sb);
-                        // and then create an XML writer based on that textwriter
-                        XmlTextWriter wr = new XmlTextWriter(tr);
-                        // enable indenting of the output text
-                        wr.Formatting = Formatting.Indented;
-                        // then save the XML document into the XML writer
-                        doc.Save(wr);
-                        // extract out the formatted text that came with the HTTP error
-                        badDataReturned = sb.ToString();
-                        // and close the XML writer
-                        wr.Close();
+                        Encoding encode = Encoding.GetEncoding("utf-8");
+                        // Pipes the stream to a higher level stream reader with the required encoding format. 
+                        StreamReader readStream = new StreamReader(response.GetResponseStream(), encode);
+                        // create a "temporary" string building into which the code adds the text.
+                        StringBuilder sb = new StringBuilder();
+                        if (rdoAtom.Checked == true)
+                        {
+                            // Atom data is returned as an XML document, so create a new parser object
+                            XmlDocument doc = new XmlDocument();
+                            // and load the received stream into the document object
+                            doc.LoadXml(readStream.ReadToEnd());
+                            TextWriter tr = new StringWriter(sb);
+                            // and then create an XML writer based on that textwriter
+                            XmlTextWriter wr = new XmlTextWriter(tr);
+                            // enable indenting of the output text
+                            wr.Formatting = Formatting.Indented;
+                            // then save the XML document into the XML writer
+                            doc.Save(wr);
+                            // extract out the formatted text that came with the HTTP error
+                            requestDataReturned = sb.ToString();
+                            // and close the XML writer
+                            wr.Close();
+                        }
+                        else
+                        {
+                            // although this looks simpler, the JavaScript Json data has to be formatted
+                            // by brute-force effort, which has been encapsulated into the PrettyPrintJson routine
+                            // remember that the formatted Json data should NOT be considered syntactically
+                            // perfect. the ONLY intent is to allow a human to make sense of it.
+                            charsRead = prettyPrintJson(readStream, ref sb);
+                            // retrieve the data for use in the output
+                            requestDataReturned = sb.ToString();
+                        }
+                        // and close the stream holding the response body
+                        readStream.Close();
+                        //
+                        // now format the results block for a successful request/response.
+                        txtResults.Text =
+                            "==========================================================" + CRLF +
+                            "====               SUCCESSFUL                         ====" + CRLF +
+                            "==========================================================" + CRLF +
+                            "Type:              " + cmbReportList.SelectedItem.ToString() + CRLF +
+                            "Request sent:      " + requestStarted.ToString() + CRLF +
+                            "Response received: " + responseReceived.ToString() + CRLF +
+                            "Response time:     " + milliseconds.TotalMilliseconds + " ms" + CRLF +
+                            "User name:         " + userNameEntered + CRLF +
+                            "HTTP response:     " + responseCode + " " + responseDesc + CRLF +
+                            "==== REQUEST URL =========================================" + CRLF +
+                            txtRESTUrl.Text + CRLF +
+                            "==== HEADERS SENT ========================================" +
+                            (requestHeadersBlock == System.String.Empty ? "*** No headers ***" : requestHeadersBlock) + CRLF +
+                            "==== HEADERS RCVD ========================================" +
+                            (responseHeadersBlock == System.String.Empty ? "*** No headers ***" : responseHeadersBlock) + CRLF +
+                            "==== RESULTS DOCUMENT ====================================" + CRLF +
+                            requestDataReturned + CRLF +
+                            "==========================================================" + CRLF +
+                            "==========================================================" + CRLF + CRLF;
                     }
                     else
                     {
-                        // although this looks simpler, the JavaScript Json data has to be formatted
-                        // by brute-force effort, which has been encapsulated into the PrettyPrintJson routine.
-                        // remember that the formatted Json data should NOT be considered syntactically
-                        // perfect. the ONLY intent is to allow a human to make sense of it.
-                        charsRead = prettyPrintJson(readStream, ref sb);
-                        // retrieve the data for use in the output
-                        badDataReturned = sb.ToString();
+                        // and do a similar formatting for the failed reqests
+                        txtResults.Text =
+                            "==========================================================" + CRLF +
+                            "====               FAILURE                            ====" + CRLF +
+                            "==========================================================" + CRLF +
+                            "Type:              " + cmbReportList.SelectedItem.ToString() + CRLF +
+                            "Request sent:      " + requestStarted.ToString() + CRLF +
+                            "Response received: " + responseReceived.ToString() + CRLF +
+                            "Response time:     " + milliseconds.TotalMilliseconds + " ms" + CRLF +
+                            "User name:         " + userNameEntered + CRLF +
+                            "HTTP response:     " + responseCode + " " + responseDesc + CRLF +
+                            "==== REQUEST URL =========================================" + CRLF +
+                            txtRESTUrl.Text + CRLF +
+                            "==== HEADERS SENT ========================================" +
+                            (requestHeadersBlock == System.String.Empty ? "*** No headers ***" : requestHeadersBlock) + CRLF +
+                            "==== HEADERS RCVD ========================================" +
+                            (responseHeadersBlock == System.String.Empty ? "*** No headers ***" : responseHeadersBlock) + CRLF +
+                            "==== RESULTS DOCUMENT ====================================" + CRLF +
+                            badDataReturned + CRLF +
+                            "==========================================================" + CRLF +
+                            "==========================================================" + CRLF + CRLF;
+                        toolStripFormStatus.Text = "Ready";
+                        return;
                     }
-                    // and close the stream holding the response body
-                    readStream.Close();
-                }
-                // calculate the number of milliseconds that the request took to complete
-                TimeSpan milliseconds = responseReceived.Subtract(requestStarted);
-                // process the normal response block
-                if (response != null)
-                {
-                    Encoding encode = Encoding.GetEncoding("utf-8");
-                    // Pipes the stream to a higher level stream reader with the required encoding format. 
-                    StreamReader readStream = new StreamReader(response.GetResponseStream(), encode);
-                    // create a "temporary" string building into which the code adds the text.
-                    StringBuilder sb = new StringBuilder();
-                    if (rdoAtom.Checked == true)
-                    {
-                        // Atom data is returned as an XML document, so create a new parser object
-                        XmlDocument doc = new XmlDocument();
-                        // and load the received stream into the document object
-                        doc.LoadXml(readStream.ReadToEnd());
-                        TextWriter tr = new StringWriter(sb);
-                        // and then create an XML writer based on that textwriter
-                        XmlTextWriter wr = new XmlTextWriter(tr);
-                        // enable indenting of the output text
-                        wr.Formatting = Formatting.Indented;
-                        // then save the XML document into the XML writer
-                        doc.Save(wr);
-                        // extract out the formatted text that came with the HTTP error
-                        requestDataReturned = sb.ToString();
-                        // and close the XML writer
-                        wr.Close();
-                    }
-                    else
-                    {
-                        // although this looks simpler, the JavaScript Json data has to be formatted
-                        // by brute-force effort, which has been encapsulated into the PrettyPrintJson routine
-                        // remember that the formatted Json data should NOT be considered syntactically
-                        // perfect. the ONLY intent is to allow a human to make sense of it.
-                        charsRead = prettyPrintJson(readStream, ref sb);
-                        // retrieve the data for use in the output
-                        requestDataReturned = sb.ToString();
-                    }
-                    // and close the stream holding the response body
-                    readStream.Close();
-                    //
-                    // now format the results block for a successful request/response.
-                    txtResults.Text =
-                        "==========================================================" + CRLF +
-                        "====               SUCCESSFUL                         ====" + CRLF +
-                        "==========================================================" + CRLF +
-                        "Type:              " + cmbReportList.SelectedItem.ToString() + CRLF +
-                        "Request sent:      " + requestStarted.ToString() + CRLF +
-                        "Response received: " + responseReceived.ToString() + CRLF +
-                        "Response time:     " + milliseconds.TotalMilliseconds + " ms" + CRLF +
-                        "User name:         " + userNameEntered + CRLF +
-                        "HTTP response:     " + responseCode + " " + responseDesc + CRLF +
-                        "==== REQUEST URL =========================================" + CRLF +
-                        fullRestURL + CRLF +
-                        "==== HEADERS SENT ========================================" +
-                        (requestHeadersBlock == System.String.Empty ? "*** No headers ***" : requestHeadersBlock) + CRLF +
-                        "==== HEADERS RCVD ========================================" +
-                        (responseHeadersBlock == System.String.Empty ? "*** No headers ***" : responseHeadersBlock) + CRLF +
-                        "==== RESULTS DOCUMENT ====================================" + CRLF +
-                        requestDataReturned + CRLF +
-                        "==========================================================" + CRLF +
-                        "==========================================================" + CRLF + CRLF;
-                }
-                else
-                {
-                    // and do a similar formatting for the failed reqests
-                    txtResults.Text =
-                        "==========================================================" + CRLF +
-                        "====               FAILURE                            ====" + CRLF +
-                        "==========================================================" + CRLF +
-                        "Type:              " + cmbReportList.SelectedItem.ToString() + CRLF +
-                        "Request sent:      " + requestStarted.ToString() + CRLF +
-                        "Response received: " + responseReceived.ToString() + CRLF +
-                        "Response time:     " + milliseconds.TotalMilliseconds + " ms" + CRLF +
-                        "User name:         " + userNameEntered + CRLF +
-                        "HTTP response:     " + responseCode + " " + responseDesc + CRLF +
-                        "==== REQUEST URL =========================================" + CRLF +
-                        fullRestURL + CRLF +
-                        "==== HEADERS SENT ========================================" +
-                        (requestHeadersBlock == System.String.Empty ? "*** No headers ***" : requestHeadersBlock) + CRLF +
-                        "==== HEADERS RCVD ========================================" +
-                        (responseHeadersBlock == System.String.Empty ? "*** No headers ***" : responseHeadersBlock) + CRLF +
-                        "==== RESULTS DOCUMENT ====================================" + CRLF +
-                        badDataReturned + CRLF +
-                        "==========================================================" + CRLF +
-                        "==========================================================" + CRLF + CRLF;
                     toolStripFormStatus.Text = "Ready";
-                    return;
                 }
+                finally
+                {
+                    // arrive here to ensure that the response stream is assured of being closed
+                    if (response != null) response.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                txtResults.Text = "Error: " + ex.Message;
                 toolStripFormStatus.Text = "Ready";
             }
             finally
             {
-                // arrive here to ensure that the response stream is assured of being closed
-                if (response != null) response.Close();
+                Cursor = Cursors.Default;
             }
-
-            Cursor = Cursors.Default;
         }
 
         private void btnCopyResults_Click(object sender, System.EventArgs e)

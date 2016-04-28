@@ -86,6 +86,14 @@
             // 
             this.cmbReportList.FormattingEnabled = true;
             this.cmbReportList.Items.AddRange(new object[] {
+            "ConnectionbyClientTypeDetailDaily",
+            "ConnectionbyClientTypeDetailWeekly",
+            "ConnectionbyClientTypeDetailMonthly",
+            "ConnectionbyClientTypeDetailYearly",
+            "ConnectionbyClientTypeDaily",
+            "ConnectionbyClientTypeWeekly",
+            "ConnectionbyClientTypeMonthly",
+            "ConnectionbyClientTypeYearly",
             "GroupActivityDaily",
             "GroupActivityWeekly",
             "GroupActivityMonthly",
@@ -94,7 +102,8 @@
             "MailboxActivityWeekly",
             "MailboxActivityMonthly",
             "MailboxActivityYearly",
-            "MailDetail",
+            "MailboxUsage",
+            "MailboxUsageDetail",
             "MailDetailDlpPolicy",
             "MailDetailMalware",
             "MailDetailSpam",
@@ -111,6 +120,9 @@
             "MailTrafficTop (outbound)",
             "MessageTrace",
             "MessageTraceDetail",
+            "MxRecordReport",
+            "OutboundConnectorReport",
+            "ServiceDeliveryReport",
             "StaleMailbox",
             "StaleMailboxDetail"});
             this.cmbReportList.Location = new System.Drawing.Point(15, 41);
