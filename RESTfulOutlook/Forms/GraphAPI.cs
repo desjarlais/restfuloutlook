@@ -20,7 +20,7 @@ namespace RESTfulOutlook.Forms
         Uri redirectUri = new Uri(Properties.Settings.Default.RedirectUri);
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
         List<string> notificationGuids = new List<string>();
-        public string hdrName, hdrValue, xAnchorMbx;
+        public string hdrName, hdrValue, xAnchorMbx, treeViewResult;
         ClassLogger logger = null;
 
         public GraphAPI(AuthenticationResult authResult, string anchor)
@@ -163,6 +163,7 @@ namespace RESTfulOutlook.Forms
                     // display error details in the UI
                     TreeNode errorParent = TreeViewHelper.Json2Tree(jResult);
                     errorParent.Text = "Request failed.";
+                    treeViewResult = errorParent.ToString();
                     tvw.Nodes.Add(errorParent);
 
                     // finally throw the exception to prevent further processing of the request
@@ -199,6 +200,7 @@ namespace RESTfulOutlook.Forms
                         tNode = tvw.Nodes[0];
 
                         TreeViewHelper.AddNode(dom.DocumentElement, tNode);
+                        treeViewResult = dom.ToString();
                         logger.Log(dom.ToString());
                     }
                     else
@@ -222,6 +224,7 @@ namespace RESTfulOutlook.Forms
                         parent.Text = "Root Object";
                         tvw.Nodes.Add(parent);
                         logger.Log(jResult.ToString());
+                        treeViewResult = jResult.ToString();
                     }
                 }
                 else
@@ -445,7 +448,17 @@ namespace RESTfulOutlook.Forms
         {
             ClearResponseTree();
         }
-        
+
+        private void btnCopyResponse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clipboard.SetText(treeViewResult);
+            }
+            catch (Exception)
+            { }
+        }
+
         public void ClearResponseTree()
         {
             tvw.Nodes.Clear();

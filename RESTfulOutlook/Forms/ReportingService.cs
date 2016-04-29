@@ -17,10 +17,10 @@ namespace RESTfulOutlook.Forms
 
         // Passwords are stored in SecureStrings, and handled as infrequently as possible
         private SecureString passwordEntered = new SecureString();
-        private String userNameEntered = System.String.Empty;
-        private String fqdnHost = System.String.Empty;
-        private String fullRestURL = System.String.Empty;
-        private String serverCookie = System.String.Empty;
+        private String userNameEntered = String.Empty;
+        private String fqdnHost = String.Empty;
+        private String fullRestURL = String.Empty;
+        private String serverCookie = String.Empty;
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
         public ReportingService(string user, SecureString pass)
@@ -441,9 +441,9 @@ namespace RESTfulOutlook.Forms
                             "==== REQUEST URL =========================================" + CRLF +
                             txtRESTUrl.Text + CRLF +
                             "==== HEADERS SENT ========================================" +
-                            (requestHeadersBlock == System.String.Empty ? "*** No headers ***" : requestHeadersBlock) + CRLF +
+                            (requestHeadersBlock == String.Empty ? "*** No headers ***" : requestHeadersBlock) + CRLF +
                             "==== HEADERS RCVD ========================================" +
-                            (responseHeadersBlock == System.String.Empty ? "*** No headers ***" : responseHeadersBlock) + CRLF +
+                            (responseHeadersBlock == String.Empty ? "*** No headers ***" : responseHeadersBlock) + CRLF +
                             "==== RESULTS DOCUMENT ====================================" + CRLF +
                             requestDataReturned + CRLF +
                             "==========================================================" + CRLF +
@@ -465,9 +465,9 @@ namespace RESTfulOutlook.Forms
                             "==== REQUEST URL =========================================" + CRLF +
                             txtRESTUrl.Text + CRLF +
                             "==== HEADERS SENT ========================================" +
-                            (requestHeadersBlock == System.String.Empty ? "*** No headers ***" : requestHeadersBlock) + CRLF +
+                            (requestHeadersBlock == String.Empty ? "*** No headers ***" : requestHeadersBlock) + CRLF +
                             "==== HEADERS RCVD ========================================" +
-                            (responseHeadersBlock == System.String.Empty ? "*** No headers ***" : responseHeadersBlock) + CRLF +
+                            (responseHeadersBlock == String.Empty ? "*** No headers ***" : responseHeadersBlock) + CRLF +
                             "==== RESULTS DOCUMENT ====================================" + CRLF +
                             badDataReturned + CRLF +
                             "==========================================================" + CRLF +

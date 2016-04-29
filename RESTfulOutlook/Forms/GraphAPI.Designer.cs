@@ -60,6 +60,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tbRequestBody = new System.Windows.Forms.TextBox();
+            this.btnCopyResponse = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRequestHeaders)).BeginInit();
@@ -330,6 +331,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnCopyResponse);
             this.groupBox3.Controls.Add(this.btnClearResponse);
             this.groupBox3.Controls.Add(this.btnGraphLog);
             this.groupBox3.Controls.Add(this.tvw);
@@ -399,6 +401,16 @@
             this.tbRequestBody.Size = new System.Drawing.Size(562, 214);
             this.tbRequestBody.TabIndex = 0;
             // 
+            // btnCopyResponse
+            // 
+            this.btnCopyResponse.Location = new System.Drawing.Point(142, 507);
+            this.btnCopyResponse.Name = "btnCopyResponse";
+            this.btnCopyResponse.Size = new System.Drawing.Size(114, 31);
+            this.btnCopyResponse.TabIndex = 22;
+            this.btnCopyResponse.Text = "Copy Response";
+            this.btnCopyResponse.UseVisualStyleBackColor = true;
+            this.btnCopyResponse.Click += new System.EventHandler(this.btnCopyResponse_Click);
+            // 
             // GraphAPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,5 +478,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.Button btnGraphLog;
         private System.Windows.Forms.Button btnClearResponse;
+        private System.Windows.Forms.Button btnCopyResponse;
     }
 }
