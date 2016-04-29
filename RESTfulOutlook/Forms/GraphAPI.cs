@@ -76,6 +76,10 @@ namespace RESTfulOutlook.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            // setup the time variables
+            DateTime responseReceived = new DateTime();
+            DateTime requestStarted = new DateTime();
+
             try
             {
                 Cursor = Cursors.WaitCursor;
@@ -134,8 +138,18 @@ namespace RESTfulOutlook.Forms
                 logger.Log("REQUEST:");
                 logger.Log(request.ToString());
 
+                // get the current time for response time calculation
+                requestStarted = DateTime.Now;
+
                 // start processing the response
-                HttpResponseMessage response = httpClient.SendAsync(request).Result;              
+                HttpResponseMessage response = httpClient.SendAsync(request).Result;
+
+                // get the current time again to figure out the response time
+                responseReceived = DateTime.Now;
+                
+                // calculate the number of milliseconds that the request took to complete
+                TimeSpan milliseconds = responseReceived.Subtract(requestStarted);
+                logger.Log("RESPONSE TIME: " + milliseconds);
 
                 // handle non-successful requests
                 if (!response.IsSuccessStatusCode)
