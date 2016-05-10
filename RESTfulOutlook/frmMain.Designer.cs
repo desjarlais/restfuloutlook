@@ -39,7 +39,6 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.btnLoginLogout = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnNotifications = new System.Windows.Forms.Button();
             this.btnUserPhotoAPI = new System.Windows.Forms.Button();
             this.btnMailAPI = new System.Windows.Forms.Button();
             this.btnCalendarAPI = new System.Windows.Forms.Button();
@@ -154,26 +153,16 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnNotifications);
             this.groupBox2.Controls.Add(this.btnUserPhotoAPI);
             this.groupBox2.Controls.Add(this.btnMailAPI);
             this.groupBox2.Controls.Add(this.btnCalendarAPI);
             this.groupBox2.Controls.Add(this.btnContactsAPI);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(173, 163);
+            this.groupBox2.Size = new System.Drawing.Size(173, 135);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Microsoft Graph SDK";
-            // 
-            // btnNotifications
-            // 
-            this.btnNotifications.Location = new System.Drawing.Point(12, 135);
-            this.btnNotifications.Name = "btnNotifications";
-            this.btnNotifications.Size = new System.Drawing.Size(145, 23);
-            this.btnNotifications.TabIndex = 16;
-            this.btnNotifications.Text = "Notification API";
-            this.btnNotifications.UseVisualStyleBackColor = true;
             // 
             // btnUserPhotoAPI
             // 
@@ -281,9 +270,9 @@
             // 
             this.groupBox4.Controls.Add(this.btnGraphAPI);
             this.groupBox4.Controls.Add(this.btnReportingService);
-            this.groupBox4.Location = new System.Drawing.Point(12, 181);
+            this.groupBox4.Location = new System.Drawing.Point(12, 153);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(173, 85);
+            this.groupBox4.Size = new System.Drawing.Size(173, 113);
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Office365 REST APIs";
@@ -348,7 +337,6 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnScopes;
         private System.Windows.Forms.Button btnUserPhotoAPI;
-        private System.Windows.Forms.Button btnNotifications;
         private System.Windows.Forms.GroupBox groupBox5;
     }
 }

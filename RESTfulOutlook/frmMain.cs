@@ -70,7 +70,6 @@ namespace RESTfulOutlook
             btnCalendarAPI.Enabled = false;
             btnReportingService.Enabled = false;
             btnUserPhotoAPI.Enabled = false;
-            btnNotifications.Enabled = false;
         }
 
         public void ToggleButtons()
