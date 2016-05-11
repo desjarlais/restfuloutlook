@@ -1,0 +1,244 @@
+05/10/16 3:31:44 PM ==> REQUEST
+05/10/16 3:31:44 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/10/16 3:31:44 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/10/16 3:32:15 PM ==> NewMessageSend Failed: Object reference not set to an instance of an object.
+05/10/16 3:32:15 PM ==> Object reference not set to an instance of an object.
+05/10/16 3:33:46 PM ==> REQUEST
+05/10/16 3:33:46 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/10/16 3:33:46 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/10/16 3:34:27 PM ==> NewMessageSend Failed: Object reference not set to an instance of an object.
+05/10/16 3:34:27 PM ==> Object reference not set to an instance of an object.
+05/10/16 3:34:27 PM ==>    at RESTfulOutlook.Forms.NewMessageForm.<CreateNewMessage>d__10.MoveNext() in F:\GitHub\restfuloutlook\RESTfulOutlook\Forms\NewMessageForm.cs:line 167
+05/10/16 6:03:57 PM ==> REQUEST
+05/10/16 6:03:57 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/10/16 6:03:57 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/10/16 6:04:38 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/10/16 6:04:38 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/10/16 6:05:52 PM ==> REQUEST
+05/10/16 6:05:52 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/10/16 6:05:52 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/10/16 6:06:13 PM ==> Object reference not set to an instance of an object.
+05/10/16 6:06:13 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/10/16 6:06:13 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/11/16 2:20:09 PM ==> REQUEST
+05/11/16 2:20:09 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:20:09 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 2:22:02 PM ==> REQUEST
+05/11/16 2:22:02 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:22:02 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 2:27:25 PM ==> REQUEST
+05/11/16 2:27:25 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:27:25 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 2:27:56 PM ==> Object reference not set to an instance of an object.
+05/11/16 2:28:23 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/11/16 2:28:23 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/11/16 2:28:28 PM ==> REQUEST
+05/11/16 2:28:28 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAABTCES0AAA=/messages', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:28:28 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAABTCES0AAA=/messages
+05/11/16 2:28:29 PM ==> REQUEST
+05/11/16 2:28:29 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAAAAAAEMAAA=/messages', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:28:29 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAAAAAAEMAAA=/messages
+05/11/16 2:44:57 PM ==> REQUEST
+05/11/16 2:44:57 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:44:57 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 2:45:59 PM ==> REQUEST
+05/11/16 2:45:59 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:45:59 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 2:47:38 PM ==> Object reference not set to an instance of an object.
+05/11/16 2:47:42 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/11/16 2:47:42 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/11/16 2:54:49 PM ==> REQUEST
+05/11/16 2:54:49 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:54:49 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 2:55:12 PM ==> Object reference not set to an instance of an object.
+05/11/16 2:55:12 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/11/16 2:55:12 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/11/16 2:57:21 PM ==> REQUEST
+05/11/16 2:57:21 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:57:21 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 2:57:23 PM ==> REQUEST
+05/11/16 2:57:23 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAAAAAAEMAAA=/messages', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 2:57:23 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders/AAMkADY0OTQxMzMzLTBmOWQtNGU2NS04ZTgwLTExMDBhMTBiMTBkMwAuAAAAAABCJnx64O-AQY5A4ABM_3lEAQAHnqTXS9fSRp2ES0AEnFmSAAAAAAEMAAA=/messages
+05/11/16 3:51:53 PM ==> REQUEST
+05/11/16 3:51:53 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 3:51:53 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 3:53:48 PM ==> REQUEST
+05/11/16 3:53:48 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 3:53:48 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 3:54:44 PM ==> REQUEST
+05/11/16 3:54:44 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 3:54:44 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 3:55:59 PM ==> REQUEST
+05/11/16 3:55:59 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 3:55:59 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 3:56:18 PM ==> Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+05/11/16 3:56:18 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/11/16 3:56:18 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/11/16 3:56:52 PM ==> REQUEST
+05/11/16 3:56:52 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 3:56:52 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 3:57:45 PM ==> REQUEST
+05/11/16 3:57:45 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 3:57:45 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 3:58:07 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/11/16 3:58:07 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/11/16 3:58:08 PM ==> NewMessageSend Failed: Exception of type 'Microsoft.Graph.ServiceException' was thrown.
+05/11/16 3:58:08 PM ==> Exception of type 'Microsoft.Graph.ServiceException' was thrown.
+05/11/16 3:58:08 PM ==>    at Microsoft.Graph.HttpProvider.<SendAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.BaseRequest.<SendRequestAsync>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.BaseRequest.<SendAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at RESTfulOutlook.Forms.NewMessageForm.<CreateNewMessage>d__10.MoveNext() in F:\GitHub\restfuloutlook\RESTfulOutlook\Forms\NewMessageForm.cs:line 187
+05/11/16 3:59:25 PM ==> REQUEST
+05/11/16 3:59:25 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 3:59:25 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 3:59:43 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/11/16 3:59:43 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/11/16 3:59:44 PM ==> NewMessageSend Failed: Exception of type 'Microsoft.Graph.ServiceException' was thrown.
+05/11/16 3:59:44 PM ==> Exception of type 'Microsoft.Graph.ServiceException' was thrown.
+05/11/16 3:59:44 PM ==>    at Microsoft.Graph.HttpProvider.<SendAsync>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.BaseRequest.<SendRequestAsync>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Graph.BaseRequest.<SendAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at RESTfulOutlook.Forms.NewMessageForm.<CreateNewMessage>d__10.MoveNext() in F:\GitHub\restfuloutlook\RESTfulOutlook\Forms\NewMessageForm.cs:line 188
+05/11/16 4:00:37 PM ==> REQUEST
+05/11/16 4:00:37 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 4:00:37 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 4:02:55 PM ==> REQUEST
+05/11/16 4:02:55 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 4:02:55 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 4:03:18 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/11/16 4:03:18 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/11/16 4:05:33 PM ==> REQUEST
+05/11/16 4:05:33 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 4:05:33 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 4:07:02 PM ==> REQUEST
+05/11/16 4:07:02 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 4:07:02 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 4:09:06 PM ==> REQUEST
+05/11/16 4:09:06 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 4:09:06 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 4:10:23 PM ==> REQUEST
+05/11/16 4:10:23 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 4:10:23 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 4:10:40 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/11/16 4:10:40 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail
+05/11/16 4:12:46 PM ==> REQUEST
+05/11/16 4:12:46 PM ==> Method: GET, RequestUri: 'https://graph.microsoft.com/v1.0/me/mailFolders', Version: 1.1, Content: <null>, Headers:
+{
+  SdkVersion: graph-dotnet-1.0.1
+}
+05/11/16 4:12:46 PM ==> https://graph.microsoft.com/v1.0/me/mailFolders
+05/11/16 4:13:10 PM ==> SdkVersion: graph-dotnet-1.0.1
+
+05/11/16 4:13:10 PM ==> https://graph.microsoft.com/v1.0/me/microsoft.graph.sendMail

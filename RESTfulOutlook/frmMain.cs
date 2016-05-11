@@ -340,6 +340,13 @@ namespace RESTfulOutlook
             Forms.Settings mSettings = new Forms.Settings();
             mSettings.Owner = this;
             mSettings.ShowDialog();
+
+            // update the config values
+            clientId = Properties.Settings.Default.ClientId;
+            redirectUri = new Uri(Properties.Settings.Default.RedirectUri);
+
+            config.clientId = clientId;
+            config.redirectUri = Properties.Settings.Default.RedirectUri;
         }
 
         private void btnUserInfo_Click(object sender, EventArgs e)

@@ -11,11 +11,8 @@ namespace RESTfulOutlook.Forms
     public partial class MailAPI : Form
     {
         GraphServiceClient graphClient;
-        public Dictionary<string, List<Recipient>> dRecips;
         public Dictionary<string, List<ItemBody>> dItemBody;
-        public Dictionary<string, List<Recipient>> dBcc;
-        public Dictionary<string, List<Recipient>> dCc;
-        public Dictionary<string, List<Recipient>> dReplyTo;
+        public Dictionary<string, List<Recipient>> dBcc, dCc, dReplyTo, dRecips;
         public Dictionary<string, List<string>> dCategories;
         public Dictionary<string, List<FileAttachment>> dFileAttachments;
         public Dictionary<string, List<ItemAttachment>> dItemAttachments;

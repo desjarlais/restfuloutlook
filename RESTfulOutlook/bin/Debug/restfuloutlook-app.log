@@ -1,0 +1,44 @@
+05/11/16 11:39:39 AM ==> AADSTS65001: The user or administrator has not consented to use the application with ID '9e827b51-5206-432c-9d4d-6be8cd20407e'. Send an interactive authorization request for this user and resource.
+Trace ID: 4e0cfb94-25da-4f3f-99ea-caeebf9db380
+Correlation ID: 54859f6d-382a-41f1-b195-85617957ae53
+Timestamp: 2016-05-11 16:39:39Z
+05/11/16 11:42:09 AM ==> AADSTS65001: The user or administrator has not consented to use the application with ID '9e827b51-5206-432c-9d4d-6be8cd20407e'. Send an interactive authorization request for this user and resource.
+Trace ID: e2b482b4-699b-450d-b2d1-27f5390c1ff5
+Correlation ID: 6ea432ed-039d-44da-b5f5-9744ec168d84
+Timestamp: 2016-05-11 16:42:09Z
+05/11/16 11:43:57 AM ==> AADSTS65001: The user or administrator has not consented to use the application with ID '9e827b51-5206-432c-9d4d-6be8cd20407e'. Send an interactive authorization request for this user and resource.
+Trace ID: a0c53f8c-ba98-4398-a776-415348f82576
+Correlation ID: ed4c64de-f624-462e-81ac-184db1e0ba8c
+Timestamp: 2016-05-11 16:42:47Z
+05/11/16 11:47:43 AM ==> AADSTS65001: The user or administrator has not consented to use the application with ID '9e827b51-5206-432c-9d4d-6be8cd20407e'. Send an interactive authorization request for this user and resource.
+Trace ID: b8a535c2-96d1-4d82-860c-75659bfe846c
+Correlation ID: 9ce83616-c24b-4c42-aca5-e3abd57306cf
+Timestamp: 2016-05-11 16:47:43Z
+05/11/16 11:48:51 AM ==> AADSTS65001: The user or administrator has not consented to use the application with ID '9e827b51-5206-432c-9d4d-6be8cd20407e'. Send an interactive authorization request for this user and resource.
+Trace ID: e9ad19f4-4fe0-40fe-abd7-2b76141e1ef5
+Correlation ID: 8ad48141-40c1-41e2-9b69-be815b97f58d
+Timestamp: 2016-05-11 16:48:50Z
+05/11/16 11:54:01 AM ==> AADSTS65001: The user or administrator has not consented to use the application with ID '9e827b51-5206-432c-9d4d-6be8cd20407e'. Send an interactive authorization request for this user and resource.
+Trace ID: 42ddd0b9-04b2-44a1-a246-a836da018ae5
+Correlation ID: 9f5166d4-cbc2-4061-953c-bf1d01389a80
+Timestamp: 2016-05-11 16:54:01Z
+05/11/16 11:56:50 AM ==> AADSTS65001: The user or administrator has not consented to use the application with ID '9e827b51-5206-432c-9d4d-6be8cd20407e'. Send an interactive authorization request for this user and resource.
+Trace ID: 2849e8af-947b-42d8-85b9-205c5f2a72ec
+Correlation ID: b27d4a0a-0a10-4676-bf36-aad9765daa64
+Timestamp: 2016-05-11 16:56:50Z
+05/11/16 11:58:23 AM ==> AADSTS70001: Application '357a1f50-23b3-4cea-851b-abd005237d1c' is not supported for this API version.
+Trace ID: f73759b5-c102-4e89-a6cb-aac8799d201c
+Correlation ID: 6a9a2d16-5b74-42be-9e6f-3169fd1dedfc
+Timestamp: 2016-05-11 16:58:23Z
+05/11/16 12:21:03 PM ==> AADSTS70001: Application '357a1f50-23b3-4cea-851b-abd005237d1c' is not supported for this API version.
+Trace ID: 78cd1d5c-0c96-4840-9ae0-80e7b908ef9f
+Correlation ID: ff8a9865-7dad-41c2-8c79-5cd07f08c392
+Timestamp: 2016-05-11 17:21:03Z
+05/11/16 2:18:29 PM ==> AADSTS70001: Application '357a1f50-23b3-4cea-851b-abd005237d1c' is not supported for this API version.
+Trace ID: c34b840b-9a0f-4b11-91f2-53bf6d846284
+Correlation ID: c73c16d2-3bf4-4394-babe-41a2e6cb16a2
+Timestamp: 2016-05-11 19:18:29Z
+05/11/16 2:19:35 PM ==> AADSTS70001: Application '357a1f50-23b3-4cea-851b-abd005237d1c' is not supported for this API version.
+Trace ID: 4ffe03f4-82cf-49a5-a69d-39ca200cab74
+Correlation ID: 549bdd78-3e94-495b-8f8d-7b4f41a93702
+Timestamp: 2016-05-11 19:19:34Z
