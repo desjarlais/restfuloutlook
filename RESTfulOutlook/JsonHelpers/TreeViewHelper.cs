@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json.Linq;
-using System.Linq;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -135,6 +134,12 @@ namespace RESTfulOutlook.JsonHelpers
                     else
                     {
                         child.Nodes.Add(token.Value.ToString());
+
+                        // check for nextLink value
+                        if (child.Text.Contains("odata.nextLink"))
+                        {
+                            Properties.Settings.Default.NextLink = child.FirstNode.Text;
+                        }
                     }
                         
                     parent.Nodes.Add(child);

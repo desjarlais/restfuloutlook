@@ -281,6 +281,7 @@ namespace RESTfulOutlook.Forms
                     apiVersion = "beta/";
                 }
 
+                // lookup the selected value and populate the respective request information
                 foreach (KeyValuePair<string, string> pair in dictionary)
                 {
                     if (pair.Key == cbRESTQuery.SelectedItem.ToString())
@@ -342,6 +343,7 @@ namespace RESTfulOutlook.Forms
             finally
             {
                 Cursor = Cursors.Default;
+                Properties.Settings.Default.NextLink = "";
             }
         }
 
@@ -461,6 +463,22 @@ namespace RESTfulOutlook.Forms
         private void btnClearResponse_Click(object sender, EventArgs e)
         {
             ClearResponseTree();
+            Properties.Settings.Default.NextLink = "";
+        }
+
+        private void btnPageForward_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tbRequestUrl.Text = Properties.Settings.Default.NextLink;
+                btnRunQuery.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                logger.Log("Paging Error:");
+                logger.Log(ex.Message);
+                logger.Log(ex.StackTrace);
+            }            
         }
 
         private void btnCopyResponse_Click(object sender, EventArgs e)

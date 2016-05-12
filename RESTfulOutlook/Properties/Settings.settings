@@ -20,5 +20,8 @@
     <Setting Name="OutlookDiagnostics" Type="System.String" Scope="User">
       <Value Profile="(Default)">Off</Value>
     </Setting>
+    <Setting Name="NextLink" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

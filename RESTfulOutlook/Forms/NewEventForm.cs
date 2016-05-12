@@ -62,7 +62,7 @@ namespace RESTfulOutlook.Forms
 
                 evt.Start = dtStart;
                 evt.End = dtEnd;
-
+                
                 // log the request info
                 sdklogger.Log(graphClient.Me.Events.Request().GetHttpRequestMessage().Headers.ToString());
                 sdklogger.Log(graphClient.Me.Events.Request().GetHttpRequestMessage().RequestUri.ToString());

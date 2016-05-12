@@ -94,5 +94,17 @@ namespace RESTfulOutlook.Properties {
                 this["OutlookDiagnostics"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NextLink {
+            get {
+                return ((string)(this["NextLink"]));
+            }
+            set {
+                this["NextLink"] = value;
+            }
+        }
     }
 }

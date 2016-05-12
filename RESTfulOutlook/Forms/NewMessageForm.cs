@@ -102,21 +102,21 @@ namespace RESTfulOutlook.Forms
                 // split out the different email addresses and add to collection
                 char[] delim = { ';' };
                 
-                // handle To
+                // handle To:
                 string[] toArray = tbToRecipients.Text.Split(delim);
                 foreach (var to in toArray)
                 {
                     AddRecipToCollection(to, toRecipients);
                 }
 
-                // handle cc
+                // handle Cc:
                 string[] ccArray = tbCC.Text.Split(delim);
                 foreach (var cc in toArray)
                 {
                     AddRecipToCollection(cc, ccRecipients);
                 }
 
-                // handle bcc
+                // handle Bcc:
                 string[] bccArray = tbBcc.Text.Split(delim);
                 foreach (var bcc in toArray)
                 {
@@ -153,32 +153,26 @@ namespace RESTfulOutlook.Forms
                 // setup the attachment collection
                 if (dgAttachments.Rows.Count > 0)
                 {
+                    // setup the attachments collection
                     msg.Attachments = new MessageAttachmentsCollectionPage();
 
                     // add attachments
                     foreach (DataGridViewRow row in dgAttachments.Rows)
                     {
-                        try
+                        if (row.Cells[0].Value != null)
                         {
-                            if (row.Cells[0].Value != null)
-                            {
-                                // create the file attachment from the file path
-                                FileAttachment file = new FileAttachment();
-                                byte[] array = System.IO.File.ReadAllBytes(row.Cells[0].Value.ToString());
-                                file.ContentBytes = array;
-                                file.Name = row.Cells[1].Value.ToString();
-                                file.ContentType = row.Cells[2].Value.ToString();
-                                file.ContentId = row.Cells[4].Value.ToString();
-                                file.IsInline = false;
-                                file.ODataType = row.Cells[6].Value.ToString();
+                            // create the file attachment from the file path
+                            FileAttachment file = new FileAttachment();
+                            byte[] array = System.IO.File.ReadAllBytes(row.Cells[0].Value.ToString());
+                            file.ContentBytes = array;
+                            file.Name = row.Cells[1].Value.ToString();
+                            file.ContentType = row.Cells[2].Value.ToString();
+                            file.ContentId = row.Cells[4].Value.ToString();
+                            file.IsInline = false;
+                            file.ODataType = row.Cells[6].Value.ToString();
 
-                                // add it to the message        
-                                msg.Attachments.Add(file);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            sdklogger.Log(ex.Message);
+                            // add it to the message        
+                            msg.Attachments.Add(file);
                         }
                     }
                 }                
@@ -192,7 +186,7 @@ namespace RESTfulOutlook.Forms
             }
             catch (Exception ex)
             {
-                sdklogger.Log("NewMessageSend Failed: " + ex.Message);
+                sdklogger.Log("NewMessageSend Failed: ");
                 sdklogger.Log(ex.Message);
                 sdklogger.Log(ex.StackTrace);
             }

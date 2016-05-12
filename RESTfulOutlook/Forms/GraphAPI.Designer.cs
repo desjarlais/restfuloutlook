@@ -54,13 +54,15 @@
             this.lnkCallAPI = new System.Windows.Forms.LinkLabel();
             this.lnkPaging = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnCopyResponse = new System.Windows.Forms.Button();
             this.btnClearResponse = new System.Windows.Forms.Button();
             this.btnGraphLog = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tbRequestBody = new System.Windows.Forms.TextBox();
-            this.btnCopyResponse = new System.Windows.Forms.Button();
+            this.btnPageForward = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRequestHeaders)).BeginInit();
@@ -73,11 +75,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(6, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 13);
+            this.label1.Size = new System.Drawing.Size(131, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Select a predefined REST Query :";
+            this.label1.Text = "Choose REST Query :";
             // 
             // btnRunQuery
             // 
@@ -113,9 +116,9 @@
             "OutlookGroups-ListMemberOf",
             "OutlookNotifications-CreatePushSubscription",
             "Graph-Metadata"});
-            this.cbRESTQuery.Location = new System.Drawing.Point(180, 11);
+            this.cbRESTQuery.Location = new System.Drawing.Point(143, 11);
             this.cbRESTQuery.Name = "cbRESTQuery";
-            this.cbRESTQuery.Size = new System.Drawing.Size(419, 21);
+            this.cbRESTQuery.Size = new System.Drawing.Size(456, 21);
             this.cbRESTQuery.TabIndex = 4;
             this.cbRESTQuery.SelectedValueChanged += new System.EventHandler(this.cbRESTQuery_SelectedValueChanged);
             // 
@@ -276,9 +279,9 @@
             this.groupBox2.Controls.Add(this.btnAddRequestHeader);
             this.groupBox2.Controls.Add(this.btnRunQuery);
             this.groupBox2.Controls.Add(this.groupBox1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 79);
+            this.groupBox2.Location = new System.Drawing.Point(9, 79);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(587, 225);
+            this.groupBox2.Size = new System.Drawing.Size(590, 225);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Request Headers";
@@ -331,6 +334,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.btnPageForward);
             this.groupBox3.Controls.Add(this.btnCopyResponse);
             this.groupBox3.Controls.Add(this.btnClearResponse);
             this.groupBox3.Controls.Add(this.btnGraphLog);
@@ -341,6 +346,16 @@
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Response";
+            // 
+            // btnCopyResponse
+            // 
+            this.btnCopyResponse.Location = new System.Drawing.Point(148, 507);
+            this.btnCopyResponse.Name = "btnCopyResponse";
+            this.btnCopyResponse.Size = new System.Drawing.Size(108, 31);
+            this.btnCopyResponse.TabIndex = 22;
+            this.btnCopyResponse.Text = "Copy Response";
+            this.btnCopyResponse.UseVisualStyleBackColor = true;
+            this.btnCopyResponse.Click += new System.EventHandler(this.btnCopyResponse_Click);
             // 
             // btnClearResponse
             // 
@@ -385,9 +400,9 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.tbRequestBody);
-            this.groupBox5.Location = new System.Drawing.Point(12, 310);
+            this.groupBox5.Location = new System.Drawing.Point(9, 310);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(587, 240);
+            this.groupBox5.Size = new System.Drawing.Size(590, 240);
             this.groupBox5.TabIndex = 21;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Request Body";
@@ -401,15 +416,25 @@
             this.tbRequestBody.Size = new System.Drawing.Size(562, 214);
             this.tbRequestBody.TabIndex = 0;
             // 
-            // btnCopyResponse
+            // btnPageForward
             // 
-            this.btnCopyResponse.Location = new System.Drawing.Point(142, 507);
-            this.btnCopyResponse.Name = "btnCopyResponse";
-            this.btnCopyResponse.Size = new System.Drawing.Size(114, 31);
-            this.btnCopyResponse.TabIndex = 22;
-            this.btnCopyResponse.Text = "Copy Response";
-            this.btnCopyResponse.UseVisualStyleBackColor = true;
-            this.btnCopyResponse.Click += new System.EventHandler(this.btnCopyResponse_Click);
+            this.btnPageForward.Location = new System.Drawing.Point(58, 508);
+            this.btnPageForward.Name = "btnPageForward";
+            this.btnPageForward.Size = new System.Drawing.Size(36, 30);
+            this.btnPageForward.TabIndex = 23;
+            this.btnPageForward.Text = ">>";
+            this.btnPageForward.UseVisualStyleBackColor = true;
+            this.btnPageForward.Click += new System.EventHandler(this.btnPageForward_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 516);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Paging";
             // 
             // GraphAPI
             // 
@@ -440,6 +465,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -479,5 +505,7 @@
         private System.Windows.Forms.Button btnGraphLog;
         private System.Windows.Forms.Button btnClearResponse;
         private System.Windows.Forms.Button btnCopyResponse;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnPageForward;
     }
 }

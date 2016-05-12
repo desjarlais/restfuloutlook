@@ -62,7 +62,7 @@ namespace RESTfulOutlook.Forms
                 homePhones.Add(tbHomePhone.Text);
                 contact.BusinessPhones = businessPhones;
                 contact.HomePhones = homePhones;
-
+                
                 // get company info
                 contact.JobTitle = tbTitle.Text;
                 contact.CompanyName = tbCompany.Text;

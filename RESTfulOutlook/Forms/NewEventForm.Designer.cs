@@ -101,9 +101,9 @@
             // 
             // tbLocation
             // 
-            this.tbLocation.Location = new System.Drawing.Point(80, 78);
+            this.tbLocation.Location = new System.Drawing.Point(135, 78);
             this.tbLocation.Name = "tbLocation";
-            this.tbLocation.Size = new System.Drawing.Size(440, 20);
+            this.tbLocation.Size = new System.Drawing.Size(385, 20);
             this.tbLocation.TabIndex = 11;
             // 
             // dtpEndTime
@@ -144,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 81);
+            this.label3.Location = new System.Drawing.Point(77, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 6;

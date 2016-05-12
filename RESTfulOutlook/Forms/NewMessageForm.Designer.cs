@@ -44,9 +44,6 @@
             this.tbToRecipients = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgAttachments = new System.Windows.Forms.DataGridView();
-            this.btnRemoveAttachment = new System.Windows.Forms.Button();
-            this.btnAddAttachment = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.colFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colContentType = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -54,6 +51,9 @@
             this.colContentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInline = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.odatatype = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.btnRemoveAttachment = new System.Windows.Forms.Button();
+            this.btnAddAttachment = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAttachments)).BeginInit();
@@ -62,7 +62,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 19);
+            this.label1.Location = new System.Drawing.Point(83, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 0;
@@ -92,7 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(657, 16);
+            this.label3.Location = new System.Drawing.Point(640, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 1;
@@ -105,30 +105,30 @@
             "Normal",
             "High",
             "Low"});
-            this.cbxImportance.Location = new System.Drawing.Point(726, 13);
+            this.cbxImportance.Location = new System.Drawing.Point(709, 20);
             this.cbxImportance.Name = "cbxImportance";
-            this.cbxImportance.Size = new System.Drawing.Size(67, 21);
+            this.cbxImportance.Size = new System.Drawing.Size(84, 21);
             this.cbxImportance.TabIndex = 6;
             this.cbxImportance.Text = "Normal";
             // 
             // tbCC
             // 
-            this.tbCC.Location = new System.Drawing.Point(135, 42);
+            this.tbCC.Location = new System.Drawing.Point(118, 45);
             this.tbCC.Name = "tbCC";
             this.tbCC.Size = new System.Drawing.Size(359, 20);
             this.tbCC.TabIndex = 2;
             // 
             // tbBcc
             // 
-            this.tbBcc.Location = new System.Drawing.Point(541, 42);
+            this.tbBcc.Location = new System.Drawing.Point(524, 46);
             this.tbBcc.Name = "tbBcc";
-            this.tbBcc.Size = new System.Drawing.Size(252, 20);
+            this.tbBcc.Size = new System.Drawing.Size(269, 20);
             this.tbBcc.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(500, 45);
+            this.label5.Location = new System.Drawing.Point(483, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 8;
@@ -137,7 +137,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(100, 45);
+            this.label4.Location = new System.Drawing.Point(83, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 7;
@@ -182,7 +182,7 @@
             // 
             // tbToRecipients
             // 
-            this.tbToRecipients.Location = new System.Drawing.Point(135, 16);
+            this.tbToRecipients.Location = new System.Drawing.Point(118, 19);
             this.tbToRecipients.Name = "tbToRecipients";
             this.tbToRecipients.Size = new System.Drawing.Size(516, 20);
             this.tbToRecipients.TabIndex = 1;
@@ -218,30 +218,6 @@
             this.dgAttachments.Name = "dgAttachments";
             this.dgAttachments.Size = new System.Drawing.Size(732, 157);
             this.dgAttachments.TabIndex = 26;
-            // 
-            // btnRemoveAttachment
-            // 
-            this.btnRemoveAttachment.Image = global::RESTfulOutlook.Properties.Resources.Clearallrequests_8816;
-            this.btnRemoveAttachment.Location = new System.Drawing.Point(747, 48);
-            this.btnRemoveAttachment.Name = "btnRemoveAttachment";
-            this.btnRemoveAttachment.Size = new System.Drawing.Size(46, 23);
-            this.btnRemoveAttachment.TabIndex = 2;
-            this.btnRemoveAttachment.UseVisualStyleBackColor = true;
-            this.btnRemoveAttachment.Click += new System.EventHandler(this.btnRemoveAttachment_Click);
-            // 
-            // btnAddAttachment
-            // 
-            this.btnAddAttachment.Image = global::RESTfulOutlook.Properties.Resources.AddMark_10580;
-            this.btnAddAttachment.Location = new System.Drawing.Point(747, 19);
-            this.btnAddAttachment.Name = "btnAddAttachment";
-            this.btnAddAttachment.Size = new System.Drawing.Size(46, 23);
-            this.btnAddAttachment.TabIndex = 1;
-            this.btnAddAttachment.UseVisualStyleBackColor = true;
-            this.btnAddAttachment.Click += new System.EventHandler(this.btnAddAttachment_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // colFilePath
             // 
@@ -308,6 +284,30 @@
             this.odatatype.Name = "odatatype";
             this.odatatype.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.odatatype.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // btnRemoveAttachment
+            // 
+            this.btnRemoveAttachment.Image = global::RESTfulOutlook.Properties.Resources.Clearallrequests_8816;
+            this.btnRemoveAttachment.Location = new System.Drawing.Point(747, 48);
+            this.btnRemoveAttachment.Name = "btnRemoveAttachment";
+            this.btnRemoveAttachment.Size = new System.Drawing.Size(46, 23);
+            this.btnRemoveAttachment.TabIndex = 2;
+            this.btnRemoveAttachment.UseVisualStyleBackColor = true;
+            this.btnRemoveAttachment.Click += new System.EventHandler(this.btnRemoveAttachment_Click);
+            // 
+            // btnAddAttachment
+            // 
+            this.btnAddAttachment.Image = global::RESTfulOutlook.Properties.Resources.AddMark_10580;
+            this.btnAddAttachment.Location = new System.Drawing.Point(747, 19);
+            this.btnAddAttachment.Name = "btnAddAttachment";
+            this.btnAddAttachment.Size = new System.Drawing.Size(46, 23);
+            this.btnAddAttachment.TabIndex = 1;
+            this.btnAddAttachment.UseVisualStyleBackColor = true;
+            this.btnAddAttachment.Click += new System.EventHandler(this.btnAddAttachment_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // NewMessageForm
             // 
