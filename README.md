@@ -64,7 +64,15 @@ Second, you can use [Microsoft Azure Active Directory](https://manage.windowsazu
 
 5. When your registration is complete, you will receive a Client ID. Make note of the Client ID and Redirect URI, you will need them to configure your app.
 
-6. If you need more control of the registration options, you can follow these [detailed instructions](https://github.com/jasonjoh/office365-azure-guides/blob/master/RegisterAnAppInAzure.md) to register your app in Azure. Note that these instructions use the Azure classic portal. You can access the [Azure classic portal here](https://manage.windowsazure.com/).
+6. Copy both the Client Id (App Id) and Redirect URI values to the clipboard. You'll need to enter these values into the sample app.
+
+	The app id is a unique identifier for your app. The redirect URI is a unique URI provided by Windows 10 for each application to ensure that messages sent to that URI are only sent to that application. 
+
+7. Open the restfuloutlook app and click on Settings
+8. Check the box for Edit Registration and populate the clientid and uri
+9. Click on **Save**.
+
+10. If you need more control of the registration options, you can follow these [detailed instructions](https://github.com/jasonjoh/office365-azure-guides/blob/master/RegisterAnAppInAzure.md) to register your app in Azure. Note that these instructions use the Azure classic portal. You can access the [Azure classic portal here](https://manage.windowsazure.com/).
 
 ##Questions and comments
 If you have any feedback about this project, use the issues section for any questions or suggestions located here: [Issues](https://github.com/desjarlais/restfuloutlook/issues)
