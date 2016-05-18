@@ -45,9 +45,9 @@ Second, you can use [Microsoft Azure Active Directory](https://manage.windowsazu
 
 2. Once you have created an Office 365 Dev Account, go to [graph.microsoft.io](http://graph.microsoft.io/en-us/) to register your app and click **App Registration** then click **Office 365 App Registration Tool** or you can go directly to the registration page [dev.office.com/app-registration](http://dev.office.com/app-registration).
 
-  ![Get started](/img/ms-graph-get-started.jpg) 
+![Get started](http://i.imgur.com/4PsfQcC.jpg) 
 
-  ![Next step](/img/ms-graph-get-started-2.jpg)
+![Next step](http://i.imgur.com/nuc1HOA.jpg)
 
 3. Give your app a name and select **Native App** in the **App type** line. Then pick a Redirect URI, the preferred naming convention is: "your Office 365 domain + a unique name for your app", but it is not required, it must however, be formatted as a URI and be unique. For example, I named my app https://greencricketcreations.onmicrosoft.com/MyCalendarApp. The Redirect URI isn't a real website; it is more of a unique identifier for your app. Once you have entered a name and Redirect URI set the permissions. The necessary permissions are:
 
@@ -60,7 +60,7 @@ Second, you can use [Microsoft Azure Active Directory](https://manage.windowsazu
 
 4. Once you have filled out the form, click **Register App**.
 
-  ![Register App](/img/ms-graph-get-started-3.jpg)
+  ![Register App](http://i.imgur.com/k1HbZhB.jpg)
 
 5. When your registration is complete, you will receive a Client ID. Make note of the Client ID and Redirect URI, you will need them to configure your app.
 
