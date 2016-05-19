@@ -76,7 +76,7 @@ namespace RESTfulOutlook.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            // setup the time variables
+            // setup variables for response time
             DateTime responseReceived = new DateTime();
             DateTime requestStarted = new DateTime();
 
@@ -111,7 +111,7 @@ namespace RESTfulOutlook.Forms
                         break;
                 }
 
-                // create the http request
+                // create the http request and add the access token in the header
                 HttpRequestMessage request = new HttpRequestMessage(HttpRequestMethod, graphRequest);
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
 
@@ -194,7 +194,7 @@ namespace RESTfulOutlook.Forms
                 if (response.StatusCode == HttpStatusCode.Accepted || response.StatusCode == HttpStatusCode.Created)
                 {
                     // POST responses that are successful return 202 Accepted or 201 Created,
-                    // there is no return value so let the user know it was successful
+                    // there is no response body so let the user know it was successful
                     tvw.Nodes.Add(new TreeNode("Message created/sent succesfully."));
                     logger.Log("StatusCode = " + response.StatusCode.ToString());
                 }
@@ -281,7 +281,7 @@ namespace RESTfulOutlook.Forms
                     apiVersion = "beta/";
                 }
 
-                // lookup the selected value and populate the respective request information
+                // lookup the selected value and populate the request information
                 foreach (KeyValuePair<string, string> pair in dictionary)
                 {
                     if (pair.Key == cbRESTQuery.SelectedItem.ToString())
@@ -487,8 +487,10 @@ namespace RESTfulOutlook.Forms
             {
                 Clipboard.SetText(treeViewResult);
             }
-            catch (Exception)
-            { }
+            catch (Exception ex)
+            {
+                logger.Log("Copy Error:" + ex.Message);
+            }
         }
 
         public void ClearResponseTree()

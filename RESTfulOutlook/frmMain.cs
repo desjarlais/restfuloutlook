@@ -49,14 +49,12 @@ namespace RESTfulOutlook
             config.graphEndpoint = Properties.Settings.Default.GraphEndpoint;
             config.redirectUri = Properties.Settings.Default.RedirectUri;
             
-
             // init config values
             redirectUri = new Uri(config.redirectUri);
             authority = String.Format(CultureInfo.InvariantCulture, config.aadInstance, "common");
             clientId = config.clientId;
             graphApiEndpoint = config.graphEndpoint;
-
-
+            
             // create log and token cache objects
             applogger = new ClassLogger("restfuloutlook-app.log");
             sdklogger = new ClassLogger("restfuloutlook-graphsdk.log");
@@ -238,6 +236,7 @@ namespace RESTfulOutlook
                 }
                 else
                 {
+                    // store the basic auth creds
                     passwordEntered = converToSecureString(mskPassword.Text);
                     userNameEntered = tbUsername.Text;
                     tbUsername.Text = string.Empty;

@@ -123,6 +123,7 @@ namespace RESTfulOutlook.Forms
                         // create the child tree node and set the text
                         TreeNode child = new TreeNode();
                         child.Text = childFolder.DisplayName;
+                        
                         // since we have a child folder, need to add this id to the dictionary
                         dFolderIds.Add(childFolder.DisplayName, childFolder.Id);
                         
@@ -147,10 +148,9 @@ namespace RESTfulOutlook.Forms
             try
             {
                 Cursor = Cursors.WaitCursor;
-                dgCleanup();
+                DgCleanup();
 
-                // get folder name from selected dropdown item and convert to folder id
-                //string folderName = cmbFolders.SelectedItem.ToString();
+                // get folder name from the treeview and find the associated folder id
                 string folderName = tvwFolders.SelectedNode.Text;
                 string folderId = null;
 
@@ -326,7 +326,7 @@ namespace RESTfulOutlook.Forms
             }
         }
 
-        public void dgCleanup()
+        public void DgCleanup()
         {
             // clear any previous rows
             dgMessages.Rows.Clear();
@@ -372,6 +372,7 @@ namespace RESTfulOutlook.Forms
                     mRecipients.Owner = this;
                     mRecipients.ShowDialog(this);
                 }
+
                 if (e.ColumnIndex == (int)columns.Attachments)
                 {
                     if (dFileAttachments.Count > 0 || dItemAttachments.Count > 0)
@@ -409,6 +410,7 @@ namespace RESTfulOutlook.Forms
                         mAttachment.ShowDialog(this);
                     }
                 }
+
                 if (e.ColumnIndex == (int)columns.Bcc)
                 {
                     List<Recipient> tRecips = null;
@@ -425,6 +427,7 @@ namespace RESTfulOutlook.Forms
                     mRecipients.Owner = this;
                     mRecipients.ShowDialog(this);
                 }
+
                 if (e.ColumnIndex == (int)columns.Cc)
                 {
                     List<Recipient> tRecips = null;
@@ -441,6 +444,7 @@ namespace RESTfulOutlook.Forms
                     mRecipients.Owner = this;
                     mRecipients.ShowDialog(this);                    
                 }
+
                 if (e.ColumnIndex == (int)columns.ReplyTo)
                 {
                     List<Recipient> tRecips = null;
@@ -457,6 +461,7 @@ namespace RESTfulOutlook.Forms
                     mRecipients.Owner = this;
                     mRecipients.ShowDialog(this);
                 }
+
                 if (e.ColumnIndex == (int)columns.Body)
                 {
                     List<ItemBody> lBody = null;
@@ -472,6 +477,7 @@ namespace RESTfulOutlook.Forms
                     mItemBodyCollection.Owner = this;
                     mItemBodyCollection.ShowDialog(this);
                 }
+
                 if (e.ColumnIndex == (int)columns.Categories)
                 {
                     List<string> lCategories = null;

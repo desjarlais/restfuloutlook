@@ -89,7 +89,7 @@ namespace RESTfulOutlook.Forms
             try
             {
                 Cursor = Cursors.WaitCursor;
-                dgCleanup();
+                DgCleanup();
 
                 int mLimit = (Int32)nudContacts.Value;
 
@@ -240,7 +240,7 @@ namespace RESTfulOutlook.Forms
             }
         }
 
-        public void dgCleanup()
+        public void DgCleanup()
         {
             // clear the dgview
             dgContactsList.Rows.Clear();
