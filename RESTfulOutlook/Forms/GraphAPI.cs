@@ -29,7 +29,7 @@ namespace RESTfulOutlook.Forms
 
             xAnchorMbx = anchor;
 
-            // setup links
+            // add hyperlinks to UI
             lnkQueryParams.Links.Add(0, 16, "http://graph.microsoft.io/en-us/docs/overview/query_parameters");
             lnkPaging.Links.Add(0, 6, "http://graph.microsoft.io/en-us/docs/overview/paging");
             lnkCallAPI.Links.Add(0, 21, "http://graph.microsoft.io/en-us/docs/overview/call_api");
@@ -47,7 +47,7 @@ namespace RESTfulOutlook.Forms
 
         public void PopulateComboBox()
         {
-            // create a generic StartDateTime and EndDateTime for calls like CalendarView
+            // create a generic StartDateTime and EndDateTime for calls like "me/CalendarView"
             DateTimeOffset dtoStart = DateTimeOffset.Now;
             DateTimeOffset dtoEnd = dtoStart.AddMinutes(30);
 
@@ -149,7 +149,7 @@ namespace RESTfulOutlook.Forms
                 
                 // calculate the number of milliseconds that the request took to complete
                 TimeSpan milliseconds = responseReceived.Subtract(requestStarted);
-                logger.Log("RESPONSE TIME: " + milliseconds);
+                logger.Log("RESPONSE TIME = " + milliseconds);
 
                 // handle non-successful requests
                 if (!response.IsSuccessStatusCode)
@@ -428,6 +428,8 @@ namespace RESTfulOutlook.Forms
             }
         }
 
+        #region handle-hyperlink clicks
+
         private void lnkQueryParams_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(e.Link.LinkData.ToString());
@@ -447,6 +449,7 @@ namespace RESTfulOutlook.Forms
         {
             Process.Start(e.Link.LinkData.ToString());
         }
+        #endregion
 
         private void btnGraphLog_Click(object sender, EventArgs e)
         {
