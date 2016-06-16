@@ -48,7 +48,7 @@ namespace RESTfulOutlook
             config.clientId = Properties.Settings.Default.ClientId;
             config.graphEndpoint = Properties.Settings.Default.GraphEndpoint;
             config.redirectUri = Properties.Settings.Default.RedirectUri;
-            
+
             // init config values
             redirectUri = new Uri(config.redirectUri);
             authority = String.Format(CultureInfo.InvariantCulture, config.aadInstance, "common");
@@ -339,13 +339,24 @@ namespace RESTfulOutlook
             Forms.Settings mSettings = new Forms.Settings();
             mSettings.Owner = this;
             mSettings.ShowDialog();
+            try
+            {
+                // update the config values
+                clientId = Properties.Settings.Default.ClientId;
+                redirectUri = new Uri(Properties.Settings.Default.RedirectUri);
 
-            // update the config values
-            clientId = Properties.Settings.Default.ClientId;
-            redirectUri = new Uri(Properties.Settings.Default.RedirectUri);
-
-            config.clientId = clientId;
-            config.redirectUri = Properties.Settings.Default.RedirectUri;
+                config.clientId = clientId;
+                config.redirectUri = Properties.Settings.Default.RedirectUri;
+            }
+            catch (Exception ex)
+            {
+                // if we fail on a bad config setting, clear property
+                applogger.Log("Settings failed to update: " + ex.Message);
+                Properties.Settings.Default.ClientId = "";
+                Properties.Settings.Default.RedirectUri = "";
+                Properties.Settings.Default.Save();
+            }
+            
         }
 
         private void btnUserInfo_Click(object sender, EventArgs e)

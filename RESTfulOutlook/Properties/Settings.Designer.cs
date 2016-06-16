@@ -49,7 +49,7 @@ namespace RESTfulOutlook.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("9e827b51-5206-432c-9d4d-6be8cd20407e")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"add-client-id-here\"")]
         public string ClientId {
             get {
                 return ((string)(this["ClientId"]));
@@ -73,7 +73,7 @@ namespace RESTfulOutlook.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/847638cc454f53f487be703a89279f11")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/addredirecturihere/")]
         public string RedirectUri {
             get {
                 return ((string)(this["RedirectUri"]));

@@ -172,8 +172,8 @@ namespace RESTfulOutlook.Forms
 
         private void btnResetRegistration_Click(object sender, EventArgs e)
         {
-            txtClientId.Text = "9e827b51-5206-432c-9d4d-6be8cd20407e";
-            txtRedirectUri.Text = "http://localhost/847638cc454f53f487be703a89279f11";
+            txtClientId.Text = "";
+            txtRedirectUri.Text = "";
         }
     }
 }

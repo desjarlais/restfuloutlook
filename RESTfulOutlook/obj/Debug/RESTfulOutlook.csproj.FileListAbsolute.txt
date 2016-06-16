@@ -179,7 +179,6 @@ D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.exe
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.pdb
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\RESTfulOutlook.exe
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\RESTfulOutlook.pdb
-D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Azure.ActiveDirectory.GraphClient.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Data.Edm.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Graph.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
@@ -189,9 +188,6 @@ D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.OData.Edm.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.OData.ProxyExtensions.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Spatial.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Newtonsoft.Json.dll
-D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Data.Services.Client.dll
-D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Data.OData.dll
-D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Spatial.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Data.Edm.xml
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.OData.Client.xml
@@ -199,9 +195,6 @@ D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.OData.Core.xml
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.OData.Edm.xml
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Spatial.xml
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Newtonsoft.Json.xml
-D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Data.Services.Client.xml
-D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Data.OData.xml
-D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Spatial.xml
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\de\Microsoft.Data.Edm.resources.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\es\Microsoft.Data.Edm.resources.dll
 D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\fr\Microsoft.Data.Edm.resources.dll
