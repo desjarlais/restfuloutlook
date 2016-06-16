@@ -368,14 +368,14 @@ namespace RESTfulOutlook
 
         private void btnScopes_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Graph Scopes : \r\n" + "============================\r\n" 
-                + "View users' basic profile\r\n" + "View users' email address\r\n"
+            string bodyText = "View users' basic profile\r\n" + "View users' email address\r\n"
                 + "Read user contacts\r\n" + "Read user calendars\r\n" + "Read user mail\r\n"
-                + "Access directory as the signed on user\r\n" + "Sign in and read user profile", "Application Scopes"
+                + "Access directory as the signed on user\r\n" + "Sign in and read user profile"
                 + "Sign in and read user profile\r\n" + "Read items in all site collections\r\n"
                 + "Read threat intelligence data for your organization\r\n" + "Read activity data for your organization\r\n"
-                + "Read service health information for your organization\r\n" + "Read activity reports for your organization",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                + "Read service health information for your organization\r\n" + "Read activity reports for your organization";
+
+            MessageBox.Show(bodyText, "Office365 Graph Scopes", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         #endregion

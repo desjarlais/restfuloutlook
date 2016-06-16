@@ -70,6 +70,7 @@ namespace RESTfulOutlook.JsonHelpers
 
         /// <summary>
         /// serialize the .net object -> json
+        /// also need to handle null values
         /// </summary>
         /// <param name="value">.net object to be serialized</param>
         /// <returns>serialized string of formatted json</returns>

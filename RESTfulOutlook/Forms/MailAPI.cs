@@ -202,6 +202,11 @@ namespace RESTfulOutlook.Forms
 
                     if (msg.ToRecipients.Any())
                     {
+                        // create a temp list for processing the individual message recips
+                        // when all recips have been added to the temp, add those to the global "cached" dictionary
+                        // this should save making multiple calls back to the service for data we already pulled
+                        // does leave a potential stale scenario, but the goal isn't to be a client app but a tool
+                        // so this should work fine
                         List<Recipient> toRecipients = new List<Recipient>();
                         foreach (var recip in msg.ToRecipients)
                         {
