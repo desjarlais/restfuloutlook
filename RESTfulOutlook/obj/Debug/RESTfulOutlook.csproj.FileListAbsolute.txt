@@ -369,3 +369,12 @@ D:\Github\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Forms.UserInfoF
 D:\Github\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.frmMain.resources
 D:\Github\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.Properties.Resources.resources
 D:\Github\restfuloutlook\RESTfulOutlook\obj\Debug\RESTfulOutlook.csproj.GenerateResource.Cache
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\Microsoft.Win32.Primitives.dll
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Net.Http.dll
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Runtime.Serialization.Primitives.dll
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\Code\GitHub\restfuloutlook\RESTfulOutlook\bin\Debug\System.Diagnostics.DiagnosticSource.xml
