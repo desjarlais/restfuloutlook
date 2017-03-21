@@ -1,6 +1,6 @@
 # RESTfulOutlook
 
-![image] (http://i.imgur.com/I8MIiAV.jpg)
+![image](http://i.imgur.com/I8MIiAV.jpg)
 
 ## Introduction
 This sample app is a .net/winform tool to test making REST calls for Outlook/Exchange data, using either the [Microsoft Graph SDK](https://www.nuget.org/packages/Microsoft.Graph) or sending the calls directly to the Microsoft Graph endpoint, similar to the [MS Graph Explorer](https://graph.microsoft.io/en-us/graph-explorer#/).
